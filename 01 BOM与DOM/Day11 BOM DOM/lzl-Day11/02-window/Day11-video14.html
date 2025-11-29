@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            font-size: 200px;
+        }
+    </style>
+</head>
+    <!-- 
+    多次定时器：
+    setInterval(回调函数, 时间间隔)		时间间隔单位是毫秒，默认值是 0， 返回定时器标记
+    clearInterval(定时器标记)		  停止定时器，需要指定定时器标记
+    -->
+<body>
+    <button id="btn01">停止</button>
+    <div id="box">
+        10
+    </div>
+    <script>
+        // 设置多次定时器   返回定时器标记
+        var interval01 = setInterval(function(num){
+            console.log('hello 高小乐',num);
+        },10000,Math.random())
+
+        // 设置多次定时器
+        var interval02 = setInterval(function(){
+            // 0-255
+            var r=Math.floor(Math.random()*256); 
+            var g=Math.floor(Math.random()*256); 
+            var b=Math.floor(Math.random()*256); 
+            document.body.style.backgroundColor = 'rgb('+r+','+g+','+b+')';
+        },70);
+
+        // 获取按钮元素 监听事件
+        var btn01 = document.getElementById('btn01');
+        btn01.onclick = function(){
+            clearInterval(interval02);
+        }
+        // ---------------------------------------------------------------------------------------
+        var num =10;
+        // 获取html元素，保存js对象
+        var boxElm = document.getElementById('box');
+        var interval03 = setInterval(function(){
+            num--;
+            boxElm.innerHTML = num;
+            if(num===0){
+                clearInterval(interval03)
+            }
+        },1000)
+
+    </script>
+</body>
+</html>

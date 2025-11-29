@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图功能1-点击底部按钮切换图片</title>
+    <style>
+        ul,ol{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .playbox{
+            width:900px;
+            height:350px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .images li {
+            width: 900px;
+            height: 350px;
+            display: none;
+        }
+        .images li.active{
+            display: block;
+        }
+        .playbox ol{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            display: flex;
+        }
+        .playbox ol li{
+            color: #fff;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            background-color: #070707;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .playbox ol li.active{
+            color: #f50;
+            border: 1px solid #f50;
+        }
+        .arrow{
+            width: 40px;
+            height: 100px;
+            background-color: #070707;
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            background-image: url('./images/index.png');
+        }
+        .arrow-next{
+            right: 0;
+            background-position: -50px 0;
+        }
+        .arrow-prev{
+            left: 0;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="playbox">
+        <ul class="images">
+            <li class="active">
+                <a href="#">
+                    <img src="./images/01.jpg" >
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/02.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/03.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/04.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/05.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+        <ol>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+        <span class="arrow arrow-prev"></span>
+        <span class="arrow arrow-next"></span>
+    </div>
+    <script>
+        // 获取相关元素
+        var imageItems = document.querySelectorAll('ul li');
+        var btnItems = document.querySelectorAll('ol li');
+        // 遍历按钮 添加监听事件
+        btnItems.forEach(function(btnItem,index,){
+            btnItem.onclick = function(){
+                btnItems.forEach(function(btnItem,index){
+                    btnItem.classList.remove('active');
+                    imageItems[index].classList.remove('active');
+                })
+                btnItem.classList.add('active');
+                imageItems[index].classList.add('active');
+            }
+        })
+    </script>
+</body>
+</html>

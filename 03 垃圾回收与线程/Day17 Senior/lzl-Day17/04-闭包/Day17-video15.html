@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name ='The window';
+        var object = {
+            name:'My Object',
+            getNameFunc: function(){
+                return function (){
+                    return this.name
+                };
+            }
+        };
+        //第一次 object调用getNameFunc()
+        //第二次 window调用return function()
+        console.log(object.getNameFunc()())  //The window
+
+        var name2 = "The Window";//全局
+            var object2 = {
+                name2: "My Object",
+                getNameFunc: function () {
+                    var that = this;
+                    return function () {
+                        return that.name2;
+                    };
+                }
+            };
+            // 第一次 object2调用getNameFunc()
+            // 第二次 调用return function ()
+            // 执行that.name2   that在getNameFunc()创建，this指向调用函数getNameFunc()的对象，所以that。。。
+            console.log(object2.getNameFunc()());//My Object
+    </script>
+</body>
+</html>

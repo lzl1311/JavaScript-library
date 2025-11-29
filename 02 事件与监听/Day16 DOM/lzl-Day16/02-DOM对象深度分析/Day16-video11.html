@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ulbox">
+        <li>1好应韩动松衣入后人德郭的，洪谭者光，而。</li>
+        <li>2好应韩动松衣入后人德郭的，洪谭者光，而。</li>
+        <li>3好应韩动松衣入后人德郭的，洪谭者光，而。</li>
+        <li>4好应韩动松衣入后人德郭的，洪谭者光，而。</li>
+        <li>5好应韩动松衣入后人德郭的，洪谭者光，而。</li>
+        <li>6好应韩动松衣入后人德郭的，洪谭者光，而。</li>
+    </ul>
+    <script>
+        
+        var ulbox = document.querySelector('#ulbox');
+        var liList = document.querySelectorAll('#ulbox li');
+        var liCollection = document.getElementsByTagName('li')
+        // Nodelist
+        // HTMLCollection
+        var newli = document.createElement('li');
+        newli.innerHTML = '我是新添加的';
+        ulbox.appendChild(newli);
+        console.log(liCollection);
+        console.log(liList)
+    </script>
+</body>
+</html>

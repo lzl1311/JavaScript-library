@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn01">点击查看图片详情</button>
+    <button id="btn05">换图</button>
+    <button id="btn02">放大</button>
+    <button id="btn03">缩小</button>
+    <button id="btn04">是否选择输入框</button>
+    <img src="./images/about4.jpg" alt="一幅粉蓝紫的图片" width="300">
+    <input type="checkbox" id="inp" checked>
+    <script>
+        // 获取图片对象
+        var imgEle = document.querySelector('img');
+        // 获取按键对象
+        var btn01Ele = document.querySelector('#btn01');
+        var btn02Ele = document.querySelector('#btn02');
+        var btn03Ele = document.querySelector('#btn03');
+        var btn04Ele = document.querySelector('#btn04');
+        var btn05Ele = document.querySelector('#btn05');
+        // 获取输入框对象
+        var inpEle = document.querySelector('#inp');
+        btn01Ele.onclick = function(){
+            console.log(imgEle.alt);
+            console.log(imgEle.title);
+            console.log(decodeURI(imgEle.src));
+            console.log(imgEle.width);
+            console.log(imgEle.height);
+            console.log(imgEle.id);
+        }
+        btn02Ele.onclick = function(){
+            imgEle.width+=20;
+        }
+        btn03Ele.onclick = function(){
+            imgEle.width-=20;
+        }
+        btn04Ele.onclick = function(){
+            
+            inpEle.checked = !inpEle.checked;
+            console.log(inpEle.checked);
+        }
+        btn05Ele.onclick = function(){
+            imgEle.src = './images/about3.jpg'
+        }
+    </script>
+</body>
+</html>

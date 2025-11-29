@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机点名</title>
+    <style>
+        #nameBox{
+            text-align: center;
+            margin: 40px auto;
+            font-size: 100px;
+        }
+        #Btn{
+            font-size: 50px;
+            text-align: center;
+            padding: 10px;
+            margin: 0 auto;
+            width: 300px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="nameBox">随机点名器</div>
+    <div id="Btn">开始</div>
+    
+    <script>
+
+        (function(){
+            var nameList = ['刘备','曹老板', '孙权','孙策','孙尚香','大乔','小乔','周瑜','兰陵王','花木兰']
+            // 获取对象
+            var nameBox = document.querySelector('#nameBox');
+            var btn = document.querySelector('#Btn');
+
+            //把定时器设置成全局变量，否则出了那个回调函数别的地方用不了
+            var intervalId = null;
+            // 设置事件
+            btn.onclick = function(){
+                // 如果btn的字是继续
+                if(btn.innerHTML !== '停止'){
+                    intervalId = setInterval(function(){
+                        nameBox.innerHTML = nameList[Math.floor(Math.random()*nameList.length)] 
+                    },50)
+                    btn.innerHTML = '停止';
+                }else{
+                    clearInterval(intervalId);
+                    btn.innerHTML = '继续';
+                } 
+            }
+        })()
+        
+    </script>
+</body>
+</html>

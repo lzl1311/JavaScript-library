@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 文档一切加载完输出
+        window.onload = function(){
+            var box = document.querySelector('#box');
+            console.log('load')
+        }
+        // 元素加载完就输出
+        window.addEventListener( 'DOMContentLoaded',function(){
+            console.log('DOMContentLoaded完毕')
+        })
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

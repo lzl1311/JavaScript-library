@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #list{
+            list-style: none;
+        }
+        li{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>
+            <input type="checkbox">
+            一作极自联慨是书与天嗣也们徒乏五，同起。
+        </li>
+        <li>
+            <input type="checkbox">
+            一作极自联慨是书与天嗣也们徒乏五，同起。
+        </li>
+        <li>
+            <input type="checkbox">
+            一作极自联慨是书与天嗣也们徒乏五，同起。
+        </li>
+        <li>
+            <input type="checkbox">
+            一作极自联慨是书与天嗣也们徒乏五，同起。
+        </li>
+        <li>
+            <input type="checkbox">
+            一作极自联慨是书与天嗣也们徒乏五，同起。
+        </li>
+    </ul>
+    <button id="btn01">全选</button>
+    <button id="btn02">全不选</button>
+    <button id="btn03">反选</button>
+    <script>
+        // 获取选项对象
+        var checkitem = document.querySelectorAll('input');
+        // 获取按钮对象
+        var btn01Ele = document.querySelector('#btn01');
+        var btn02Ele = document.querySelector('#btn02');
+        var btn03Ele = document.querySelector('#btn03');
+        // 按下按钮实现全选
+        btn01Ele.onclick = function(){
+            for(i=0;i<checkitem.length;i++){
+                checkitem[i].checked = true;
+            }
+        }
+        // 按下按钮实现全不选
+        btn02Ele.onclick = function(){
+            for(i=0;i<checkitem.length;i++){
+                checkitem[i].checked = false;
+            }
+        }
+        // 按下按钮实现反选
+        btn03Ele.onclick = function(){
+            for(i=0;i<checkitem.length;i++){
+                if(checkitem[i].checked === true){
+                    checkitem[i].checked = false;
+                }else{
+                    checkitem[i].checked = true;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

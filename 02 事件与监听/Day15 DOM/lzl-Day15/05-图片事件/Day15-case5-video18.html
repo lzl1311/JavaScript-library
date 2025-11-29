@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            margin: 0 auto;
+            width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .wrapper img {
+            margin: 10px;
+            width: 220px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img src="./images/db01.jpg" alt="">
+        <img src="./images/db02.jpg" alt="">
+        <img src="./images/db03.jpg" alt="">
+        <img src="./images/db04.jpg" alt="">
+        <img src="./images/db05.jpg" alt="">
+        <img src="./images/db06.jpg" alt="">
+        <img src="./images/db0612.jpg" alt="">
+        <img src="./images/db07.jpg" alt="">
+        <img src="./images/db08.jpg" alt="">
+        <img src="./images/db09.jpg" alt="">
+        <img src="./images/db019.jpg" alt="">
+        <img src="./images/db10.jpg" alt="">
+        <img src="./images/db01.jpg" alt="">
+        <img src="./images/db001.jpg" alt="">
+        <img src="./images/db02.jpg" alt="">
+        <img src="./images/db03.jpg" alt="">
+        <img src="./images/db04.jpg" alt="">
+        <img src="./images/db05.jpg" alt="">
+        <img src="./images/db06.jpg" alt="">
+        <img src="./images/db07.jpg" alt="">
+        <img src="./images/sadfasdf.jpg" alt="">
+        <img src="./images/db08.jpg" alt="">
+        <img src="./images/db09.jpg" alt="">
+        <img src="./images/db10.jpg" alt="">
+        <img src="./images/db01.jpg" alt="">
+        <img src="./images/db02.jpg" alt="">
+        <img src="./images/db03.jpg" alt="">
+        <img src="./images/dbsdfads.jpg" alt="">
+        <img src="./images/db04.jpg" alt="">
+        <img src="./images/db05.jpg" alt="">
+        <img src="./images/db06.jpg" alt="">
+        <img src="./images/db07.jpg" alt="">
+        <img src="./images/db08.jpg" alt="">
+        <img src="./images/db09.jpg" alt="">
+        <img src="./images/db10.jpg" alt="">
+        <img src="./images/db01.jpg" alt="">
+        <img src="./images/db02.jpg" alt="">
+        <img src="./images/db03.jpg" alt="">
+        <img src="./images/db04.jpg" alt="">
+        <img src="./images/db05.jpg" alt="">
+        <img src="./images/db06.jpg" alt="">
+        <img src="./images/db07.jpg" alt="">
+        <img src="./images/db08.jpg" alt="">
+        <img src="./images/db09.jpg" alt="">
+        <img src="./images/db10.jpg" alt="">
+    </div>
+    <script>
+        // 获取元素
+        var imgItems = document.querySelectorAll('.wrapper img');
+        //遍历
+        imgItems.forEach(function(item){
+            item.onerror = function(){
+                item.src = './images/noimage.png';
+            }
+        })
+    </script>
+</body>
+</html>

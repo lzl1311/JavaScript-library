@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .todolist {
+            margin: 50px auto;
+            width: 700px;
+        }
+
+        .todo-header input {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .todo-header button {
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+        }
+
+        .todo-body ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .todo-body li {
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .todo-body li.active {
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="todolist">
+        <div class="todo-header">
+            
+            <button id="addBtn">添加</button>
+            <button id="insertBtn">插入</button>
+            <button id="replaceBtn">替换</button>
+        </div>
+        <div class="todo-body">
+            <ul id="todoContent">
+                <li>和雪丽去吃晚饭</li>
+                <li>和雪丽去看电影</li>
+                <li>和雪丽去做足疗</li>
+                <li>和雪丽去河边钓鱼</li>
+                <li>和雪丽去河边挖螃蟹</li>
+                <li>和雪丽去办公室喝茶</li>
+            </ul>
+        </div>
+    </div>
+    <li id="newLi">懒羊羊爱吃青草蛋糕</li>
+    <script>
+        // 获取相关元素
+        var todoContent = document.querySelector('#todoContent')
+        var addBtn = document.querySelector('#addBtn');
+        var insertBtn = document.querySelector('#insertBtn');
+        var replaceBtn = document.querySelector('#replaceBtn');
+        var newLi = document.querySelector('#newLi');
+
+        var newli = document.createElement('li');
+        newli.innerHTML = '我是高小乐'+Math.random();
+        // 添加按钮
+        addBtn.onclick = function(){
+            todoContent.appendChild(newLi.cloneNode(true));
+            //todoContent.appendChild(newli.cloneNode(true));
+            //newli.cloneNode(true);
+        }
+
+        // 插入按钮
+        insertBtn.onclick = function(){
+            todoContent.insertBefore(newLi,todoContent.firstElementChild)
+            //todoContent.insertBefore(newli.cloneNode(true),todoContent.firstElementChild);
+            //newli.cloneNode(true);
+        };
+        // 替换按钮
+        replaceBtn.onclick = function(){
+            todoContent.replaceChild(newLi,todoContent.lastElementChild)
+            //todoContent.replaceChild(newli.cloneNode(true),todoContent.lastElementChild);
+            // newli.cloneNode(true);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my</title>
+    <style>
+        input,textarea,select {
+            box-sizing: border-box;
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+<body>
+<form action="1.php" id="myForm">
+        <table>
+            <tr>
+                <td>邮箱：</td>
+                <td>
+                    <input type="email" id="emailInput">
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align:top">留言：</td>
+                <td>
+                    <textarea id="" cols="30" rows="10"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>地址：</td>
+                <td>
+                    <select id="addressSel"></select>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <hr>
+
+    <button id="btn">双击提交 右击重置</button>
+  
+    <script>
+        // 获取元素
+        var btn = document.querySelector('#btn');
+        var formBox = document.querySelector('#myForm')
+        // 添加事件 
+        // 双击事件
+        btn.ondblclick = function(){
+            formBox.submit();
+        }
+        // 添加右击事件
+        btn.oncontextmenu = function(){
+            formBox.reset();
+        }
+        // 控制台输出事件
+        console.log(formBox.length);
+        console.log(formBox.elements);
+       
+        // 5秒后聚焦 聚焦后3秒不聚焦
+        setTimeout(function(){
+            formBox.elements[0].focus();
+            console.log(1)
+            setTimeout(function(){
+                formBox.elements[0].blur();
+                console.log(10)
+            },3000)
+        },5000)
+
+        // 
+        formBox.elements[1].ondblclick = function(){
+            formBox.elements[1].select();
+        }
+
+        var list = [' 北京 ', ' 上海 ', ' 乌鲁木齐 ', ' 呼和浩特 ', ' 武汉 ', ' 西安 ', ' 成都 '];
+        list.forEach(function(item,index){
+            // 生成的样式<option value=0>北京</option>
+            formBox.elements[2].add(new Option(item,index))
+        })
+
+        // 删除选项
+        formBox.elements[2].onchange = function(){
+            // seletedIndex select特有的，表示被选中的option的所有
+           formBox.elements[2].remove(formBox.elements[2].selectedIndex)
+        }
+    </script>
+</body>
+</html>

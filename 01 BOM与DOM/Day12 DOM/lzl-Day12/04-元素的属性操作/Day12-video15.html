@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./images/about4.jpg" width="300" data-home-address="东京" data-locadin="img100.png">
+    <button id="btn01">获取信息</button>
+    <button id="btn02">创建信息</button>
+    <script>
+        // 获取图片对象
+        var imgEle = document.querySelector('img');
+        // 获取按钮对象
+        var btn01 = document.querySelector('#btn01');
+        var btn02 = document.querySelector('#btn02');
+        // 按下按钮获取信息
+        btn01.onclick = function(){
+            console.log('data-home-address:',imgEle.getAttribute('data-home-address'));
+            console.log('data-home-address:',imgEle.dataset.homeAddress);
+            console.log('data-locadin:',imgEle.dataset.locadin);
+        }
+        // 按下按钮创建新信息
+        btn02.onclick = function(){
+            imgEle.dataset.homeAddress = '北京';
+            imgEle.dataset.locadin = '狗老师.png';
+        }
+    </script>
+</body>
+</html>

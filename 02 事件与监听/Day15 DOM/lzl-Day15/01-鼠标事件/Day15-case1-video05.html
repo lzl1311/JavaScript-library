@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: #76d71c;
+            position: fixed;
+            top: 30px;
+            left: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        (function(){
+            // 获取元素
+            var box = document.querySelector('#box');
+            // 监听事件
+            // 按下鼠标才能开启鼠标移动监听
+            box.onmousedown = function(event){
+                this.style.backgroundColor = '#ccc';
+                // 获取鼠标在元素上的位置
+                var mouseleft = event.offsetX;
+                var mousetop = event.offsetY;
+                //给文档设置鼠标移动事件(不可能出文档)
+                document.onmousemove = function(event){
+                    var left = event.clientX - mouseleft;
+                    var top = event.clientY - mousetop;
+                    // 注意 注意 给css中修改样式需要加单位
+                    if(left <0){
+                        left = 0;
+                    }else if(left >document.documentElement.clientWidth - box.offsetWidth){
+                        left = document.documentElement.clientWidth - box.offsetWidth;
+                    }
+
+                    if(top <0){
+                        top=0;
+                    }else if(top >document.documentElement.clientHeight - box.offsetHeight){
+                        top = document.documentElement.clientHeight - box.offsetHeight;
+                    }
+
+                    box.style.left = (left)+'px';
+                    box.style.top = (top )+'px' ;
+                }
+            }
+            box.onmouseup = function(){
+                this.style.backgroundColor = '';
+                document.onmousemove = null;
+            }    
+        })()
+    </script>
+</body>
+</html>
+<!-- 
+解决方法：
+1.把监听鼠标移动的对象变成document，鼠标移不出去
+2.这里的left，指的是box左上角应该放置的水平位置
+这里的top，指的是box左上角应该放置的垂直位置
+-->

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图功能5-滑动变化</title>
+    <style>
+        ul,ol{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .playbox{
+            width:900px;
+            height:350px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .images{
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .images li {
+            width: 900px;
+            height: 350px;
+        }
+        .playbox ol{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            display: flex;
+        }
+        .playbox ol li{
+            color: #fff;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            background-color: #070707;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .playbox ol li.active{
+            color: #f50;
+            border: 1px solid #f50;
+        }
+        .arrow{
+            width: 40px;
+            height: 100px;
+            background-color: #070707;
+            position: absolute;
+            top:50%;
+            transform: translateY(-50%);
+            background-image: url('./images/index.png');
+        }
+        .arrow-next{
+            right: 0;
+            background-position: -50px 0;
+        }
+        .arrow-prev{
+            left: 0;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="playbox">
+        <ul class="images">
+            <li>
+                <a href="#">
+                    <img src="./images/01.jpg" >
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/02.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/03.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/04.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="./images/05.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+        <ol>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+        <span class="arrow arrow-prev"></span>
+        <span class="arrow arrow-next"></span>
+    </div>
+    <script>
+        // 获取相关元素
+        var playBox = document.querySelector('.playbox')
+        
+        var btnItems = document.querySelectorAll('ol li');//按钮集合
+        var prevBtn = document.querySelector('.arrow-prev');//左按钮
+        var nextBtn = document.querySelector('.arrow-next');//右按钮
+        var images = document.querySelector('.images');
+
+        // 克隆最后一张图片作为第一张图片
+        images.insertBefore(images.lastElementChild.cloneNode(true),images.firstElementChild);
+        // 克隆第一张图片作为最后一张图片
+        images.appendChild(images.children[1].cloneNode(true));
+       
+        //图片集合
+        var imageItems = document.querySelectorAll('ul li');
+        // 按钮index
+        var index = 0;
+        // 图片index
+        var imageindex = 1;
+        var duration = 13000;
+        // 图片的宽度
+        var imagewidth = imageItems[0].offsetWidth;
+        // 遍历按钮 添加监听事件
+        btnItems.forEach(function(btnItem,btnindex){
+            btnItem.onclick = function(){
+                index = btnindex;
+                imageindex = btnindex+1;
+                setActive();
+            }
+        })
+        // 设置定时器
+        var intervalId = setInterval(next,duration);
+        // 设置页面第一张图片的显示
+        images.style.left = -900+'px';
+        // 左边按钮添加监听事件
+        prevBtn.onclick = prev;
+
+        // 右边按钮监听事件
+        nextBtn.onclick = next;
+
+        // 设置鼠标进入监听事件
+        playBox.onmouseenter = function(){
+            clearInterval(intervalId);
+        }
+        // 设置鼠标离开监听事件
+        playBox.onmouseleave = function(){
+            intervalId = setInterval(next,duration);
+        }
+        // 封装函数 图片上一张切换
+        function prev(){
+            index--;
+            imageindex--;
+            if(index <0){
+                index = btnItems.length-1;
+            }
+            if(imageindex <0){
+                imageindex = imageItems.length-3;
+                images.style.transition = 'none';
+                images.style.left = -imagewidth*(imageItems.length-2) +'px'
+            }
+            setTimeout(setActive);
+        }
+
+        // 封装函数 图片下一张切换
+        function next(){
+            index++;
+            imageindex++;
+            if(index >btnItems.length-1){
+                index = 0;
+            }
+            if(imageindex >imageItems.length-1){
+                imageindex = 2;
+                // 把过渡取消 none
+                images.style.transition ='none';
+                // 这个位置是真正的第一张图片的位置 瞬移
+                images.style.left = -imagewidth + 'px';
+            }
+            // 通过设置单次定时把会合并成一个步骤的 分成两个步骤(异步操作)
+            // 把函数作为参数时不加小括号立即调用
+            setTimeout(setActive);
+        }
+
+        // 创建函数 按钮添加active
+        function setActive(){
+            // 需要重现遍历btnItems不能用全局的index，否则每一次遍历只遍历一个index
+            btnItems.forEach(function(btnitem,index){
+                btnitem.classList.remove('active');
+            })
+            btnItems[index].classList.add('active');
+            // 调用函数时就加上过渡
+            images.style.transition ='left 500ms'; 
+            // 图片添加移动距离  
+            images.style.left = imageindex * (-imagewidth) +'px'; 
+            
+        }   
+    </script>
+    
+</body>
+</html>

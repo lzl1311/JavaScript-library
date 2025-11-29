@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #Box{
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <section id="Box">
+        <p id="box01">斗愚念太系，总担文。</p>
+        <p id="box02">斗愚念太系，总担文。</p>
+        <p id="box03">斗愚念太系，总担文。</p>
+        <p id="box04">斗愚念太系，总担文。</p>
+    </section>
+    <p id="box05">主友屯，先在承，谭。</p>
+    <p id="box05">主友屯，先在承，谭。</p>
+
+    <script>
+        // 使用标签名调用文档中所有标签是p的元素，返回值是集合
+        var pElm = document.getElementsByTagName('p');
+        console.log(pElm);
+        // 从某个元素的后代调用所有标签是p的元素
+        var boxElm = document.getElementById('Box');
+        var p = boxElm.getElementsByTagName('p');
+        p[1].style.backgroundColor = '#ccc';
+        for(var i=0;i<p.length;i++){
+            p[i].innerHTML = '懒羊羊';
+        }
+    </script>
+</body>
+</html>

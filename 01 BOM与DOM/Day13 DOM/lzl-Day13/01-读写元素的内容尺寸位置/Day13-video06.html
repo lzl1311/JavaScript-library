@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        .wrapper {
+            width: 600px;
+            padding: 20px;
+            border: 2px dashed #999;
+            /* overflow: hidden;
+            overflow: auto; */
+        }
+
+        .wrapper p {
+            padding: 20px;
+            width: 800px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="wrapper">
+        什志服新读可可是了雷韩勉能哉回极德，亲胜头洪养慷生韦训弟我心，恼谓落么，范愚可。
+        <ul>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+        </ul>
+        <p>救洪上，后与回才为居而高则讨入人，兮太者己，一葬逃而耐日光说都，天活太实他见使在自你他，水磊语皇，主了到心护病娇从叹是于尝时说，之生是千商的者下程友范本到哥，水亲丑不其见开我价，同月太反锐司土，仁位妙，在于仍负死，肯洪了而斯宫的言月别公竟是者韩都，公人家。</p>
+    </div>
+    <div style="height:1000px;"></div>
+    <script>
+        var box = document.querySelector('#box');
+        console.log('off系列：',box.offsetWidth ,box.offsetHeight);
+        console.log('client系列：',box.clientWidth,box.clientHeight);
+        console.log('scroll系列：',box.scrollWidth,box.scrollHeight);
+
+        var rectDom = box.getBoundingClientRect();
+        console.log('名字超长系列：',rectDom.width,rectDom.height);
+        // 包含滚动条的宽高
+        console.log(window.innerHeight);
+        console.log(window.innerWidth);
+        // 不包含滚动条的宽高   17
+        console.log(document.documentElement.clientHeight);
+        console.log(document.documentElement.clientWidth);
+    </script>
+</body>
+</html>

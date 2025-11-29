@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 想看谁的执行上下文对象，就在内部打一个断点 -->
+     <script>
+        function A(){
+            var num01 = 100;
+            var num02 = 200;
+            var num03 = 400;
+            function B(){
+                console.log(num01 + num02);
+            }
+            // 方式一   作为A的返回值   这里的闭包只有num01和num02
+            // return B;
+        }
+        // 方式二   作为全局执行上下文对象的属性
+        window.fun = B;
+        // var fc = A();
+        // fc();
+     </script>
+</body>
+</html>

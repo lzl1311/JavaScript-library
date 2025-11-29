@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box01{
+            width: 600px;
+            height: 250px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+       <a href="https://www.baidu.com" id="box">点一下跳转</a>
+       <form action="https://www.baidu.com">
+            <input type="text" name="wd"> <button>搜索</button>
+       </form>
+       <div id="box01"></div>
+       <div style="height: 800px;"></div>
+       <script>
+            var box = document.querySelector('#box');
+            var formBox = document.querySelector('form');
+            var box01 = document.querySelector('#box01')
+            box.onclick = function(event){
+                alert('即将发生跳转')
+                event.preventDefault();
+            }
+            formBox.onsubmit = function(event){
+                console.log('被提交');
+                event.preventDefault();
+            }
+            box01.oncontextmenu = function(event){
+                event.preventDefault();
+                // 语法糖 不支持addEventListener监听事件
+                return false;
+                console.log('正在打开菜单');
+            }
+            // 不允许阻止滚轮的默认行为
+            window.onmousewheel = function(event){
+                event.preventDefault();
+            }
+       </script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+// 入口文件
+// 导入变量
+@import "variables" ;
+
+// 导入重置样式表
+@import "reset";
+
+// 导入混合
+@import "mixins";
+// 整体样式设计
+.topbar{
+    height: 30px;
+    min-width: 1200px;
+    width: 100%;
+    line-height: 30px;
+    background-color: #eaeaea;
+    .container{
+        display: flex;
+        // 设置主轴对齐方式——两端对齐
+        justify-content: space-between;
+        a{
+            padding: 0 10px;
+            &:not(:last-child){
+                border-right: 1px solid @sep-color;
+            }
+        }
+    }
+}
+.container{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+// logo和搜索框
+.page-header{
+    width: 1200px;
+    min-width: 1200px;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        img{
+        width: 175px;
+        height: 56px;
+        margin: 25px 45px;
+        }
+        form{
+            margin-top: 35px;
+            // 设置后 button和input之间的空白就没了
+            display: flex;
+            input{
+                box-sizing: border-box;
+                width: 490px;
+                height: 32px;
+                padding: 0 4px;
+                border: 2px solid @form-red;
+                outline: none;
+            }
+            // 默认就是box-sizing: border-box;
+            button{
+                border: none;
+                width: 68px;
+                height: 32px;
+                background-color: @form-red;
+                color: #fff;
+            }
+        }
+    }
+}
+// page-nav
+.page-nav{
+    border-bottom: 2px solid @btn-red;
+    min-width: 1200px;
+    .container{
+        display: flex;
+        height: 50px;
+        line-height: 50px;
+        .all-cates{
+            width: 210px;
+            text-align: center;
+            background-color: @btn-red;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bolder;
+        }
+        nav{
+            display: flex;
+            a{
+                margin: 0 22px;
+                font-size: 16px;
+                color: #333;
+            }
+        }
+    }
+    
+}
+// page-main
+.page-main{
+    margin-top: 15px;
+    min-width: 1200px;
+    // 路径导航
+    .container{
+        display: flex;
+        padding: 9px 15px 9px 0;
+        span {
+            &:not(:last-child)::after{
+            content: "/\00a0";
+            padding: 0 5px;
+            color: #ccc;
+            }
+        }    
+    }
+    // 放大镜和商品参数选项
+    .product{
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0 15px;
+        min-width: 1200px;
+        // 放大镜
+        .product-preview{
+            width: 400px;
+            .zoombox{
+                width: 400px;
+                position: relative;
+                display: flex;
+                .smallimg{
+                    width: 400px;
+                    height: 400px;
+                    border: 1px solid #dfdfdf;
+                    position: relative;
+                    cursor: move;
+                    .mask-box{
+                        width: 200px;
+                        height: 200px;
+                        border: 1px solid #dfdfdf;
+                        background-color: rgba(255,255,255,.5);
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        display: none;
+                    }
+                }
+                .largeimg{
+                    width: 400px;
+                    height: 400px;
+                    border: 1px solid #dfdfdf;
+                    overflow: hidden;
+                    position: absolute;
+                    left: 420px;
+                    top: 0;
+                    display: none;
+                    img{
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+            }
+            // 缩略图
+            .thumb-box{
+                margin-top: 5px;
+                display: flex;
+                justify-content: space-between;
+                button{
+                    width: 10px;
+                    height: 54px;
+                    border: 1px solid #ccc;
+                    background-color: #e8e8e8;
+                    cursor: pointer;
+                    &.prevbtn{
+                    margin-right: 4px;
+                }
+                }
+                .thumb-content{
+                    width: 372px;
+                    height: 56px;
+                    overflow: hidden;
+                    position: relative;
+                    .thumb-wrapper{
+                        display: flex;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        transition: left 300ms;
+                        img{
+                            width: 50px;
+                            height: 50px;
+                            border: 1px solid #ccc;
+                            padding: 2px;
+                            margin-right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 侧边栏选项卡 
+    .product-section{
+        display: flex;
+        justify-content: space-between;
+        width: 1200px;
+        margin: 30px auto 0;
+        .product-sidebar{
+            box-sizing: border-box;
+            width: 210px;
+            border: 1px solid #ccc;
+            .tab-nav{
+                height: 40px;
+                display: flex;
+                cursor: pointer;
+                .tab-nav-item{
+                    width: 105px;
+                    line-height: 37px;
+                    border-top: 2px solid #fff;
+                    border-bottom: 1px solid #ccc;
+                    text-align: center;
+                    &.active{
+                    border-top-color: @btn-red;
+                    border-bottom-color: #fff;
+                    }
+                }
+            }
+            .tab-panel{
+                .tab-panel-item{
+                    padding: 10px;
+                    display: none;
+                    .cates{
+                        display: flex;
+                        flex-wrap: wrap;
+                        li{
+                            width: 50%;
+                            border-bottom: 1px dashed #ededed;
+                            line-height: 28px;
+                        }
+                    }
+                    &.active{
+                        display: block;
+                    }
+                    .products{
+                        li{
+                            margin: 5px 0 15px;
+                            border-bottom: 1px solid #ededed;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            img{
+                                width: 152px;
+                            }
+                            p{
+                                width: 100%;
+                                &.price{
+                                    font-size: 16px;
+                                    color: #c81623;
+                            }
+                            }
+                            a{
+                                margin: 5px 0;
+                                border: 1px solid #8c8c8c;
+                                color: #8c8c8c;
+                                padding: 2px 14px;
+                                line-height: 18px;
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

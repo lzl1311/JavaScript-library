@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            margin: 100px auto;
+            width:600px;
+            height: 150px;
+            display: flex;
+            overflow: hidden;
+            background-color: #ccc;
+        }
+
+        .wrapper img {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="wrapper">
+        <img src="../images/db01.jpg" alt="">
+        <img src="../images/db02.jpg" alt="">
+        <img src="../images/db03.jpg" alt="">
+        <img src="../images/db04.jpg" alt="">
+        <img src="../images/db05.jpg" alt="">
+        <img src="../images/db06.jpg" alt="">
+        <img src="../images/db07.jpg" alt="">
+        <img src="../images/db08.jpg" alt="">
+        <img src="../images/db09.jpg" alt="">
+        <img src="../images/db10.jpg" alt="">
+        <img src="../images/db01.jpg" alt="">
+    </div>
+    <script>
+        // 获取对象
+        var box = document.querySelector('#box');
+        var boxItems = document.querySelectorAll('#box img');
+
+        // 设置定时器
+        
+        var intervalid = setInterval(function(){
+            box.scrollLeft +=1;
+            console.log(box.scrollLeft)
+            if(box.scrollLeft>=1050){
+                box.scrollLeft=100;  
+            }
+        },1)
+    </script>
+</body>
+</html>

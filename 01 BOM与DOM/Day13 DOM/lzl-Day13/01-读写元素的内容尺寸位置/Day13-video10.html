@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            width: 500px;
+            height: 300px;
+            overflow: auto;
+            background-color: #ccc;
+        }
+        .wrapper p{
+            width: 800px;
+        }
+        img{
+            margin: 10px;
+            width: 480px;
+            height: 480px;
+        }
+        .btn{
+            position: fixed;
+            right: 0;
+            bottom: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button id="leftBtn">←</button>
+    <button id="rightBtn">→</button>
+    <button id="upBtn">↑</button>
+    <button id="downBtn">↓</button>
+    <div class="btn">
+        <button id="btn01" >↑</button>
+        <button id="btn02" >↓</button>
+    </div>
+    
+    <br>
+    <br>
+    <div class="wrapper" id="box">
+        <p>全我明能知王感说牛斯斯得人承只量而的学，老尝兼见以骂廿是，一哉秦让在文拆郭起三你娘，吞谭有畴书县相帮，衣首书时玉拆一锐不了活弄其倒，作后未作衣六看以宫升招脱了、，有前要派慨为是，有范对雷为的听京反分我是幕无韩德秦家今，挟司心不少为貂中召弄也下的易身导承郭。</p>
+        <p>全我明能知王感说牛斯斯得人承只量而的学，老尝兼见以骂廿是，一哉秦让在文拆郭起三你娘，吞谭有畴书县相帮，衣首书时玉拆一锐不了活弄其倒，作后未作衣六看以宫升招脱了、，有前要派慨为是，有范对雷为的听京反分我是幕无韩德秦家今，挟司心不少为貂中召弄也下的易身导承郭。</p>
+        <p>全我明能知王感说牛斯斯得人承只量而的学，老尝兼见以骂廿是，一哉秦让在文拆郭起三你娘，吞谭有畴书县相帮，衣首书时玉拆一锐不了活弄其倒，作后未作衣六看以宫升招脱了、，有前要派慨为是，有范对雷为的听京反分我是幕无韩德秦家今，挟司心不少为貂中召弄也下的易身导承郭。</p>
+        <p>全我明能知王感说牛斯斯得人承只量而的学，老尝兼见以骂廿是，一哉秦让在文拆郭起三你娘，吞谭有畴书县相帮，衣首书时玉拆一锐不了活弄其倒，作后未作衣六看以宫升招脱了、，有前要派慨为是，有范对雷为的听京反分我是幕无韩德秦家今，挟司心不少为貂中召弄也下的易身导承郭。</p>
+        <p>全我明能知王感说牛斯斯得人承只量而的学，老尝兼见以骂廿是，一哉秦让在文拆郭起三你娘，吞谭有畴书县相帮，衣首书时玉拆一锐不了活弄其倒，作后未作衣六看以宫升招脱了、，有前要派慨为是，有范对雷为的听京反分我是幕无韩德秦家今，挟司心不少为貂中召弄也下的易身导承郭。</p>
+    </div>
+    <img src="../images/db07.jpg" >
+        <img src="../images/db08.jpg" >
+        <img src="../images/db09.jpg" >
+        <img src="../images/db10.jpg" >
+        <img src="../images/db01.jpg" >
+        <img src="../images/db02.jpg" >
+        <img src="../images/db03.jpg" >
+    <script>
+        // 获取对象
+        var leftBtn = document.querySelector('#leftBtn');
+        var rightBtn = document.querySelector('#rightBtn');
+        var upBtn = document.querySelector('#upBtn');
+        var downBtn = document.querySelector('#downBtn');
+        var btn01 = document.querySelector('#btn01');
+        var btn02 = document.querySelector('#btn02');
+        var box = document.querySelector('#box');
+        // 内容向左
+        leftBtn.onclick = function(){
+            box.scrollLeft += 20;
+        }
+        // 内容向右
+        rightBtn.onclick = function(){
+            box.scrollLeft -=20;
+            console.log(box.scrollLeft)
+        }
+        // 内容向上
+        upBtn.onclick = function(){
+            box.scrollTop +=20;
+        }
+        // 内容向下
+        downBtn.onclick = function(){
+            box.scrollTop -=20;
+        }
+        // 
+        btn01.onclick = function(){
+            document.documentElement.scrollTop -= 400;
+        }
+        btn02.onclick = function(){
+            document.documentElement.scrollTop += 400;
+        }
+    </script>
+</body>
+</html>

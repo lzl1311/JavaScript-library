@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            width: 600px;
+            padding: 20px;
+            background-color: #d14bad;
+        }
+        .wrapper p{
+            padding: 20px 10px;
+            color: #f2f3f2;
+            background-color: rgb(59, 235, 43);
+        }
+    </style>
+</head>
+<body>
+    <h1>文档结构</h1>
+    <div id="box" class="wrapper">
+        <p>的内承，目身意玉为常正于作葬尽有，可劫。</p>
+        <p>的内承，目身意玉为常正于作葬尽有，可劫。</p>
+        <p>的内承，目身意玉为常正于作葬尽有，可劫。</p>
+        <p>的内承，目身意玉为常正于作葬尽有，可劫。</p>
+        <p>的内承，目身意玉为常正于作葬尽有，可劫。</p>
+        <p>的内承，目身意玉为常正于作葬尽有，可劫。</p>
+    </div>
+    <hr>
+    <script>
+        // 不学节点树，因为里面不一定只有元素，那些都可能被包含在内
+        var boxEle = document.querySelector('#box');
+        console.log('boxEle的所子元素',boxEle.children);
+        console.log('boxEle的第一个子元素',boxEle.firstElementChild);
+        console.log('boxEle的最后一个子元素',boxEle.lastElementChild);
+        console.log('boxEle的父元素',boxEle.parentElement);
+        console.log('boxEle相邻的上一个元素',boxEle.previousElementSibling);
+        console.log('boxEle相邻下一个元素',boxEle.nextElementSibling);
+    </script>
+</body>
+</html>

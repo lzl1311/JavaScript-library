@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn01" onclick="console.log('好麻烦好笨')" oncontextmenu="console.log('你不会被输出的笨蛋')">方式一</button>
+    <button id="btn02">方式二</button>
+    <button id="btn03">方式三</button>
+
+    <script>
+        var btn02 = document.querySelector('#btn02');
+        var btn03 = document.querySelector('#btn03');
+        btn02.onclick = function(){
+            console.log(Math.floor(Math.random()*11));
+        }
+        btn02.onclick = function(){
+            console.log('为什么你可以输出，因为后来者居上')
+        }
+        btn03.addEventListener('click',function(){
+            console.log('高级用法，推荐多人协作使用')
+        });
+        btn03.addEventListener('click',function(){
+            console.log('没想到到吧，我也可以输出')
+        })
+    </script>
+</body>
+</html>

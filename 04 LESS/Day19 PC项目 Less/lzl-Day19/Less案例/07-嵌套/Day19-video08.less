@@ -1,0 +1,45 @@
+// 基本使用
+.box{
+    width: 200px;
+    height: 100px;
+    /*选中 .box元素内部后代所有.item类 */
+    .item{
+        background-color: #ccc;
+        font-size: 19px;
+    }
+    /* 选中.box的子元素，不包含孙子辈等等后代 */
+    >.item01{
+        background-color: #72c12d;
+        font-family: '宋体';
+    }
+    /* 选中.box相邻的兄弟元素紧跟的第一个元素*/
+    +.item02{
+        font-size: 15px;
+        color: #4891bb;
+    }
+    /*选中与 .box同级，且在 .box后面的所有.image，不要求紧相邻*/ 
+    ~.image{
+        width: 200px;
+        margin: 20px;
+    }
+}
+.box01{
+    &:hover{
+        color: #13d6f4
+    };
+    &:active{
+        background-color: #4172f7;
+    }
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @media(min-width = 765px){
+        width: 200px;
+    }
+    @media(min-width = 654px){
+        width: 400px;
+    }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: #76d71c;
+            position: fixed;
+            top: 30px;
+            left: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        (function(){
+            // 获取元素
+            var box = document.querySelector('#box');
+            // 监听事件
+            // 按下鼠标才能开启鼠标移动监听
+            box.onmousedown = function(event){
+                this.style.backgroundColor = '#ccc';
+                // 获取鼠标在元素上的位置
+                var mouseleft = event.offsetX;
+                var mousetop = event.offsetY;
+                box.onmousemove = function(event){
+                    var left = event.clientX;
+                    var top = event.clientY;
+                    // 注意 注意 给css中修改样式需要加单位
+                    this.style.left = (left - mouseleft)+'px';
+                    this.style.top = (top - mousetop)+'px' ;
+                }
+            }
+            box.onmouseup = function(){
+                this.style.backgroundColor = '';
+                box.onmousemove = null;
+            }    
+        })()
+    </script>
+</body>
+</html>
+<!-- 
+缺陷：
+1.移动过快时，鼠标移出监听事件的元素，就不移动了
+2.监听事件的元素，会移出视口外
+-->

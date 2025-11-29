@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    open()		打开新窗口
+    close()		关闭本窗口，要求该窗口必须是 open 打开的
+
+    -->
+    <h1>window</h1>
+    <hr>
+    <button id="btn01">打开窗口</button>
+    <button id="btn02">打开新窗口</button>
+    <button id="btn03">打开指定的窗口</button>
+    <button id="btn04">打开指定的小窗口</button>
+    <button id="btn05">打开新窗口指定尺寸</button>
+    <button id="btn06">关闭窗口</button>
+    <iframe name="laole" src="" frameborder="1" width="600px" height="400px"></iframe>
+    <script>
+        name = 'self';
+
+        // 打开空白窗口
+        var btn01 = document.getElementById('btn01');
+        btn01.onclick= function(){
+            open();
+        }
+
+        // 打开新窗口 指定网页
+        var btn02 = document.getElementById('btn02');
+        btn02.onclick = function(){
+            open('Day11-video12.html')
+        }
+
+        // 在指定的窗口打开网页 
+        var btn03 = document.getElementById('btn03');
+        btn03.onclick = function(){
+            open('https://www.baidu.com','self')
+        }
+
+        // 在指定的窗口打开网页
+        var btn04 = document.getElementById('btn04');
+        btn04.onclick = function(){
+            open('https://www.taobao.com','laole')
+        }
+
+        // 打开新窗口指定尺寸
+        var btn05 = document.getElementById('btn05');
+        btn05.onclick = function(){
+            open('https://www.taobao.com','','width=300 height=400')
+        }
+
+        // 关闭窗口
+        var btn06 = document.getElementById('btn06');
+        btn06.ondblclick = function(){
+            close();
+        }
+    </script>
+</body>
+</html>

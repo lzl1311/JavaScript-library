@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px auto;
+            width: 1100px;
+        }
+        #box img{
+            margin: 10px;
+            width: 480px;
+            height: 480px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img data-src="../images/db01.jpg" >
+        <img data-src="../images/db02.jpg" >
+        <img data-src="../images/db03.jpg" >
+        <img data-src="../images/db04.jpg" >
+        <img data-src="../images/db05.jpg" >
+        <img data-src="../images/db06.jpg" >
+        <img data-src="../images/db07.jpg" >
+        <img data-src="../images/db08.jpg" >
+        <img data-src="../images/db09.jpg" >
+        <img data-src="../images/db10.jpg" >
+        <img data-src="../images/db01.jpg" >
+        <img data-src="../images/db02.jpg" >
+        <img data-src="../images/db03.jpg" >
+        <img data-src="../images/db04.jpg" >
+        <img data-src="../images/db05.jpg" >
+        <img data-src="../images/db06.jpg" >
+        <img data-src="../images/db07.jpg" >
+        <img data-src="../images/db08.jpg" >
+        <img data-src="../images/db09.jpg" >
+        <img data-src="../images/db10.jpg" >
+        <img data-src="../images/db01.jpg" >
+        <img data-src="../images/db02.jpg" >
+        <img data-src="../images/db03.jpg" >
+        <img data-src="../images/db04.jpg" >
+        <img data-src="../images/db05.jpg" >
+        <img data-src="../images/db06.jpg" >
+        <img data-src="../images/db07.jpg" >
+        <img data-src="../images/db08.jpg" >
+        <img data-src="../images/db09.jpg" >
+        <img data-src="../images/db10.jpg" >
+        <img data-src="../images/db01.jpg" >
+        <img data-src="../images/db02.jpg" >
+        <img data-src="../images/db03.jpg" >
+        <img data-src="../images/db04.jpg" >
+        <img data-src="../images/db05.jpg" >
+        <img data-src="../images/db06.jpg" >
+        <img data-src="../images/db07.jpg" >
+        <img data-src="../images/db08.jpg" >
+        <img data-src="../images/db09.jpg" >
+        <img data-src="../images/db10.jpg" >
+        <img data-src="../images/db01.jpg" >
+        <img data-src="../images/db02.jpg" >
+        <img data-src="../images/db03.jpg" >
+        <img data-src="../images/db04.jpg" >
+        <img data-src="../images/db05.jpg" >
+        <img data-src="../images/db06.jpg" >
+        <img data-src="../images/db07.jpg" >
+        <img data-src="../images/db08.jpg" >
+        <img data-src="../images/db09.jpg" >
+        <img data-src="../images/db10.jpg" >
+        <img data-src="../images/db10.jpg" >
+        <img data-src="../images/db10.jpg" >
+    </div>
+    <script>
+        /*
+         你想到的办法是for循环，加循环标记，break退出
+        (function(){
+            // 获取对象
+            var box = document.querySelector('#box');
+            var imgItems = document.querySelectorAll('#box img');
+
+            // 滚动条检测事件
+            imgPlay();
+            window.onscroll =imgPlay;
+            function imgPlay(){
+                for(var i=0;i<imgItems.length;i++){
+                    if(imgItems[i].src){
+                        continue;
+                    }
+                    if(imgItems[i].getBoundingClientRect().top < document.documentElement.clientHeight){
+                        imgItems[i].src = imgItems[i].dataset.src;
+                    }
+                }
+            }
+        })()
+        */ 
+        // 获取对象
+        
+        (function(){
+            var box = document.querySelector('#box');
+            var boxItems = document.querySelectorAll('#box img');
+            // 只要是把类数组转成数组都这样 .slice.call(this,0)
+            var imgArray = [].slice.call(boxItems,0);
+            imgScroll();
+            window.onscroll =imgScroll;
+
+            function imgScroll(){
+                imgArray.forEach(function(item,index){
+                    if(item.getBoundingClientRect().top < document.documentElement.clientHeight){
+                        item.src = item.dataset.src;
+                        // 加完src就删了，直接删会影响索引，所以delete删
+                        delete imgArray[index];
+                    }
+                });
+                // console.log(imgArray)
+            }
+        })();
+        /* window.onscroll = function(){
+        //     boxItems.forEach(function(boxitem){
+        //     if(boxitem.getBoundingClientRect().top<document.documentElement.clientHeight){
+        //         boxitem.src = boxitem.dataset.src
+        //     }
+        // })
+        // } 
+        */
+    </script>
+</body>
+</html>

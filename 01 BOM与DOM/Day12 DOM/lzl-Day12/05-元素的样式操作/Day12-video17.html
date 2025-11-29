@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            padding: 10px;
+            line-height: 30px;
+        }
+        .box01{
+            color: #29d4e0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="box" style="background-color:#96f346; color:#f34697; text-decoration: underline;">
+        才后人情，一求国，呼好德洪韩教命，者到逃马己磊未，死人到统日令给重人李生郭嗣，锐最和三身沾五仅以你王在人劝见尝韩婵他，松要无爱法这卧那保，今救间生已如秦井房我亓传养极言不，言领斯中极血慨洪秦书传，读。
+    </div>
+    <button id="btn01">读取样式</button>
+    <button id="btn02">修改样式</button>
+    <script>
+        // 获取行内元素
+        var box = document.querySelector('#box');
+        // 获取按钮对象
+        var btn01 = document.querySelector('#btn01');
+        var btn02 = document.querySelector('#btn02');
+        // 按下按钮读取样式
+        btn01.onclick = function(){
+            console.log( 'color:',box.style.color);
+            console.log('background-color:',box.style.backgroundColor);
+            console.log('text-decoration:',box.style.textDecoration);
+        }
+        // 按下按钮修改样式
+        btn02.onclick = function(){
+            box.style.color = '#29d4e0';
+            box.style.fontSize = '20px';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+@fonts : 18px;
+@fontcolor : #75f53a;
+@width:500px;
+@height:500px;
+@min768:~"min-width:768px";
+@min999:~"min-width:999px";
+@backgroundC:background-color;
+@classname:#page;
+
+.box{
+    width: @width;
+    height: @height;
+    font-size: @fonts;
+    // 变量作为属性名使用
+    @{backgroundC}:#ccc;
+}
+@media (@min768){
+    .container {
+        width: 100%;
+    }
+}
+// 变量存放带有特殊符号的值
+@media (@min999){
+    .container {
+        width: 790px;
+    }
+}
+// 将变量作为选择器
+@{classname}{
+    width: 500px;
+    padding: 10px;
+    color: @fontcolor;
+    background-color: #de267c;
+}

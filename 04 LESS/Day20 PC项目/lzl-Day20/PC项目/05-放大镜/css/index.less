@@ -1,0 +1,158 @@
+// 入口文件
+// 导入变量
+@import "variables" ;
+
+// 导入重置样式表
+@import "reset";
+
+// 导入混合
+@import "mixins";
+// 整体样式设计
+.topbar{
+    height: 30px;
+    min-width: 1200px;
+    width: 100%;
+    line-height: 30px;
+    background-color: #eaeaea;
+    .container{
+        display: flex;
+        // 设置主轴对齐方式——两端对齐
+        justify-content: space-between;
+        a{
+            padding: 0 10px;
+            &:not(:last-child){
+                border-right: 1px solid @sep-color;
+            }
+        }
+    }
+}
+.container{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+// logo和搜索框
+.page-header{
+    width: 1200px;
+    min-width: 1200px;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        img{
+        width: 175px;
+        height: 56px;
+        margin: 25px 45px;
+        }
+        form{
+            margin-top: 35px;
+            // 设置后 button和input之间的空白就没了
+            display: flex;
+            input{
+                box-sizing: border-box;
+                width: 490px;
+                height: 32px;
+                padding: 0 4px;
+                border: 2px solid @form-red;
+                outline: none;
+            }
+            // 默认就是box-sizing: border-box;
+            button{
+                border: none;
+                width: 68px;
+                height: 32px;
+                background-color: @form-red;
+                color: #fff;
+            }
+        }
+    }
+}
+// page-nav
+.page-nav{
+    border-bottom: 2px solid @btn-red;
+    min-width: 1200px;
+    .container{
+        display: flex;
+        height: 50px;
+        line-height: 50px;
+        .all-cates{
+            width: 210px;
+            text-align: center;
+            background-color: @btn-red;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bolder;
+        }
+        nav{
+            display: flex;
+            a{
+                margin: 0 22px;
+                font-size: 16px;
+                color: #333;
+            }
+        }
+    }
+    
+}
+// page-main
+.page-main{
+    margin-top: 15px;
+    padding: 9px 15px 9px 0;
+    min-width: 1200px;
+    .container{
+        display: flex;
+        span {
+            &:not(:last-child)::after{
+            content: "/\00a0";
+            padding: 0 5px;
+            color: #ccc;
+            }
+        }
+        
+    }
+}
+// product-preview
+.product{
+    margin: 5px 0 15px;
+    min-width: 1200px;
+    .product-preview{
+        .zoombox{
+            width: 400px;
+            position: relative;
+            display: flex;
+            .smallimg{
+                width: 400px;
+                height: 400px;
+                border: 1px solid #dfdfdf;
+                position: relative;
+                cursor: move;
+                .mask-box{
+                    width: 200px;
+                    height: 200px;
+                    border: 1px solid #dfdfdf;
+                    background-color: rgba(255,255,255,.5);
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    display: none;
+                }
+            }
+            .largeimg{
+                width: 400px;
+                height: 400px;
+                border: 1px solid #dfdfdf;
+                overflow: hidden;
+                position: absolute;
+                left: 420px;
+                top: 0;
+                display: none;
+                img{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面滚动</title>
+    <style>
+        section{
+            height: 490px;
+            border: 1px solid #ccc;
+        }
+        nav{
+            position: fixed;
+            right: 0;
+            bottom: 100px;
+            width: 100px;
+        }
+        h2{
+            height: 30px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<!-- 
+    scrollTo()          滚动到指定位置
+    scrollBy()          滚动到指定距离
+    -->
+<body>
+    <nav>
+        <button id="btn01">返回顶部</button>
+        <button id="btn02">翻页</button>
+    </nav>
+    
+    <h2>第一章</h2>
+    <section></section>
+    <h2>第二章</h2>
+    <section></section>
+    <h2>第三章</h2>
+    <section></section>
+    <h2>第四章</h2>
+    <section></section>
+    <h2>第五章</h2>
+    <section></section>
+    <h2>第六章</h2>
+    <section></section>
+    <h2>第七章</h2>
+    <section></section>
+    <h2>第八章</h2>
+    <section></section>
+    <script> 
+        var btn01 = document.getElementById('btn01');
+        btn01.onclick = function(){
+            scrollTo({
+                left:0,
+                top:0,
+                behavior:"smooth"
+            })
+        }
+        var btn02 = document.getElementById('btn02');
+        btn02.onclick = function(){
+            scrollBy({
+                left:0,
+                top:560,
+                behavior:"smooth"
+            })
+        }
+    </script>
+</body>
+</html>
