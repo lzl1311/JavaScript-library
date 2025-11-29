@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//匿名函数就是没有函数名的直接函数
+//匿名函数适用于立即调用的函数和回调函数
+        
+    (function(){
+            console.log('我是一个函数')
+        })();//自己调用自己
+
+//立即调用的函数(IIFE)
+//目的：产生一个作用域
+    (function(){
+        var address='上海';
+        console.log('我是立即调用的函数',address);
+    })();
+    //console.log(address);
+//两个连续的IIFE要用分号隔开 
+
+
+//回调函数  我定义的，我没调用， 最后执行了
+
+    var nameList = ['a姥姥','b姥姥','c姥姥','d姥姥','e姥姥','f姥姥',]
+    //forEach是系统创建的函数，用于遍历数组;！！！需要一个函数当参数
+    //匿名函数作为回调函数
+    nameList.forEach(function(){
+        console.log('我是回调函数');
+    });
+
+    //有名字的函数作为回调函数
+    function func(){
+        console.log('我func');
+    }
+    nameList.forEach(func);
+
+    //使用forEach遍历数组
+    nameList.forEach(function(item,index){
+        console.log(item,index);
+    })
+    </script>
+</body>
+</html>

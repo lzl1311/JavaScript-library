@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多向分支-switch case-案例</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        输入油号 油量
+        92号： 4元/L    油量>=40L;3.5元/L
+        92号： 5元/L    油量>=50L;4.5元/L
+        没有其他油号
+        */ 
+       var oilN=+prompt('请输入您所需要的油号');
+       var oilL=+prompt('请输入您所需要的油量,单位L');
+
+       //switch后面的表达式只能是单个值
+       switch(oilN){
+        //case后面必须是常量
+            case 92:
+                //初始价格
+                var price=4;
+                //如果油量大于等于40L，需要调整价格
+                if(oilL>=40){
+                    price=3.5;
+                }
+                //计算总价
+                var total = price *oilL;
+                alert('本次加油需要' + total + '元')
+                break;
+            case 95:
+                //定义初始单价
+                var price01=5;
+                //如果油量大于50，修改单价
+                if(oilL>=50){
+                    price01=4.5;
+                }
+                total =price01 *oilL;
+                alert('本次加油需要' + total + '元')
+                break;
+            default:
+                alert('这里没有');
+       }
+    </script>
+</body>
+</html>

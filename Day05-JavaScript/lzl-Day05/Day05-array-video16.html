@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串数组特性</title>
+</head>
+<body>
+   <script>
+     //创建字符串
+     var msg='hello 懒羊羊 青草蛋糕。'
+     console.log(msg.length);
+     console.log(msg[7]);
+     console.log(msg[msg.length-1]);
+
+     for(var i=0;i<msg.length;i++){
+        console.log(msg[i]);
+     }
+     /*
+     字符串具有一部分数组特性
+     1. 字符串具有一部分数组特性
+        有lenght属性，可以读取到字符串的长度； 但是length的值不能像数组一样修改
+        可以通过索引读取到某个字符，但是不能修改单个字符
+     2. 字符串这种具有一部分数组特性但又不是数组的数据，统称为类数组（伪数组 Like-Array
+     */
+   </script>
+</body>
+</html>

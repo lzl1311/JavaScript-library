@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            padding: 20px;
+            width: 600px;
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <!-- 方案一 内联脚本 -->
+    <!-- <h1>JavaScript</h1>
+    <hr>
+    <button onclick="alert('好听')" oncontextmenu="alert('好痛')">点我</button>
+    <p onclick="alert('好奇怪');alert('特别奇怪')">着仓赏弟越，位竟极。</p> -->
+    <h1>JavaScript</h1>
+    <hr>
+    <button>点我</button>
+    <p>褒的我三刑主，才感。</p>
+    <!-- 方案二 嵌入脚本    script标签写在页面的任何位置都会执行到，建议写在其他所有元素的后面 -->
+    <script>
+        alert("hello world");
+        //将html元素获取到js中
+    </script>
+    <!-- 方案三 引入脚本 位置和嵌入脚本一样 -->
+     <script src="js文件的地址"></script>	
+     <script>
+        //单行注释
+        alert('ok');
+        alert('你好');//注释本行后面的部分
+        // 多行注释
+        /*alert('ok');
+        alert('ok');
+        alert('ok');*/
+     </script>
+
+     <script>
+        //使用分号作为指令结束符
+        alert('12');alert('13');
+
+        //使用换行作为指定结束行
+        alert('14') 
+        alert('15')
+        alert('16')
+     </script>
+</body>
+</html>

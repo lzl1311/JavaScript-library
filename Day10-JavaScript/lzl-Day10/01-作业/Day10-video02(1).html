@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // F ->Function.prototype ->Object.prototype
+        // f ->Array.prototype ->Object.prototype
+        Object.prototype.a = function(){
+            console.log('a');
+        }
+        Function.prototype.b = function(){
+            console.log('b');
+        }
+        var F = function(){};
+        var f = [];
+        f.a();//a
+        F.a();//a
+        F.b();//b
+        f.b();//报错    访问不存在的属性 / 方法时，若强行调用会报错
+    </script>
+</body>
+</html>

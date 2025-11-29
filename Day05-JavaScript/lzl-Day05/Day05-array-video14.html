@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组删除元素</title>
+</head>
+<body>
+    <script>
+        var namelist=['5奶奶', 'money姥姥', 'monkey姥姥', '6奶奶', '7奶奶', 'a姥姥', 'b姥姥', 'c姥姥', 'nod姥姥', 'd姥姥', 'e姥姥', 'f姥姥', '1姥姥', '2姥姥', '3姥姥', '4姥姥'];
+        console.log(namelist);
+
+//修改数组length删除元素
+        namelist.length-=3;
+        console.log(namelist);
+
+//pop()方法删除最后一个元素
+        namelist.pop();//一次只能删一个
+        console.log(namelist);
+
+//shift()方法删除第一个元素
+        namelist.shift();//一次只能删一个
+        console.log(namelist);
+
+//splice()方法删除指定位置指定数量的元素
+        namelist.splice(2,3);
+        console.log(namelist);
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while-乘法表3</title>
+    <style>
+        table{
+            width: 900px;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        td:not(:empty){
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write('<table>');
+        document.write('<tbody>');
+            var i=1;
+            while(i<=9){
+                document.write('<tr>')
+                    //no content
+                    var j=1;
+                    while(j<=(9-i)){
+                        document.write('<td></td>')
+                        j++
+                    }
+                    var j=1;
+                    while(j<=i){
+                        document.write('<td>'+ j +'X' + i +'=' + i*j +'</td>');
+                        j++;
+                    }
+                    //yes content
+                document.write('</tr>')
+                i++;
+            }
+        document.write('</tbody>');
+        document.write('</table>');
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>递归函数案例</title>
+</head>
+<body>
+    <script>
+        var nums = [
+    [1000, 2000, 3000],
+    'hello',
+    [
+        [10,20,30],
+        [
+            'a', 
+            'b', 
+            ['A', 'B', 'C']
+        ],
+        '小乐'
+    ],
+    12313,
+    [101,202,303]
+]
+// 使用递归函数
+        var newNums = [];
+        function flatArray(arr){
+            for(var i=0;i<arr.length;i++){
+                if(arr[i] instanceof Array){
+                    flatArray(arr[i]);
+                }else{
+                    newNums.push(arr[i]);
+                }
+            }
+        }
+        flatArray(nums);
+        console.log(newNums);
+    </script>
+</body>
+</html>

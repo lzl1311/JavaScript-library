@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    封装函数，参数是数组，返回值是随机取出来的元素
+   定义数组 ['刘姥姥', '牛姥姥', '司马姥姥', '欧阳姥姥', '独孤姥姥', '令狐姥姥', '东方姥姥'];
+   随机取出数组中的元素
+    -->
+    <script>
+        // random的范围是0-1永远取不到1
+        var arr =  ['刘姥姥', '牛姥姥', '司马姥姥', '欧阳姥姥', '独孤姥姥', '令狐姥姥', '东方姥姥'];
+        console.log(arr[Math.floor(Math.random()* arr.length )]);    
+        
+        // 封装函数
+        /**
+         * 随机取数组中的一个元素
+         * @params {array} 数组
+         * @returns 随机取出来的元素
+        */
+        function arrRandom(Array){
+            return Array[Math.floor(Math.random() * Array.length)] ;
+        }
+        // 举例子
+        var fruits = ['草莓', '芒果', '蓝莓', '菠萝', '樱桃', '榴莲', '荔枝', '猕猴桃'];
+        console.log(arrRandom(fruits)) ;
+    </script>
+</body>
+</html>

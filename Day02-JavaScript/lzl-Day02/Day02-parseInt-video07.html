@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //parseInt() parseFloat() 非字符串全部转为NaN
+        console.log(parseInt(false));//NaN
+        console.log(parseInt(true));//NaN
+        console.log(parseInt(null));//NaN
+        console.log('');
+        
+        //parseInt() parseFloat() 纯数字字符串，或者以数字开头的字符串才能转成有效数字
+        console.log(parseInt('45obx'));//45
+        console.log(parseInt('hello100'));//NaN
+        console.log(parseFloat('45y20'));//45
+        console.log(parseInt(''));//NaN
+        console.log(Number(''));//0
+        //区别：
+        console.log(parseInt('23.89boo'));//23
+        console.log(parseFloat('23.89boo'));//23.89
+        //我们可以用parseInt()提取数字中的整数部分
+
+        /*自动类型转换（隐式转换）
+        1.如果数据不是当前运算环境所需要的类型，数据就会发生数据类型自动转换，转换规则和强制类型转换一致
+        2.当前运算环境一般由运算符决定。
+        */
+    </script>
+</body>
+</html>

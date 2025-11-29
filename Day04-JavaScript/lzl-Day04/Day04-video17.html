@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乘法表格式4</title>
+    <style>
+        table{
+            width: 900px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            empty-cells: hide;
+        }
+        td:not(:empty) {
+            padding: 10px;
+            border: 2px solid #353434;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.write('<table>');
+        document.write('<tbody>');
+        for(var i=9;i>=1;i--){
+            document.write('<tr>')
+                //no content
+                for(var j=1;j<=(9-i);j++){
+                    document.write('<td></td>')
+                }
+                //yes content
+                for(var j=1;j<=i;j++){
+                    document.write('<td>'+ j +'X'+ i + '=' + i*j +'</td>')
+                }
+            document.write('</tr>')
+        }
+        document.write('</tbody>');
+        document.write('</table>');
+    </script>
+</body>
+</html>

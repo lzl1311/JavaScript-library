@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 返回值
+    1.返回值是函数调用表达式的值
+    2.如何在函数中设置返回值
+        ①return关键字设置返回值，返回值的右边需要表达式（可以是变量。。。）
+        ②如果函数体中没有return，或者return右边没有表达式，都表示该函数没有返回值
+        ③return表示函数的结束，一旦执行到return，后面的代码就不用再执行了。
+    -->
+        <script>
+            function fn06(){
+                console.log(100);
+            }
+            var res1 = fn06;
+            var res2 =fn06();//100
+            console.log(res1);//函数本身
+            console.log(res2);//没有return没有返回值，undefined
+
+            console.log(fn06())//两个输出的值，100；undefined。因为console.log输出的是函数的返回值，没有所以undefined
+        </script>
+</body>
+</html>

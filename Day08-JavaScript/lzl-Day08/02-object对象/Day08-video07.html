@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建数组
+        var arr = [100,200,1,2,3,];
+        arr.username = '高小乐';
+        arr.address ='上海';
+        console.log(arr);
+
+        console.log(arr['username']);
+        for(var attr in arr){
+            console.log(attr);
+        }
+        delete arr.address;
+        delete arr[1];
+        console.log(arr);
+        var age='username';
+        console.log(age in arr);
+    </script>
+</body>
+</html>

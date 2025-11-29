@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- this在构造函数内使用，this的值是构造函数的实例 -->
+    <script>
+        var a = 5;
+        function test(){
+            a = 0;
+            console.log(a);
+            console.log(this.a);
+            var a;
+            console.log(a);
+        }
+        test();//0 5 0
+        new test();//0 undefined 0
+    </script>
+</body>
+</html>

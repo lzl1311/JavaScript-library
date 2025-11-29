@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // u -> User.prototype ->Object.prototype
+        //
+        function User(){
+        }
+        // 创建新对象 'aaaa'
+        User.prototype = {
+            name:'aaaa'
+        }
+        var u = new User();
+        console.log(u.name);//aaaa
+
+        // 修改已经存在的name的值
+        User.prototype.name = 'bbb';
+        console.log(u.name);//bbb
+
+        //每写一个{} 就重新创建一个新的对象
+        User.prototype = {
+            name:'ccc'
+        }
+        console.log(u.name);//bbb
+    </script>
+</body>
+</html>

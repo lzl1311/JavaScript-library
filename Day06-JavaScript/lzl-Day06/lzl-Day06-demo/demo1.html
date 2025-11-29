@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isMax(){
+            var max=arguments[0];
+            for(var i=1;i<arguments.length;i++){
+                if(max<arguments[i]){
+                    max=arguments[i]
+                }
+            }
+            return(max)
+        }
+
+        function isMin(){
+            var min=arguments[0];
+            for(var i=1;i<arguments.length;i++){
+                if(min>arguments[i]){
+                    min=arguments[i]
+                }
+            }
+            return(min)
+        }
+    console.log(isMax(100,200,300,1,2,999,333,222,1000,0.6));
+    console.log(isMin(100,200,300,1,2,999,333,222,1000,0.6));
+    </script>
+</body>
+</html>

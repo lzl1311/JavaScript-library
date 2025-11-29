@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while的各种运用场景</title>
+</head>
+<body>
+    <!-- 输出10以内所有的偶数 -->
+     <script>
+        /*
+        //循环从0到10
+        var n=0;
+        while(n<=10){
+            //加判断，单while行不通
+            if(n%2===0){
+                console.log(n);
+            }
+            n++;
+        }
+        */
+        var n=0;
+        while(n<=10){
+            console.log(n);
+            n += 2;
+        }
+        //计算100以内所有数字的和
+        var i=0;
+        var sum=0;//定义变量 和 重新定义一个量来记录和
+        while(i<=100){
+           sum+=i//sum=sum+i的简写 
+           i++;
+        }
+        console.log('计算100以内所有数字的和是'+sum);
+
+        //计算10以内所有奇字的乘积
+        var n=1;
+        var sum =1;
+        while(n<10){
+            sum=sum*n;//简写sum *= n
+            n+=2;
+            console.log(sum)
+        }
+        console.log(sum);
+     </script>
+</body>
+</html>

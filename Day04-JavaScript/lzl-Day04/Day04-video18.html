@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跳出循环两种</title>
+</head>
+<body>
+    <!-- 
+    跳转语句：
+    ①break
+    在switch case中使用，结束所在的case；
+    在循环中使用，跳出循环，后面的循环不执行；
+    ②continue
+    在循环中使用，跳出本次循环，不影响后面的循环；
+    -->
+    <script>
+        //循环1-10
+        for(var i=1;i<=10;i++){
+            if(i===5){
+                continue;
+            }
+            console.log(i);
+        }
+        //取大于0.99的随机数
+        while(true){
+            var rand=Math.random();
+            if(rand >=0.99){
+                console.log(rand);
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

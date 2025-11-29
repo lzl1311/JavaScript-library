@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>do while</title>
+</head>
+<body>
+    <!-- while 和 do while 的区别 
+    只有第一次循环不一样，只要循环次数超过1次，就都一样了 
+    
+    -->
+     
+     <script>
+        //输出10次懒羊羊今天吃了n个青草蛋糕
+        var n=0;
+        do{
+            n++;
+            console.log('懒羊羊今天吃了'+ n +'个青草蛋糕');
+        }while(n<10)
+        console.log('循环标记变量的值：'+ n);//10
+
+        //循环数字7-15
+        var n=7
+        do{
+            console.log(n);
+            n++;
+        }while(n<16)
+        console.log('循环标记变量的值：'+ n);//16
+
+        //倒叙输出数字56-43
+        var n=56;
+        do{
+            console.log(n);
+            --n;
+        }while(n>42)
+        console.log('循环标记变量的值：'+ n);//42
+
+       // 输出10以内所有的偶数 
+       var n=0
+       do{
+        console.log(n);
+        n+=2;
+       }while(n<=10)
+       console.log('循环标记变量的值：'+ n);
+        //计算100以内所有数字的和
+        var n=0;
+        var sum=0;
+        do{
+            sum=sum+n;
+            n++;
+        }while(n<=100)
+        console.log(sum);
+        console.log('循环标记变量的值：'+ n);//101
+        //计算10以内所有奇字的乘积
+        var n=1;
+        var res=1;
+        do{
+            res=res*n;
+            n+=2;
+        }while(n<10)
+        console.log(res);
+       console.log('循环标记变量的值：'+ n);//11
+     </script>
+</body>
+</html>

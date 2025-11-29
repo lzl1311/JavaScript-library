@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    对象和原型
+    1.每个对象都有原型，可以使用原型的属性
+    2.一个对象只有一个原型，一个原型可以作为多个对象的原型
+    -->
+    <!-- 
+    构造函数和原型
+    1.可以通过构造函数获取到对象的原型
+    2.构造函数相同的对象，原型也是相同的；相同数据类型的对象，原型也相同
+    -->
+    <!-- 
+    通过对象获取原型：
+    对象.__proto__
+
+    通过对象的构造函数获取原型：
+    对象的构造函数.prototype
+    -->
+    <script>
+        //创造数组
+        var arr = [10,20,30];
+        console.log(arr);
+        console.log(arr.__proto__);
+        console.log(Array.prototype);
+        console.log(arr.__proto__===Array.prototype);
+
+    </script>
+</body>
+</html>

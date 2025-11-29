@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>稀疏数组</title>
+</head>
+<body>
+    <!-- 避免稀疏数组
+    1.什么是稀疏数组
+    如果书数组中存在没有值的元素 ，该数组就是稀疏数组
+
+    2.什么会产生稀疏数组
+    ① 给数组增加新元素，但不连续
+    ②修改数组.length，之比原来大
+    ...
+    -->
+    <script>
+        var arr = [100,200,300,7.5,'gaoxiaol',false,true,undefined,[100,200,300]];
+        console.log(arr);
+    </script>
+</body>
+</html>

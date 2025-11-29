@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var foo = 123;
+        function print(){
+            this.foo = 234;	 //修改全局变量      
+            console.log(foo); 
+            //console.log(this);    
+        }
+        print();//234
+
+        console.log(foo);//234
+
+    </script>
+</body>
+</html>

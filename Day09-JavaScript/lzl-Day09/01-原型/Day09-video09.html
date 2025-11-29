@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建数组
+        var arr01 =[10,20,30,40,50];
+        arr01.username = '懒羊羊';
+        arr01.__proto__.age = 100;
+        Array.prototype.address='上海';
+
+        console.log(arr01.username);//懒羊羊
+        console.log(arr01.age);//100
+        console.log(arr01.address);//上海
+        console.log('');
+
+        var arr02 = ['a','b','c'];
+        console.log(arr02.username);//undefined
+        console.log(arr02.age);//100
+        console.log(arr02.address);//上海
+        console.log('');
+
+        arr02.address = '北京';//单独给arr02添加属性address，这样不能改原型
+        console.log(arr01)//上海
+        console.log(arr02)//北京
+
+    </script>
+</body>
+</html>

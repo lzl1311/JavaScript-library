@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加油案例-else if</title>
+</head>
+<body>
+    <script>
+        /*
+        输入油号 油量
+        92号： 4元/L    油量>=40L;3.5元/L
+        92号： 5元/L    油量>=50L;4.5元/L
+        没有其他油号
+        */ 
+       //define
+       var oilN=+prompt('请输入您所需要的油号');
+       var oilL=+prompt('请输入您所需要的油量,单位L');
+
+       if(oilN === 92){
+            if(oilL>=40){
+                var price =3.5;
+                var total = oilL*price;
+            }else{
+                price = 4;
+                total = oilL*price;
+            }
+            alert('本次加油需要支付' + total + '元');
+       }else if(oilN === 95){
+            if(oilL>=50){
+                price = 4.5;
+                total = oilL*price;
+            }else{
+                price=5;
+                total = oilL*price;
+            }
+            alert('本次加油需要支付' + total + '元');
+       }else{
+            alert('没有您需要的油');
+       }
+    </script>
+</body>
+</html>

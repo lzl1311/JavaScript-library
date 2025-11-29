@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 输入年份获取生肖 输入公元纪年 -->
+     <script>
+        var year = prompt('请输入您的出生年份');
+        switch(year % 12) {
+            case 1: alert('鸡'); break;
+            case 2: alert('狗'); break;
+            case 3: alert('猪'); break;
+            case 4: alert('鼠'); break;
+            case 5: alert('牛'); break;
+            case 6: alert('虎'); break;
+            case 7: alert('兔'); break;
+            case 8: alert('龙'); break;
+            case 9: alert('蛇'); break;
+            case 10: alert('马'); break;
+            case 11: alert('羊'); break;
+            case 0: alert('猴'); break;
+            default:alert('请重新输入正确的年份');
+        }
+     </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 函数调用
+    函数名后面没加小括号就是没有调用，不被执行 
+    函数名后面没有小括号，就是把整个函数赋值给了变量
+    -->
+    <script>
+        function fun01(){
+            console.log('hello')
+        }
+        var res1=fun01;
+        var res=fun01();
+        console.log(res1);
+
+        var res2=Array;
+        var res3=Array();
+        console.log(res2);
+        console.log(res3);
+        var rand=res2(3,4,5,6);
+        console.log(rand);
+    </script>
+</body>
+</html>

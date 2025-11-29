@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--this的含义 
+    1. this 是系统内置的只读变量
+    2. this 的值在不同的地方是不一样的
+    -->
+    <!-- 
+    1.在函数外边使用(全局使用)
+    this的值是window
+    2.在函数内使用
+    this的值是构造函数的实例(实例化构造函数所创建的对象)
+    3.在函数中使用
+    this的值是调用该函数(方法)的对象
+    注意：不要看函数声明语句的地方，看调用函数的语句，看前面是哪个对象
+    -->
+    <script>
+        // 创建全局变量
+        var address = '北京';
+        function fn(){
+            console.log('fn函数执行了');
+        }
+        // 所有全局变量都是Window的属性
+        console.log(window.address);
+        console.log(this);
+        console.log(window);
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象类型
+        var arr = [];
+        arr.address = '上海';
+        console.log(arr.address);
+
+        // 原始类型
+        var msg = '';
+        // 需要msg包装成对象，new String(msg)临时创建对象
+        // 给临时创建创建对象添加属性address，本语句执行完就销毁
+        msg.address = '上海';
+        // 使用msg.address，又临时创建新对象new String(mes)，从该临时对象读取属性address，用完就销毁
+        console.log(msg.address);//undefined
+        console.log(msg.address = '北京');//北京
+    </script>
+</body>
+</html>

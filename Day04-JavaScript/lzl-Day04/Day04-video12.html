@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不需要循环标记变量</title>
+</head>
+<body>
+    <script>
+        //console.log(Math.random());
+        //for循环 取大于0.59小于0.61的数
+        for(var rand=Math.random();rand<=0.59||rand>=0.61;){
+            rand=Math.random();//持续生成随机数，没有就会死循环
+            console.count();//计数的
+        }
+        console.log(rand);
+        //while循环 取大于0.99的随机数
+        while(rand<=0.99){
+            var rand=Math.random();//持续生成
+        }
+        console.log(rand);
+
+        //do while 取小于0.001的数
+        do{
+            var rand=Math.random();//持续生成
+        }while(rand>=0.001)
+        console.log(rand);
+    </script>
+</body>
+</html>

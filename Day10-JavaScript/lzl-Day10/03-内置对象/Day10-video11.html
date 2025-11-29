@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+<body>
+    <!-- Date
+    ①实例化日期时间对象
+    特殊写法
+    ②实例的属性和方法
+    getFullYear()       获取当前的年(公元纪年)
+    getMonth()          获取当前月份，月的取值0-11
+    getDate()           获取每月第几天
+    getDay()            获取每周第几天
+    getHours()          获取时
+    getMinutes()        获取分
+    getSeconds()        获取秒
+    getMilliseconds()   获取毫秒
+    
+    getUTCHours()       获取零时区的时
+    getTime()           获取时间戳，从1970-01-01 00:00  距离日期时间对象的毫秒数
+
+    set...              设置日期时间
+    setUTC...           设置零时区日期时间
+    setTime()           设置时间戳
+    
+    -->
+    <!-- Date构造函数本身的属性和方法
+    Date.now()          获取此时此刻的时间戳
+    Date.UTC()          获取指定日期的时间戳，用2-6个数字表示年月日时分秒
+    -->
+    <script>
+
+        // 实例化日期时间对象   不写参数 直接输出实例化对象时的时间
+        var d1 = new Date();
+        // 实例化日期时间对象   指定日期时间
+        var d2 = new Date('2004-08-12T10:06:09');
+        // 实例化日期时间对象   指定日期时间
+        // 这样的写法，月份较为特殊，是从0开始计，所以10月，应写成9
+        var d3 = new Date(1945,9,1,10,0,12);
+        var d4 = new Date(1999,9);
+        // 实例化日期时间对象   指定日期时间   参数是时间戳
+        var d5 = new Date(1990,1,1,1);
+        // 修改日期对象的日期时间
+        d1.setFullYear(2000);
+        console.log(d3);
+        console.log(d4);
+        console.log(d5);
+        console.log('');
+        console.log('');
+        console.log('年(公元纪年)：',d1.getFullYear());
+        console.log('月：',d1.getMonth()+1);
+        console.log('日',d1.getDate());
+        console.log('星期:',d1.getDay());
+        console.log('小时',d1.getHours());
+        console.log('分钟',d1.getMinutes());
+        console.log('秒',d1.getSeconds());
+        console.log('毫秒',d1.getMilliseconds());
+        console.log('零时区(时)',d1.getUTCHours()); 
+        console.log('零时区(年)',d1.getUTCFullYear()); 
+    </script>
+</body>
+</html>

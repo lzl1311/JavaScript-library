@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    封装函数
+    实现翻转字符串，  请用上数组的 reverse 方法
+    -->
+    <script>
+        var n='get-element-by-id';
+        console.log(n.split('').reverse().join(''));
+        // 封装函数
+        /**
+         * 翻转字符串
+         * @params {string} 要处理的字符串
+         * @returns {string} 翻转好的字符串
+        */
+        function overturn(str){
+            return str.split('').reverse().join('');
+        }
+        console.log(overturn('set-name-by-class-name'))
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的概念/组成/</title>
+</head>
+<body>
+    <h1>创建函数第一种方式</h1>
+    <script>
+    /*函数名：函数名就是变量名；变量的值是函数类型的数据，可以称该变量是函数名。
+
+      函数体：函数中的代码块。
+
+      参数：用于像函数内传递数据，分为形参和实参。
+
+      返回值：作为函数的计算结果，是函数调用表达式的值。*/
+
+//创建函数第一种方式--function关键字创建函数
+    function fun01() {
+        console.log('hello my name is fun01');
+    }
+    //调用函数，要加上小括号
+//创建一个有参数的函数
+    function fun02(name,age){
+        console.log('我是'+ name+ '今年' +age);
+    }
+    fun01();
+    fun02('Tom',3);
+    fun02('Jerry',3);
+//创建一个有返回值的函数
+    function fun03(num01,num02){
+
+        return num01 * num02;//表示有返回值了
+    }
+    console.log(fun03(5,6));
+    var res=fun03(10,6);
+    console.log(res);
+    </script>
+</body>
+</html>
