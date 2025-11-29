@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装判断质数的函数</title>
+</head>
+<body>
+    <script>
+        /**
+         * 判断一个数字是否是质数 number
+         * @parma {number} 要判断的数字
+         * @returns{boolean} true表示是质数，false表示不是质数
+        */
+        function isPrime(num){
+            for(var i=2;i<=num/2;i++){
+                if(num % i === 0){
+                    return false;//只要出现return后面的不执行了
+                }
+            }
+            return true;
+        }
+//输入一个数字判断是否是质数
+       var num = prompt('请输入一个数字');
+       if(isPrime(num)){
+        alert(num+'是一个质数');
+       }else{
+        alert(num+'不是一个质数');
+       }
+//输出100-200的质数
+       for(var n=100;n<=200;n++){
+            if(isPrime(n)){
+                console.log(n+'是质数')
+            }
+       }
+    </script>
+</body>
+</html>

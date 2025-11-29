@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = 'get-element-by-id';
+        var newstr = str.split('-').map(function(item,index){
+            return index===0 ? item.toLowerCase() :item[0].toUpperCase() + item.slice(1).toLowerCase();
+        }).join('');
+        console.log(newstr);
+
+        /**
+         * 字符串转换 将短横线分隔的字符串转为小驼峰的形式
+         * @params {string} 要转换的字符串
+         * @returns {string} 转化好的字符串
+        */
+        function toCamel(str) {
+            var newstr = str.split('-').map(function(item,index){
+                return index===0 ? item.toLowerCase() :item[0].toUpperCase() + item.slice(1).toLowerCase();
+        }).join('');
+            return newstr;
+        }
+        console.log(toCamel('set-name-by-class-name'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌套循环-表格</title>
+    <style>
+        table{
+            width: 800px;
+            /* 单元格宽度固定，不会根据内容变化 */
+            table-layout: fixed;
+            /* 相邻单元格共用一个边框 ，合并的是单元格边框*/
+            border-collapse: collapse;
+        }
+        td{
+            padding: 10px;
+            border: 1px solid #353434;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // document.write('100<br>');//在文档流里，遵循文档流原则，要换行，需要换行符
+        // document.write('200');
+
+        //定义变量 指定行数和列数
+        var rows =+prompt('请输入表格的行数：');
+        var cols =+prompt('请输入表格的列数：');
+
+        if(isNaN(rows)){
+            rows=0;
+        };
+        if(isNaN(cols)){
+            cols=0;
+        }
+        //使用js输出表格10行8列
+        document.write('<table>');
+        document.write('<tbody>');
+        var i=0;
+        while(i<rows){
+            document.write('<tr>');
+                for(var j=0;j<cols;j++){
+                    document.write('<td>'+ j +'</td>');
+                }
+            document.write('</tr>');
+            i++
+        }
+        document.write('</tbody>');
+        document.write('</table>');
+    </script>
+</body>
+</html>

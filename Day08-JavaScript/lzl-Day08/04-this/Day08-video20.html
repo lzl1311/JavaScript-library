@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建对象
+        var user = {
+            name:'高小乐',
+            age:189,
+            getInfo:function(){
+                console.log('getInfo');
+                console.log(this);
+                console.log(this.name);
+            },
+            frend:{
+                name:'曹操',
+                say:function(){
+                    console.log('say');
+                    console.log(this);
+                    console.log(this.name);
+                }
+            }
+        }
+        user.getInfo();
+        user.frend.say();
+        console.log('');
+
+        // 修改全局变量name的值
+        var name = '龙傲天';
+
+        // 创建函数
+        function func(){
+            console.log('func');
+            console.log(this);
+            console.log(this.name);
+        }
+        // 调用函数
+        func();
+        console.log('');
+
+        //创建变量
+        var drink = user.getInfo;
+        drink();
+        console.log('')
+
+        // 给对象添加属性
+        user.frend.eat = func;
+        user.frend.eat();
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其他运算符</title>
+</head>
+<body>
+    <script>
+        //typeof
+        var res=typeof 100;
+        console.log(res);
+        console.log('');
+        console.log('');
+        console.log('');
+
+        //逗号运算符
+        //用途：同时创建多个变量并赋值
+        var a=100;
+        var b=200;
+        var c=300;
+
+        var a=100,b=200,c=300;
+        //最后一个作为表达式的值
+        var res=(a=1000,c=2000,b=200);
+        console.log(res);//200
+        //作为参数分隔符
+        console.log(a=1000,c=2000,b=200);//1000 2000 200
+        console.log('');
+        console.log('');
+        console.log('');
+
+        //+ 什么时候是相加，字符串连接符或是正号
+        //当只有一个操作数的时候就是正号
+
+        //字符串连接符  只要操作数中有一个是string，+就表示字符串连接符
+        console.log(45 + '8');//458,最后一个数字颜色不一样是string
+
+        //如果有两个操作数，两个操作数都不是string，则+表示相加；
+        console.log(true + null);//1
+    </script>
+</body>
+</html>

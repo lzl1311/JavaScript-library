@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+区分
+.__proto__
+是实例的属性，指向它的原型对象
+.prototype 只有构造函数有
+是构造函数的一个属性，它指向一个原型对象
+-->
+<!-- 原型链
+每一个对象都有原型，原型是对象，原型也有原型，原型的原型也有原型，组成了原型链
+原型链的作用
+
+-->
+<!-- 
+构造函数的Array和原型Array没有关系
+-->
+    <script>
+        var arr = [];
+        // arr的构造函数是Array
+        console.log(arr);
+        // arr的原型是Array.prototype，Array.prototype的构造函数是Object
+        console.log(Array.prototype);
+        // 顶层原型
+        console.log(Object.prototype);
+        console.log('');
+
+        // Array是一个函数，Array的构造函数是Function
+        console.log(Array);
+        // Array的原型是Function.prototype，Function.prototype的构造函数是Object
+        console.log(Function.prototype);
+        // 顶层原型
+        console.log(Object.prototype);
+        console.log('');
+
+        // Object是个函数，Object的构造函数是Function
+        console.log(Object);
+        // Object的原型是Function.prototype，Function.prototype的构造函数是Object
+        console.log(Function.prototype);
+        // 顶层原型
+        console.log(Object.prototype);
+        console.log('');
+
+        // Function是一个函数，Function的构造函数是Function
+        console.log(Function);
+        // Function的原型是Function.prototype，Function.prototype构造函数是Object
+        console.log(Function.__proto__ === Function.prototype);
+
+        Array.prototype.username = '小乐';
+        Function.prototype.age = 10;
+        Object.prototype.address = '上海';
+
+        console.log(arr.username);//小乐
+        console.log(arr.age);//undefined
+        console.log(arr.address);//上海
+        console.log('');
+
+        console.log(Array.username);//undefined
+        console.log(Array.age);//10
+        console.log(Array.address);//上海
+    </script>
+</body>
+</html>

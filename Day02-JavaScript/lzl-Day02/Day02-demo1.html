@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作业</title>
+</head>
+<body>
+    <script>
+        var n = 100;
+
+        console.log(n ++ && n --); //  101
+        console.log(n); //100             
+
+
+        console.log(-- n || n ++); //99  
+        console.log(n); //99 	
+        /*
+        n=100
+        n++		100	n=101
+        n--		101	n=100
+
+        n=100
+        --n		99	n=99
+        */
+       
+        console.log('100'%20);//0
+        console.log(false * 20);//0
+        console.log(Number(undefined));//NaN
+        console.log(undefined +100);//NaN
+        console.log('100'==100);//true
+        console.log(false === 0);//false
+        
+        console.log(null == undefined);//false错
+        //特殊情况：null只和undefined成立   true
+       
+        console.log(200!==300);//true
+
+        console.log('abc'<'b');//false错
+        //因为b在a后边，所以是b>a,成立true
+
+        console.log((100>20)&&1000);//1000
+
+        console.log(+'hello');//1错
+        //'hello'转成数字是NaN，加一个正号也还是NaN
+
+        var a = 20
+
+        var res = (++ a ) - (a ++) || (a --) - (--a)
+        console.log(a); //20         
+        console.log(res); //2 
+    </script>
+</body>
+</html>

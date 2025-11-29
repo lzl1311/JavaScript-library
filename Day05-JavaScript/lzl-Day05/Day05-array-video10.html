@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组案例1</title>
+</head>
+<body>
+    <script>
+        var arr =[100,200,435,1.23,87,800,90,0.07];
+//计算数组里面的元素之和
+        var sum=0;
+        for(var i=0;i<arr.length;i++){
+            sum=sum+arr[i];
+        }
+        console.log('元素之和' + sum);
+//计算数组中元素的平均值
+        var sum_avg=0;
+        sum_avg=sum/arr.length;
+        console.log('平均值' + sum_avg);//
+//取出数组中最大的元素
+        var max=arr[0];//定义变量保存最大值
+        //遍历数组元素
+        for(var i=1;i<arr.length;i++){
+           //如果当前元素比max大，就修改max的值为当前变量
+           if(max < arr[i]){
+            max = arr[i]
+           } 
+        }
+        console.log('最大值' + max);
+//取出数组中最小的元素
+        var min=arr[0];
+        for(var i=1;i<arr.length;i++){
+            if(min>arr[i]){
+                min=arr[i];
+            }
+        }
+        console.log('最小值' + min);
+//修改数组元素的值，每个元素都变成原来的2倍
+        for(var i=0;i<arr.length;i++){
+            arr[i]*=2;
+        }
+        console.log(arr);
+    </script>
+</body>
+</html>

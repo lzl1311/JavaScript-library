@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    实例的属性
+    length          获取数组的长度，元素的个数
+    -->
+
+    <!-- 实例的修改器方法
+    执行完方法后，调用该方法的对象本身会被修改，修改器方法是数组独有的
+
+    push()          在数组的后面添加元素，返回添加元素后数组的长度
+    pop()           删除最后一个元素，返回被删除的元素
+    shift()         删除第一元素，返回被删除的元素
+    unshift()       在数组的前面添加元素，返回添加元素后数组的长度
+    splice()        替换指定位置指定数量元素，返回数组，数组中被删除掉的元素
+    sort()          数组排序，返回排好序的数组
+    reverse()       翻转数组，返回翻转好的数组
+    -->
+    <script>
+        var nameList = ['欧阳姥姥', '司马姥姥', '独孤姥姥', '令狐姥姥', '东方姥姥', '西门姥姥', '诸葛姥姥'];
+        console.log(nameList);
+        nameList.push('a姥姥');
+        console.log(nameList.push());
+        console.log(nameList.pop());
+        console.log(nameList.shift());
+        console.log(nameList.unshift('1姥姥'));
+        console.log(nameList);
+        console.log(nameList.splice(2,1,'b姥姥','c姥姥')) ;
+        console.log(nameList);
+        console.log(nameList.sort())
+        console.log(nameList);
+        console.log(nameList.reverse());
+        console.log(nameList);
+    </script>
+</body>
+</html>

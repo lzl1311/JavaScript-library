@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//步骤：先找var，创建变量但是没赋值，又找function，创建并赋值
+
+
+        //使用变量
+        console.log(address);//所以输出address函数本身
+
+        //使用var创建变量
+        var address = '北京';
+        //使用function创建的函数
+        function address(){
+            console.log('我是函数 address');
+        }
+        console.log(address);//'北京'
+        address();//address is not function
+
+        //一个作用域只能有一个同名的变量，所以上面的address不能同时是函数也不能同时是字符串
+    </script>
+</body>
+</html>

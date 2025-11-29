@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for循环</title>
+</head>
+<body>
+    <!-- 
+    for(循环标记变量初始值;循环条件表达式;循环标记变量变化){}
+    -->
+    <script>
+        //输出10次懒羊羊今天吃了n个青草蛋糕
+        for(var n=0;n<10;n++){
+            console.log('懒羊羊今天吃了'+ n +'个青草蛋糕')
+        }
+        console.log('标记变量：'+n);//10
+        //循环数字7-15
+        for(var n=7;n<=15;n++){
+            console.log(n);
+        }
+        console.log('标记变量：'+n);//16
+        //倒叙输出数字56-43
+        for(var n=56;n>=43;n--){
+            console.log(n);
+        }
+        console.log('标记变量：'+n);//42
+        // 输出10以内所有的偶数 
+       for(var n=0;n<=10;n+=2){
+            console.log(n);
+       }console.log('标记变量：'+n);//12
+        //计算100以内所有数字的和
+        var sum=0;
+        for(var n=0 ;n<=100;n++){
+            sum=sum+n; 
+            
+        }
+        console.log(sum);   
+        //计算10以内所有奇字的乘积
+       var res=1;
+        for(n=1;n<=10;n+=2){
+            res=res*n;
+        }
+        console.log(res);
+
+        //使用两个循环标记变量
+        for(x=1,y=1;x<=15,y<=10;x++,y++){
+            console.log(x,y);
+        }
+        //循环10次，因为,是运算符，取后面的那一个为值
+    </script>
+</body>
+</html>

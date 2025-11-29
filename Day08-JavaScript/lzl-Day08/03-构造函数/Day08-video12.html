@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //自定义构造函数
+        function User(userName,userAge,homeAddress){
+            this.name = userName;
+            this.age = userAge;
+            this.address = homeAddress;
+            this.addShopping = function(product){
+                console.log(this.name + '把' + product + '加入购物车');
+            }
+            this.buy = function(product){
+                console.log(this.name + '买了' +product);
+            }
+        }
+        var u1 = new User('懒羊羊',3,'羊村999号');
+        var u2 = new User('喜羊羊',7,'羊村998号');
+
+        u1.addShopping('青草蛋糕');
+        u1.buy('薯片');
+        console.log(u1);
+        console.log(u2);
+
+        function User1(userName,userAge,homeAddress){
+            this.name = userName;
+            this.age = userAge;
+            this.address = homeAddress;
+            this.addShopcart = function(product){
+                console.log(this.name+'将'+product+'加入购物车');
+            }
+            this.buy = function(product){
+                console.log(this.name+'购买了'+product);
+            }
+        }
+        // 实例化该构造函数，创建新的对象
+        var u1 = new User1('高小乐',23,'上海');
+        var u2 = new User1('乾隆',90,'北京');
+
+        u1.addShopcart('零食');
+        u2.buy('巧克力派');
+
+        console.log(u1);
+        console.log(u2);
+    </script>
+</body>
+</html>

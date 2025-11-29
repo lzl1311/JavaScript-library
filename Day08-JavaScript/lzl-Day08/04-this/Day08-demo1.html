@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+var value = "全局";
+
+function Example() {
+  this.value = "对象属性";
+  var value = "局部变量";
+  console.log(value);
+  console.log(this.value);
+}
+
+// 第一部分
+Example();
+console.log(value);
+/*
+Example()调用，
+输出 局部变量 对象属性
+输出 对象属性
+*/ 
+// 第二部分
+var ins = new Example();
+console.log(value);
+console.log(ins.value);
+
+/*
+构造函数实例化
+输出 局部变量 对象属性
+输出 对象属性 对象属性
+*/ 
+    </script>
+</body>
+</html>

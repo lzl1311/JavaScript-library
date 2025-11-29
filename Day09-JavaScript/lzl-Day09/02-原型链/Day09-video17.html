@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    constructor
+    功能：是对象的一个属性，用于返回创建该对象的构造函数。
+    -->
+    <!-- 
+    默认情况：
+        假如对象a 的原型是 b
+        通常，a本身上没有 constructor属性； b 自身上会有 constructor 属性，但是给 a 准备的， 值是 a 的构造函数
+        所以：
+        a.constructor 获取的是 a 的构造函数
+        b.constructor 的值也是 a 的构造函数
+
+    -->
+    <script>
+        // 创建数组
+        // arr -> Array.prototyoe ->Object.prototype
+        var arr = [10,20,30];
+        // 数组自身没有constructor属性，用的是Array的
+        console.log(arr.constructor);
+        console.log(Array.prototype.constructor);//用的是自身的constructor属性
+        console.log(Object.prototype.constructor);
+        
+    </script>
+</body>
+</html>

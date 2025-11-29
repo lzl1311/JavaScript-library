@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100-999之间的水仙花数</title>
+</head>
+<body>
+    <!-- 
+    153
+    个位    153%10
+    十位    (153%100)/10=5.3
+    百位     153/100=1.53-->
+    <script>
+        for(var n=100;n<=999;n++){
+          var n1=parseInt( n%10);
+          var n2=parseInt((n%100)/10) ;
+          var n3=parseInt(n/100); 
+
+            if(n === n1**3 + n2**3 + n3**3){
+              console.log(n);
+            }
+        }   
+    </script>
+</body>
+</html>

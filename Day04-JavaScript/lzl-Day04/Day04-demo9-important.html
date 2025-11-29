@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100-200的素数</title>
+</head>
+<body>
+    <script>
+        for(var num=100;num<=200;num++){
+            var isPrime=true;
+            for(var i=2;i<num/2;i++){
+                if(num%i===0){
+                    isPrime=false;
+                    break;
+                }
+            }
+            if(isPrime===true){
+                console.log(num+'是质数');
+            }
+        }
+
+        // for(var num=100;num<=200;num++){
+        //     var isPrime = true;
+        //     for(var i=2;i<=num/2;i++){//超过一半就没有整除的可能
+        //         if(num%i===0){
+        //             isPrime=false;
+        //             break;
+        //         }
+        //     }
+        //     if(isPrime === true){
+        //         console.log(num+'是质数');
+        //     }
+        // }
+        
+    </script>
+</body>
+</html>

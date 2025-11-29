@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水费</title>
+</head>
+<body>
+    <script>
+        var waterL=prompt('请输入您的用水量（单位：立方米）');
+        if(isNaN(waterL)){
+            alert('请输入正确格式')
+        }else{
+            if(waterL <= 220){
+            var total=waterL * 4.05;
+
+            }else if(waterL <= 300){
+                var total = 220 * 4.05 + (waterL-220) * 5.8;
+            }else{
+                var total = 220 * 4.05 + 80 * 5.8 + (waterL-300) * 8.79;
+            }
+            alert('您需要支付' + total + '元');
+        }
+        //记住，分块算，不是所有的都一个价
+    </script>
+</body>
+</html>330

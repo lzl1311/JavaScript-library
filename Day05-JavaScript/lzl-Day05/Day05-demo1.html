@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>翻转字符串函数</title>
+</head>
+<body>
+    <script>
+        /**
+         * 翻转字符串
+         * @param {string} 要进行翻转的字符串
+         * @returns{string} 翻转好的字符串
+        */
+        function reverseString(str){
+            var newStr = '';
+            for(var i=str.length-1;i>=0;i--){
+                newStr+=str[i];
+            }
+            return newStr;
+        }
+        msg='hello Tom,hello Jerry,gooby';
+        console.log(reverseString(msg));
+
+        //自己的
+        function turn(n){
+           var ns=String(n);
+           var result='';//创建一个空字符用于拼接
+            for(i=(ns.length-1) ;i>=0;i--){
+                result +=ns[i];//加起来就好了
+            }
+            return result;
+        }
+        console.log(turn('tom'));
+    </script>
+</body>
+</html>

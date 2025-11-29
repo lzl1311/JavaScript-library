@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>//实参给形参赋值严格按照顺序，所以有默认值的一般放最后
+    //ES5的方式
+        function fun1(name,age,addres){
+           if(addres===undefined){
+            addres='上海'
+           }
+            
+            console.log('my name is ' + name+',my old is '+age+',my house is'+addres)
+        }
+        fun1('Tom',30);
+
+    //ES6的方法
+    function fun2(name,age=20,addres='上海'){
+            console.log('我叫' + name+',今年 '+age+'岁，住在'+addres)
+        }
+        fun2('孙悟空',999);
+        fun2('猪八戒',998);
+
+    </script>
+</body>
+</html>

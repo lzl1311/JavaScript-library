@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>位上有3或者7的数字</title>
+</head>
+<body>
+    <script>
+        for(n=100;n<=999;n++){
+            var n1=n%10;
+            var n2=parseInt((n%100)/10);
+            var n3=parseInt(n/100);
+            if(n1===3||n1===7||n2===3||n2===7||n3===3||n3===7){
+                console.log(n);
+            } 
+        }
+    </script>
+</body>
+</html>

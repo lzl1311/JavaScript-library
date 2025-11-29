@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>形参 实参</title>
+</head>
+<body>
+    <script>
+        //形参就是没有赋值的变量
+        function fun(name,age){
+            console.log('我叫'+ name +',我今年'+ age);
+        }
+        //调用函数 实参用于给形参赋值
+        //形参只能在函数里面用
+        fun('Tom',3);
+        fun('Jerry',3);
+
+        //形参和实参关于数量的问题
+        function fun1(name1,name2){
+            console.log(name1+'和'+ name2 +'跳舞');
+        }
+//当实参数量=形参
+        fun1('Tom','Jerry');
+//当实参数量>形参   按顺序给形参赋值，多出来的实参没作用
+        fun1('Tom','Teri','Jerry');
+//当实参数量<形参   没赋值的地方会自动不上undefined
+        fun1('Tom');
+    </script>
+</body>
+</html>

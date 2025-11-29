@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 一个变量的作用域只与函数声名的地方有关，与调用的位置无关 -->
+    <script>
+        //创建函数
+        var age=100;
+        function fn(){
+            console.log('fn:',age);
+        }
+        //创建函数
+        function func(){
+            var age =200;
+            //调用函数fn
+    //取值的时候，不要看调用的地方，要看创建的地方
+            fn();
+        }
+        //调用函数func
+        func();//100
+    </script>
+</body>
+</html>

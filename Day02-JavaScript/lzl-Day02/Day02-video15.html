@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关系运算符-判等</title>
+</head>
+<body>
+    <h1>建议用全等</h1>
+    <script>
+        //==相等 !=不相等
+        //两个操作数都是number
+        console.log(NaN != NaN);//true
+
+        //两个操作数类型不一致，转为number再比较
+        console.log(false == '');//true
+
+        //两个操作数类型一致，不需要转为number
+        console.log(true == true);//true
+
+        //null判等情况特殊
+        console.log(null == '');//false
+        console.log(null ==false);//false
+        console.log(null == 0);//false
+        console.log(null == undefined);//true
+
+        //全等  两个操作数类型不一致，直接判为不全等
+        //全等和相等的结果相反
+    </script>
+</body>
+</html>

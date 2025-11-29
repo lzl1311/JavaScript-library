@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒泡排序</title>
+</head>
+<body>
+    <script>
+        var nums = [34, 78, 12, 104, 79, 50, 36, 29, 19.9, 250, 120];
+        for(var n=nums.length;n>0;n--){//外层循环也可以写成for(var k=1;k<num.length;k++)
+            for(var i=0;i<nums.length-1;i++){
+                if(nums[i]>nums[i+1]){//如果降序就改这
+                    var temp=nums[i+1];
+                    nums[i+1]=nums[i];
+                    nums[i]=temp;
+                }
+            }
+        }    
+        console.log(nums)
+
+        
+        /**
+         * 数据排序
+         * @param{array}要排序的数组
+         * @parma{boolean} true：降序 false：升序
+         * @returns {array}
+        */
+        function sortArray(nums,isDown=false){
+            for(var n=nums.length;n>0;n--){
+                for(var i=0;i<nums.length;i++){
+                    if(isDown){//降序
+                        var expre=nums[i]<nums[i+1];
+                    }else{//升序
+                        expre=nums[i]>nums[i+1];
+                    }
+                    if(expre){
+                        var temp=nums[i+1];
+                        nums[i+1]=nums[i];
+                        nums[i]=temp;
+                    }     
+            }     
+        }
+        return nums;   
+        }
+        var res=[90,100,1,2,3,6,800,900,999];
+        console.log(sortArray(res,true)); 
+    </script>
+</body>
+</html>

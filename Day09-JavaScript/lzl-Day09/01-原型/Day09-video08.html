@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    适合放在原型上的属性：所有实例都用同一个逻辑 所有实例默认用同一个值
+    -->
+    <script>
+        // 自定义构造函数
+        function User(userName,userAge,userAddress){
+            this.name = userName;
+            this.age = userAge;
+            this.address = userAddress;
+            console.log(this);
+        }
+
+        //将方法添加到User的实例的原型
+        User.prototype.addshopping = function(product){
+                console.log(this.name + '将' +product +'加入购物车');
+            }
+        User.prototype.buy = function(product){
+                console.log(this.name + '买了' +product);
+            }
+
+        var u1 = new User('高小乐',23,'上海');
+        var u2 = new User('懒羊羊',3,'羊村');
+        console.log(u1);
+        console.log(u2);
+
+        u1.addshopping('巧克力派');
+        u2.buy('香蕉牛奶');
+    </script>
+</body>
+</html>

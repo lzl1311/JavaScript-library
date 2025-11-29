@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 构造函数   其他编程语言中的类 
+        构造函数对对象进行描述，描述对象的特点，
+        每个对象都有构造函数，相同数据类型的对象构造函数是同一个，
+        如所有数组的构造函数都是Array、所有函数的构造函数都是Function。 
+    -->
+    <!-- 构造函数对应的是数据类型 
+        构造函数是对象的描述，对象是构造函数的实例
+        一个对象只能有一种构造函数，构造函数可以给多个对象
+    -->
+    <script>
+        var arr=[1,2,3];
+        function fun01(){};
+        user ={username:'小乐',id:12345}
+        console.log(arr instanceof Array);
+        console.log(fun01 instanceof Function);
+        console.log(user instanceof Object);
+
+
+        // constructor属性
+        console.log(fun01.constructor);//直接获取该对象的构造函数
+    </script>
+</body>
+</html>

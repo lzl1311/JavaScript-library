@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符-与 或</title>
+</head>
+<body>
+    <script>
+        //逻辑与 两个条件都成立 结果才成立
+        //两个操作数都是布尔值
+        console.log(true && true);//true
+        console.log(false && true);//false
+        console.log('');
+        console.log('');
+        console.log('');
+
+        //操作数不是布尔
+        //如果第一个操作数成立，直接取第二个操作数作为表达式的值
+        //如果第一个操作数不成立，取第一个操作数作为表达式的值，第二个操作数不会被执行
+        console.log(true && 250);//250
+        console.log(null && 300);//null
+
+        var n = 0;
+        var res = n++ && ++n;
+        console.log(res);//0
+        console.log(n);//1  因为前一个操作数不成立，不执行后面的，直接取n++为值
+
+        //获取用户输入的年龄 18-60
+        var age=45;
+        console.log(age>=18 && age<=60);//true
+
+        //逻辑或
+        //两个操作数都是boolean
+        console.log(false || false);//false
+
+        //操作数不是boolean
+        //如果第一个操作数成立，直接取第一个操作数为表达式的值，第二个操作数不会被执行
+        //如果第一个操作数不成立，取第二个操作数为表达式的值
+        console.log('hello' || 250);//hello
+        console.log(null || 250);//250
+
+        var n = 0;
+        var res = n++ || ++n;
+        console.log(res);//2
+        console.log(n);//2
+        console.log('');
+        console.log('');
+        console.log('');
+
+        //逻辑非    一个操作数，取反就好
+        console.log(!true);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1!+2!+3!+...+20!</title>
+</head>
+<body>
+    <script>
+        //老师的
+        var sum=0;
+        for(var n=1;n<=20;n++){
+            var res=1;
+            for(var i=1;i<=n;i++){
+                res=res*i;
+                console.log(i+'的阶乘是'+res);
+            }
+            sum=sum+res;
+        }
+        console.log('20!='+sum);
+        
+        //自己的
+        var sum=0;
+        var res=1;
+        for(var i=1;i<=20;i++){
+            res=res*i;
+            sum=sum+res;
+        }
+    </script>
+</body>
+</html>

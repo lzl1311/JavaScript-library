@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 实例的访问器方法(1)
+    执行完方法后，结算结果以返回值给出，而调用方法的对象本身不会被修改
+
+    concat()        将多个数组连接成一个，返回连接好的数组，参数是数组，可以是任意个
+    slice()         截取数组中一部分返回新数组，指定开始位置和结束位置
+    join()	        将数组中所有的元素合并成一个字符串并返回，参数指定分隔符，默认是逗号
+    indexOf()       返回指定元素在数组第一次出现的位置，不存在返回-1
+    lastIndexOf()   返回指定元素在数组最后一次出现的位置，不存在返回-1
+
+    -->
+    <script>
+        var nameList = ['欧阳姥姥', '司马姥姥', '独孤姥姥', '令狐姥姥', '东方姥姥', '西门姥姥', '诸葛姥姥'];
+        var nums = [10,20,30,40,50];
+        console.log(nameList);
+        console.log(nums);
+        console.log('')
+
+        // 数组连接
+        console.log(nameList.concat(nums));
+        console.log('')
+        // 数组截取
+        console.log(nameList.slice(2,5));
+        // 合并
+        console.log(nameList.join(' '));
+        // 判断是否存在某个元素
+        console.log(nameList.indexOf('司马姥姥'));
+        console.log(nameList.lastIndexOf('o姥姥'));
+        console.log('');
+
+
+        var user ={name: '赵云', age: 46, address: '石家庄'}
+        var users = [
+            {name: '曹操', age: 67, address: '许昌'},//地址传递，一直在创建新对象
+            {name: '刘备', age: 47, address: '成都'},
+            {name: '孙权', age: 37, address: '南京'},
+            {name: '吕布', age: 51, address: '包头'},
+            user,//地址传递，一直在创建新对象
+            {name: '诸葛亮', age: 53, address: '南阳'}
+        ];
+        console.log(users.indexOf(user))
+    </script>
+</body>
+</html>

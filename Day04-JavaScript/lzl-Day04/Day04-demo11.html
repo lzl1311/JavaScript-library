@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面输出</title>
+</head>
+<body>
+    <script>
+        //优化做法
+        for(var n=1;n<=50;n++){ 
+            var num= n<10 ? '0'+n : n;
+            document.write(num+' ');
+            if(n % 10 === 0){
+                document.write('<br>')
+            } 
+        }
+
+
+
+        // for(var n=1;n<=50;n++){
+        //     //因为你先加换行后写数字，所以如果判断条件写0，会在10的倍数前加换行
+        //     if(n % 10 === 1){
+        //         document.write('<br>')
+        //     }
+        //     if(n<10){
+        //         document.write('0');
+        //     }  
+        //     document.write(n+' ')
+        // }
+    </script>
+</body>
+</html>
