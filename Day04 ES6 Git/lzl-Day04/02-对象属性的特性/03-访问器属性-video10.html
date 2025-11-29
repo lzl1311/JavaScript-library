@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>访问器属性</title>
+</head>
+<body>
+    <script>
+        // 创建对象
+        const user = {
+            name:'海绵宝宝',
+            address:'菠萝屋',
+            _age:0
+        };
+        // 添加属性并设置属性的特性
+        Object.defineProperty(user,'age',{
+            configurable:true,
+            enumerable:true,
+            set:function(val){
+                val = +val;
+                if(val>=10 && val<=200){
+                    this._age = val;
+                }
+            },
+            get:function(){
+                return this._age;
+            }
+        })
+        user.age = 200;
+        user._age = 300;
+        console.log(user.age);
+        console.log(user._age)
+
+        /*
+        我理解一下，我添加了一个访问器属性在user上，这个不能存储值，只有通过
+        get和set设置和读取值。set的参数就是在外部设置的值。把这个值给属性_age，_age
+        在这个过程中是存储容器，传递值的介质对吗
+        */ 
+
+    </script>
+</body>
+</html>

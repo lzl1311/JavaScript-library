@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = Object.create(Array.prototype,{
+            0:{
+                enumerable:true,
+                configurable:true,
+                writable:false,
+                value:'恶心'
+            },
+            age:{
+                enumerable:false,
+                configurable:true,
+                set:function(val){},
+                get:function(){
+                    return 120;
+                }
+            }
+        })
+        console.log(arr)
+    </script>
+</body>
+</html>

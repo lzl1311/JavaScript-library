@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const users = [
+            {name: '关飞', age: 43, address:'上路' },
+            {name: '刘邦', age: 46, address:'辅助' },
+            {name: '周瑜', age: 20, address:'中路' },
+            {name: '小乔', age: 50, address:'北京' },
+            {name: '孙策', age: 94, address:'上海' },
+            {name: '大乔', age: 49, address:'江南' },
+            {name: '太乙', age: 100, address:'天上' },
+            {name: '曹操', age: 23, address:'地下' },
+            {name: '女娲', age: 200, address:'南京' },
+        ]
+        // console.log(users);
+        console.log('');
+
+        // 数组排序 按照年龄从小到大
+        // users.sort((prev,next) => {
+        //     return prev.age - next.age
+        // });
+        /*
+        sort是数组实例的属性，有两种方式一种是自定义排序规则 一种是自带的，自带的就是把传入的参数转成ascrll码再进行比较。自定的排序规则，采用回调函数
+        Array.sort(function(a,b){
+            return a-b
+        })
+        if a-b是正数	也就是a>b	需要交换位置
+        if a-b是负数	也就是a<b   不需要交换位置
+        如果我想进行从小到大的排序	
+        */ 
+        users.sort((prev,next) => prev.age - next.age)
+        console.log(users)
+        // 取出40岁以上的人员，组成数组
+        /*
+        数组的属性filter
+        有三个参数 item index array（原数组）
+        返回复合条件的元素组成的数组，如果return true 就加入新数组 返回false就不加入
+        */ 
+        const rest = users.filter((item) => item.age > 40)
+        console.log(rest)
+        // 提取所有用户的姓名，组成新的数组
+        console.log( users.map(item => item.name));
+    </script>
+</body>
+</html>

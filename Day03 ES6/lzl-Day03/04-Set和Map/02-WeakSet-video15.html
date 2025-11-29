@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const s1 = new String('小乐');
+        const s2 = {age:23}
+        const ws = new WeakSet([s1,new Number(200),{name:'海绵宝宝'},[1,2,3]]);
+        console.log(ws);
+        ws.add(document.body);
+        console.log(ws.has(document.body));
+        ws.delete({name:'海绵宝宝'});
+        console.log(ws);
+        console.log(ws.has({name:'海绵宝宝'}));
+        ws.add(s2);
+        console.log(ws.has(s2));
+        // 不能遍历 ; WeakSet中的数据只能是对象类型 不能是原始类型 写在数组中
+        // 实例的方法 add delete has
+    </script>
+</body>
+</html>

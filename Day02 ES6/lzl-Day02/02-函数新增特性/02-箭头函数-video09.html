@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.使用箭头函数创建没有参数的函数
+        const fun02 = () => {}
+        console.log(fun02);
+        console.log(typeof fun02);
+        console.log('');
+
+        // 2.使用箭头函数创建有参数的函数
+        const fun01 = (username,age) => {
+            console.log(`我是${username},我今年${age}岁`);
+        }
+        fun01('高小乐',200);
+        console.log('');
+
+        // 3.使用箭头函数时 只有一个参数时 小括号可以不写
+        const fn01 = n1 => {
+            console.log(n1*100 +100);
+        };
+        fn01(3);
+        console.log('');
+
+        // 4.如果箭头函数的函数体只有一条语句，且是返回语句时，return和大括号可以不写
+        const fn02 = (n1,n2) => console.log(n1+n2);
+        fn02(100,200);
+        console.log('');
+
+        //  5.大括号小括号都省略
+        const fn03 = num1 => num1*10+3;
+        console.log(fn03(30));
+    </script>
+</body>
+</html>

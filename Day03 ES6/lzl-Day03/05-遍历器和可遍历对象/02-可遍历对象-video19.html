@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 可遍历对象都有一个属性Symbol.iterator，这个属性Symbol.iterator的值是一个方法，调用这个方法可以得到遍历器对象 -->
+    <script>
+        const arr = [100,200,300,400];
+        const str = 'hello world';
+        const s = new Set(str);
+        const iter = arr[Symbol.iterator]();
+        //得到遍历器
+        console.log(iter);
+        //使用遍历器的方法
+        console.log(iter.next());
+        // for of结构循环
+        for(const s of iter){
+            console.log(s);
+        }
+    </script> 
+    
+</body>
+</html>

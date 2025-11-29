@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 方式一 递归函数扁平化数组
+        function ArrayFlat(arr){
+            let arr01 = []
+            arr.forEach(function(item,index){
+                if(item instanceof Array){
+                    // arr01.push(...ArrayFlat(item));
+                    arr01 = arr01.concat(ArrayFlat(item));
+                }else{
+                    arr01.push(item);
+                }
+            })
+            return arr01;
+        }
+        const arr02 = [100,[200,300,400],[{name:'小乐'},{age:100},{parent:{name:'高大乐'}}],];
+       
+        console.log( ArrayFlat(arr02)) ;
+        // 方式二   缺点里面的元素变成字符串
+        console.log(arr02.join().split(',')) 
+
+        // 方式三
+        console.log(arr02.flat());
+    </script>
+</body>
+</html>

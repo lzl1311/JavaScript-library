@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="btns">
+        <button>点击</button>
+        <button>点击</button>
+        <button>点击</button>
+        <button>点击</button>
+        <button>点击</button>
+    </div>
+    <script>
+        const reg = Math.random();
+        //1. 声名多个变量并赋值
+        let [v1,v2,v3,v4,v5] = [{age:200,name:'懒羊羊'},120,reg,function(){console.log('hello')},300];
+        console.log(v1);//{age: 200, name: '懒羊羊'}
+        console.log(v2);//120
+        console.log(v3);//0.378972162169108
+        console.log(v4);//ƒ (){console.log('hello')}
+        console.log(v5);//300
+        console.log('');
+
+        //2. 同时修改多个变量的值
+        const data = ['懒羊羊','喜羊羊','美羊羊','暖羊羊'];
+        [v1,v2,v3,v4] = data;
+        console.log(v1);
+        console.log(v2);
+        console.log(v3);
+        console.log(v4);
+        console.log('');
+
+        //3. 交换两个变量的值
+        [v1,v2] = [v2,v1];
+        console.log([v1,v2]);
+        console.log('');
+
+        //4. 使用结构赋值给函数形参传值
+        function func([name1,name2,name3]){
+            console.log(name1 +' 和 ' + name2 +' 以及 '+ name3 + ' 是好朋友 ');
+        }
+        func(data);
+        // 5.两边的数组结构不完全一致   
+        let [a1,a2,a3,a4] = [100,200,300,400];
+        const [b1,b2,b3] = [2000,3000];
+        [a1,a2,a3,a4] = ['beijin','shanghai'];
+        console.log(a1);
+        console.log(a2);
+        console.log(a3);
+        console.log(a4);
+        console.log(b1);
+        console.log(b2);
+        console.log(b3);
+        console.log('');
+        // 解构赋值的左侧变量可以指定默认值
+        let [c1,c2,c3=120] = ['小猪',230];
+        console.log(c1);
+        console.log(c2);
+        console.log(c3);
+        console.log('');
+
+        // 7.解构格式复杂的数组
+        // 同一个数组可以有多种形式的解构
+        var arr = [
+            100,
+            ['高小乐', 199],
+            [
+                100,
+                [10, 20]
+            ]
+        ];
+        const [a,[b,c],[d,[e,f]]] = arr;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+        console.log(e);
+        console.log(f);
+        const [d1,d2,d3] = arr;
+        console.log(d1);
+        console.log(d2);
+        console.log(d3);
+
+        // 伪数组可以被解构
+        const btns = document.querySelectorAll('#btns button');
+        const str = 'morning';
+        const [h1,h2,h3] = btns;
+        const [h4,h5,h6] = str;
+        console.log(h1);
+        console.log(h2);
+        console.log(h3);
+        console.log(h4);
+        console.log(h5);
+        console.log(h6);
+    </script>
+</body>300
+</html>

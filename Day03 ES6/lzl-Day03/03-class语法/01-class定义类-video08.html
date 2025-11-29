@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义一个类class
+        class Product {
+            // 设置属性
+            name = '糖果';
+            price = 123;
+            // 采用简写就会把函数直接写到实例的原型上   好处：节约内存，这样就不会创建一个实例就有一堆方法在实例上
+            // 设置方法
+            buy(num,name){
+                console.log(`买了${num}份${name}`);
+            }
+            shoppcar(name){
+                console.log(`把${name}加入购物车`);
+            }
+        }
+        // 使用类
+        const product01 = new Product();
+        console.log(product01);
+        product01.buy(10,'太妃糖');
+        product01.shoppcar('夹心巧克力');
+    </script>
+</body>
+</html>

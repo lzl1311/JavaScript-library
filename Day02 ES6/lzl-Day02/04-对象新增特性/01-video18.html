@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.用变量表示属性值，变量名和属性名同名
+        const username = '海绵宝宝',age = 3,address = '比奇堡裤头村';
+        const prop = 'homeAddress'
+        const say = () =>{
+            console.log('say function');
+        }
+        const user = {
+            name: username,
+            [10+10]:'高手',//属性名是20
+            [prop]:'上海',//属性名是homeAddress 
+            age,
+            address,
+            say,
+            getInfo(name1){
+                console.log(name1)
+            },
+            setage(){
+                return console.log(age)
+            }
+        }
+        console.log(user);
+        user.getInfo('小乐');
+        console.log(user.getInfo);
+    </script>
+</body>
+</html>

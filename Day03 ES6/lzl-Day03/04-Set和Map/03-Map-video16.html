@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [100,200,300];
+        const user = {name:'高小乐'};
+        const s = new Set(arr);
+        // 创建一个Map对象
+        const m = new Map([
+            [s,100],
+            ['address','上海'],
+            [user,[1,2,3]],
+            [arr,arr],
+            // [username,'高小乐'],字符串作为key时，引号不能省
+        ]);
+        // set方法
+        m.set(arr,128);// m.set(key,value);
+        m.set('s2',[123,321]);
+        m.set(['arr','rra'],'这是一个数组');
+        // delete方法
+        m.delete('address');
+        // has方法
+        console.log(m.has(s));
+        console.log(m.has('s2'));
+        console.log(m.has(['arr','rra']));
+        console.log('');
+
+        // get方法
+        
+        console.log(m.get('s2'));
+        console.log('');
+
+        // size方法
+        console.log(m.size);
+        // forEach方法
+        m.forEach((item,index) =>{
+            console.log(item,index)
+        });
+        
+        console.log(m.keys());
+        console.log(m.values());
+        console.log(m.entries());
+    </script>
+</body>
+</html>

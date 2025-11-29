@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义对象
+        const user = {
+            name:'海绵宝宝',
+            address:'菠萝屋'
+        }
+        // 修改address属性的特性
+        Object.defineProperty(user,'address',{
+            enumerable:false,
+            configurable:false,
+            writable:false,
+            value:'蟹堡王'
+        })
+        console.log(Object.getOwnPropertyDescriptor(user,'address'));
+        user.address = '比奇堡';
+        delete user.address;
+        user.age = 200;
+        // 修改age属性的特性
+        Object.defineProperty(user,'age',{
+            configurable:false,
+            enumerable:true,
+            writable:false
+        })
+        user.age = 190;
+        // 只能遍历出name age
+        for(const i in user){
+            console.log(i)
+        }
+        console.log(user)
+    </script>
+</body>
+</html>

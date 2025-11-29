@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Product {
+
+            // 设置属性
+            name ;
+            price ;
+            time;
+
+            // 构造器方法   在实例化的时候就执行
+            constructor(name,price){
+                this.name = name;
+                this.price = price;
+                this.num = Math.random();
+            }
+
+            // 设置方法
+            buy(num){
+                console.log(`买了${num}份${this.name}`);
+            }
+            shoppcar(){
+                console.log(`把${this.name}加入购物车`);
+            }
+            static getInfo(){
+                console.log('我是类Product里面的静态方法');
+            }
+        }
+        Product.getInfo();//可以直接调用 因为是静态方法 是构造函数的属性
+        // Product.buy();报错 这是类 要使用类里面的实例方法必须实例化
+    </script>
+</body>
+</html> 

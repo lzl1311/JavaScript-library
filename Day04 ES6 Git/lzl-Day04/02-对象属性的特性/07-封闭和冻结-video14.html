@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义对象
+        const arr = [100,200,300,400];
+        arr.name = '海绵宝宝';
+        arr.address = '菠萝屋';
+
+        const arr01 = [100,200,300,400];
+        arr01.name = '海绵宝宝';
+        arr01.address = '菠萝屋';
+// --------------------------------------------------------------------------
+        // 封闭对象
+        Object.seal(arr01);
+        console.log('对象是否被封闭',Object.isSealed(arr01));
+        console.log('对象是否被冻结',Object.isFrozen(arr01));
+
+        // 封闭后不能添加新属性 旧属性不可被配置
+        arr01.name = '章鱼哥';//可以
+        // 不可配置(配置特性那四个不能改) 不可删除 不可添加 
+        arr01.age = 100;
+        delete arr01.address;
+        console.log(arr01);
+// -----------------------------------------------------------------------------------------
+        // 冻结对象
+        Object.freeze(arr);
+        console.log('对象是否被封闭',Object.isSealed(arr));
+        console.log('对象是否被冻结',Object.isFrozen(arr));
+
+        // 冻结后不能添加新属性 旧属性不可被配置且不能修改
+        // 不可配置(配置特性那四个不能改) 不可删除 不可添加 不可修改
+        arr.name = '章鱼哥';
+        arr.age = 100;
+        delete arr.address;
+        console.log(arr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n1 = 100;
+        let n2 = 200;
+        let n3 = 300;
+
+        // ||=
+        n1 ||= 250;//n1= n1||250
+        n1= false||300
+        console.log(n1);
+
+        // &&=
+        n2 &&= 250;//n2= n2&&250
+        n2= undefined && 100;
+        console.log(n2);
+
+        // ??=
+        n3 ??= 250;  //n3= n3 ?? 250
+        n3= undefined ?? 250
+        console.log(n3)
+        
+    </script>
+</body>
+</html>

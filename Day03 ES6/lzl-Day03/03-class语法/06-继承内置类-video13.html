@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class MyArray extends Array{
+            #name;
+            //我这么理解的 constructor得到的除了新设置的属性，全部给super
+            constructor (name,...regs) {
+                super(...regs);
+                this.#name = name;
+            }
+        }
+        const a1 = new MyArray('高小乐',100,200,300,400,500);
+        console.log(a1)
+    </script>
+</body>
+</html>

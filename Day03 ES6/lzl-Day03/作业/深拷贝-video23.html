@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user01 = {
+            name:'海绵宝宝',
+            address:'比奇堡裤头村',
+            firend:['蟹老板','派大星','章鱼哥'],
+            parent:{
+                name:'海绵',
+                age:100,
+                address:'海绵村'
+            }
+        }
+        
+
+
+
+        console.log(user01)
+        // 复制对象
+        user01[Symbol.iterator] = function* (){
+            parent[Symbol.iterator] = function* (){
+                for(let key in this){
+                    yield [key,this[key]]
+                }
+            }
+            for(let key in this){
+                yield [key,this[key]]
+            }
+        }
+        const user02 = {};
+        for(const v of user01){
+            console.log([...v]);
+            user02[v[0]]=v[1]
+        }
+        user02.parent.age = 200;
+    </script>
+</body>
+</html>

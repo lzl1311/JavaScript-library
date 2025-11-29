@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建数组
+        const arr = [100,200,300,400,500,600,700];
+
+        // 获取由数组arr中的值组成的键
+        const keyIter = arr.keys();
+        console.log(keyIter);
+        for (const s of keyIter){
+           console.log(s)
+        };
+
+        // 获取由数组arr中的值组成的对
+        const valuesIter = arr.values();
+        for(const s of valuesIter){
+            console.log(s);
+        }
+
+        // 获取由数组arr中的值组成的对
+        const entriesIter = arr.entries();
+        for(const s of entriesIter){
+            console.log(s);
+        }
+    </script>
+</body>
+</html>

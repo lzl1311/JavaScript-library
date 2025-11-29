@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user01 = {
+            name:'海绵宝宝',
+            address:'比奇堡裤头村',
+            firend:['蟹老板','派大星','章鱼哥'],
+            parent:{
+                name:'海绵',
+                age:100,
+                address:'海绵村',
+                drink(){}
+            },
+            fun01(){},
+            fun02(){}
+        };
+        
+        //JSON.stringify() 将对象转成json格式的字符串
+        let user02 = JSON.stringify(user01);
+        //JSON.parse() 把json格式的字符串 恢复成对象或数组
+        user02 = JSON.parse(user02);
+        user02.parent.name = '海绵妈';
+        user02.parent.age = 200;
+        user02.firend = ['痞老板','珊迪']
+        console.log(user01);
+
+        // 缺点：会把方法吞了 适合没有方法的数组
+    </script>
+</body>
+</html>

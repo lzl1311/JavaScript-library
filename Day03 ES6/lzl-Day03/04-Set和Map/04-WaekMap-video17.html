@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [100,200,300];
+        const user = {name:'高小乐'};
+        const s = new Set(arr);
+        // 创建一个Map对象
+        const m = new WeakMap([
+            [s,100],
+            // ['address','上海'],
+            [user,[1,2,3]],
+            [arr,arr],
+        ]);
+        // 不能遍历；   键名只能是对象类型的 不能是原始类型数据
+        // 方法： set get delete has
+    </script>
+</body>
+</html>

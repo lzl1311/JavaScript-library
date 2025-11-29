@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    生成器 是用来创建遍历器对象，调用一次创建一个遍历器对象
+    -->
+    <script>
+        // 创建生成器
+        function* gen(){
+            console.log(1)
+            yield 100;
+            console.log(111)
+            console.log(2)
+            yield 200;
+            yield 300;
+        }
+        console.log(typeof gen);
+
+        // 调用生成器 得到遍历器对象
+        const iter = gen();
+        console.log(iter.next()) ;
+        console.log(iter.next()) ;
+        // iter.next();
+        // for(const v of iter){
+        //     console.log(v);
+        // }
+        /*
+        生成器 就是在function创建函数时，在关键字后面来个* 这就是生成器。不能用箭头函数
+        调用一次生成器就创建一个遍历器对象 也yield后写数据，遍历遍历器对象时，
+        不调用next（）方法执行里面的内容，调用一次next，执行到一个yield就停下
+        */ 
+    </script>
+</body>
+</html>

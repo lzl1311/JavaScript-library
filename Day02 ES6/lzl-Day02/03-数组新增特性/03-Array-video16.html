@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="box">
+        <li>至等人学尽程了，使。</li>
+        <li>至等人学尽程了，使。</li>
+        <li>至等人学尽程了，使。</li>
+        <li>至等人学尽程了，使。</li>
+        <li>至等人学尽程了，使。</li>
+    </ul>
+    <script>
+        // Array.of() 创建一个新数组 参数作为数组内的元素
+        const arr01 = new Array(10);
+        const arr02 = Array.of(10);
+        console.log(arr01);//这是一个长度为10的空数组
+        console.log(arr02);//这是一个长度为1，里面有一个元素值为10的数组
+
+        // Array.from() 
+        const boxs = document.querySelectorAll('#box li');
+        const arr03 = Array.from(boxs);
+        console.log(arr03);
+        console.log(Array.from('hello world'));
+    </script>
+</body>
+</html>

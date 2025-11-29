@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    1.rest参数，可以获取实参代替arguments
+    2.rest参数的格式  ...参数名
+    3.arguments可以获取全部实参
+    4.在有其他参数时，rest只能获取剩余的实参
+    5.rest返回的是一个数组    arguments返回的是一个伪数组
+    6.rest参数后面不能跟参数，会报错
+    -->
+    <script>
+        function fun01(...num01){
+            console.log(num01);
+        }
+        fun01();
+        fun01(100,[200,1],{username:'高小乐'},true)
+        function fun02(name,age,...num02){
+            console.log(name);
+            console.log(age);
+            console.log(num02);//[100,200],true,'海绵宝宝'
+            console.log(arguments);//'高小乐',200,[100,200],true,'海绵宝宝'
+        }
+        fun02('高小乐',200,[100,200],true,'海绵宝宝');
+
+        // 累加实参
+        function fun03(...num03){
+            return num03.reduce(function(prev,item){
+                return prev + item;
+            })
+        }
+        console.log(fun03(10,20,100,20,111,120,30)) ;
+    </script>
+</body>
+</html>

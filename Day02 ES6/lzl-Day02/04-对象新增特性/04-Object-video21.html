@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 判等     Object.is
+        console.log(Object.is(100,'100'));//false
+        console.log(Object.is(100,100));//true
+        console.log(Object.is(NaN,NaN));//true
+        console.log(Object.is(-0,+0));//false
+
+        // 创建一个对象
+        const user = {
+            name: '高小乐',
+            age: 45,
+            address: '上海',
+            say() {},
+            drink() {}
+        };
+        console.log(Object.keys(user));//返回键 []
+        console.log(Object.values(user));//返回值   []
+        console.log(Object.entries(user));//返回键值对 是数组形式(二维数组)
+        const user01 = Object.entries(user);
+        console.log(Object.fromEntries(user01));//相当于entries的逆运算
+        console.log(Object.getPrototypeOf(user));//获取对象原型的方式之一
+        const arr = [100,200,300,[1,2,3]]
+        console.log(Object.setPrototypeOf(arr,user));
+        console.log(Object.getPrototypeOf(arr));
+        console.log(Object.getOwnPropertyDescriptors(user));//返回该对象的所有描述信息
+        console.log('');
+
+        // 判断属性是不是自身的
+        console.log(Object.hasOwn(user,'age'));
+    </script>
+</body>
+</html>

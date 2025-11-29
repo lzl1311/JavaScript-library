@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        拓展运算符
+        1.可以复制数组
+        2.可以合并数组
+        3.用数组作为实参，赋值给实参
+        4.可以把可遍历对象转成真数组
+    -->
+    <ul id="box">
+        <li>斯举着说，长陈快文。</li>
+        <li>斯举着说，长陈快文。</li>
+        <li>斯举着说，长陈快文。</li>
+        <li>斯举着说，长陈快文。</li>
+    </ul>
+    <script>
+        const arr01 = ['小智','皮卡丘','杰尼龟','卡拉卡拉']
+        function fun01(n1,n2,n3,n4){
+            console.log(n1);
+            console.log(n2);
+            console.log(n3);
+            console.log(n4);
+        }
+        // 把数组拆分为逗号隔开的参数序列
+        // 1.用数组作为实参，给有多个形参的函数传参
+        fun01(...arr01);//相当于fun01('小智','皮卡丘','杰尼龟','卡拉卡拉')
+        console.log('');
+        console.log(''); 
+
+
+        // 2.使用拓展运算符 复制数组
+        // const arr02 = arr01; 这样相当于把arr01存储数组的地址给arr02，两个变量共用一个数组
+        const arr02 = [...arr01];//先把arr01使用拓展符号拆成逗号相连的参数序列，再放到[]新数组中
+        arr02[2] = '喷火龙';
+        console.log(arr02);
+
+        // 3.合并数组
+        const arr03 = [1,2,300,200,100];
+        const arr04 = [...arr01,...arr03,'nihao'];
+        console.log(arr04);
+
+        // 4. 也可以将可遍历对象转为逗号分隔的参数序列
+        // 将可遍历对象转为纯数组
+        const box = document.querySelectorAll('#box li');
+        console.log([...box]);
+        console.log([...'hello world']);
+    </script>
+</body>
+</html>

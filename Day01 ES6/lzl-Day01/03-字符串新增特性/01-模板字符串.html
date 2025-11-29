@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    
+        字符模板 
+    1.可以保留字符串原本的格式，不需要/n换行。
+    2.可以通过${}加入变量或表达式，
+    map的用法
+    数组.map(function(item,index){
+    return
+    })
+    返回一个新数组，长度和原数组一样，具有遍历功能，return的值会存入新数组
+    join的用法
+    数组.join（）
+    将数组中的元素拼接成一个字符串，可以指定分隔符，默认分隔符是逗号，使用空格指定分隔符，就可以连起来了
+
+    -->
+    <ul id="box"></ul>
+    <script>
+        // 创建模板字符串
+        const str = `hello       高小乐`;
+        console.log(str);
+        const content = `
+            锄禾日当午，
+            汗滴禾下土，
+            谁知盘中餐，
+            粒粒皆辛苦。
+        `;
+        console.log(content);
+        console.log(`
+            锄禾日当午，
+            汗滴禾下土，
+            谁知盘中餐，
+            粒粒皆辛苦。
+        `);
+
+        // 模板字符插入变量
+        const name1 = '懒羊羊';
+        const gender = '男';
+        const hometown = '羊村';
+        const hobby = '青草蛋糕';
+        const money = -1.2;
+
+        const massage = 
+        `我的名字叫${name1}, 
+        性别${gender}, 
+        我来自${hometown}, 
+        我的业余爱好是 ${hobby}, 
+        我会进行数学运算${money*78-20},
+        我学习后的期望薪资是 ${money} K`;
+        console.log(massage);
+        
+
+        const arr = ['汤姆','杰瑞','泰瑞','杰瑞表哥','汤姆表哥'];
+        // 在map中，return返回的值会存入新数组，map具有遍历功能
+        const html = arr.map(function(item,index){
+            return`
+            <li>
+                <span>${index+1}</span>
+                <a href="#">${item}</a>
+            </li>
+            `
+        }).join('');
+        console.log(html);
+        const box = document.querySelector('#box');
+        box.innerHTML = html;
+    </script>
+</body>
+</html>

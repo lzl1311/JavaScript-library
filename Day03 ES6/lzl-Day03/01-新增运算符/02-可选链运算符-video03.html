@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 适合链式调用，一旦遇到不存在就输出undefined 就结束 -->
+    <script>
+        const user = {
+            address:'北京',
+            name:'高小乐',
+            num: 1,
+            child:{
+                address:'上海',
+                name:'海绵宝宝'
+            },
+            say(){
+                return false;
+            }
+        }
+        // . 调用属性
+        console.log(user.address);
+        console.log(user.child.address);
+        console.log(user.parent);
+        // console.log(user.parent.address);报错
+        console.log('')
+
+        // ?.调用属性
+        console.log(user?.address);
+        console.log(user?.child?.name);
+        console.log(user?.parent)
+        console.log(user?.parent?.address);//undefined
+        console.log('')
+
+        // 使用可选链运算符调用方法
+        console.log(user.eat?.());
+        console.log(user?.say?.());
+        console.log(user?.eat?.());//短路了
+    </script>
+</body>
+</html>

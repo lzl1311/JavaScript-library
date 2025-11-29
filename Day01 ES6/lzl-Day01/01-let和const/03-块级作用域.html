@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="box">
+        <li>土拆重鼓九烦是派秦。</li>
+        <li>土拆重鼓九烦是派秦。</li>
+        <li>土拆重鼓九烦是派秦。</li>
+        <li>土拆重鼓九烦是派秦。</li>
+        <li>土拆重鼓九烦是派秦。</li>
+        <li>土拆重鼓九烦是派秦。</li>
+    </ul>
+    <script>
+        let address = '狼堡';
+        //let创建的变量具有块级作用域
+        {
+            var workaddress = '羊村';
+            let schooladdress = '赛尔号';
+            console.log(schooladdress);//赛尔号
+            console.log(address);//狼堡
+        } 
+        // console.log(schooladdress);报错
+        console.log(workaddress);//羊村
+
+        // 分支结构会产生块级作用域
+        if(true){
+            console.log(address);
+            let age = 200;//块级变量
+            var age01 = 100;//全局变量
+        }
+        // console.log(age);报错
+        console.log(age01);//100
+        console.log('')
+        // 循环结构产生块级作用域
+        for(let i= 0;i<10;i++){
+            console.log(i);
+        }
+        // console.log(i)报错
+        
+        // 获取元素
+        var boxItems = document.querySelectorAll('#box li');
+        for(let i=0;i<boxItems.length;i++){
+            boxItems[i].onclick = function(){
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    Object.assign()方法合并就是把后面对象中的值全部赋值给第一个
+
+    -->
+    <script>
+        const user = {
+            name: '高小乐',
+            age: 45,
+            address: '上海',
+            say() {},
+            drink() {}
+        };
+
+        const data = {
+            homeAddress: '伦敦',
+            schollAddress: '纽约',
+            address: '北京'
+        };
+        const num = [100,200,300];
+        const user01 = Object.assign({},user,data,num);
+        console.log(user01);
+        console.log('');
+
+        // 复制对象
+        const user02 = Object.assign({},user01);
+        user02.address = '比奇堡裤头村';
+        console.log(user01.address);
+ 
+    </script>
+</body>
+</html>

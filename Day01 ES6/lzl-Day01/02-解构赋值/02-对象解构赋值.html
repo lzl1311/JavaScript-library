@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.对象的解构赋值是按照属性名进行匹配
+        const {name:username,address:address,num:number} = {name:'懒羊羊',address:{name:'喜羊羊',age:999},num:[123,456]};
+        console.log(username);
+        console.log(address);
+        console.log(number);
+        const user = {
+            name:'赛尔号',
+            age:1999,
+            address:1-2-19
+        }
+        // 按照属性名进行匹配，属性名可以相同，但是变量名不同，不能修改赋值 只能重新声名赋值 
+        const {name:u,address:a,num:n} = user;
+        console.log(u)//赛尔号
+        console.log(a)//-20
+        console.log(n)//undefined
+        console.log('');
+        
+        // 2.对象的解构赋值可以简写左边，属性名和变量名一致
+        const {name01,name02,name03,name04} = {name01:'小猪',name02:'维尼',name03:123,name04:[1,2,3,4]};
+        console.log(name01);
+        console.log(name02);
+        console.log(name03);
+        console.log(name04);
+
+        // 3.对象的解构赋值可以个形参赋值   实参在哪给形参赋值，这里就怎么赋值
+        function func({content,title,foot}){
+           console.log(content,title,foot);
+        }
+        const textcontent = {content:'text',title:12312310,foot:{name:'吹牛大王'}};
+        // func({content:'text',title:12312310,foot:{name:'吹牛大王'}})
+        func(textcontent);
+
+        // 4.对象解构赋值可以给默认值
+        const {n1:n1,n2=123,n3:n3=300,n4} = {n1:100,n3:200};
+        console.log(n1);
+        console.log(n2);
+        console.log(n3);
+        console.log(n4);
+
+        // 5.对于复杂一些的对象进行解构
+        const obj = {
+            email: 'xiaole@qq.com',
+            nums: [100, 200],
+            prop: {
+                content: 'Hello ES6'
+            }
+        };
+        // 不简写：const {email:email,nums:[nu01,nu02],prop:prop} = obj;
+        const {email,nums:[nu01,nu02],prop} = obj;
+        console.log(email);
+        console.log(nu01);
+        console.log(nu02);
+        console.log(prop); 
+
+        // 6.一切皆对象，对象的解构可以解构一些数据
+        // 不简写格式：属性名:变量名
+        const {length,map,push,forEach} = [100,200,300,400];
+        console.log(length);
+        console.log(map);
+        console.log(push);
+        console.log(forEach);
+        const {length:len,forEach:foreach,indexOf} = 'hello 高小乐';
+        console.log(len);//9
+        console.log(foreach);//undefined
+        console.log(indexOf);//函数
+    </script>
+</body>
+</html>

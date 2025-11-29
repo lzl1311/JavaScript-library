@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    length不可以被遍历
+    -->
+    <script>
+        const arr = [100,200];
+        arr.firstName = '高';
+        arr.lastName = '乐';
+
+        const user = {
+            name:'海绵宝宝',
+            age:'3',
+            address:'比奇堡裤头村',
+            say(){},
+            eat(){}
+        };
+        console.log(user);
+        for(let i in user){
+            console.log(i)
+        }
+        console.log('');
+        console.log(arr);
+        for(let i in arr){
+            console.log(i)
+        }
+        console.log('');
+        window.name = user;
+        arr.firstName = user;
+        console.log(window.name);
+        console.log(arr.firstName);
+
+        // 获取对象自身的属性特性   
+        // configurable是否可以删除、修改
+        // enumerable是否可以循环得到、是否可以枚举
+        console.log(Object.getOwnPropertyDescriptor(window,'name'));
+        console.log(Object.getOwnPropertyDescriptor(user,'say'));
+        console.log(Object.getOwnPropertyDescriptor(arr,'length'));
+        // 获取对象自身全部的属性特性
+        console.log(Object.getOwnPropertyDescriptors(arr));
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const str = 'hello world';
+        console.log(str.includes('d')) ;
+        console.log(str.startsWith('l',5));
+        console.log(str.endsWith('d',11));
+        console.log(str.repeat(3));
+
+        const content = '           hello           ';
+        console.log(`#${content}#`);
+        console.log(`#${content.trim()}#`);
+        console.log(`#${content.trimStart()}#`);
+        console.log(`#${content.trimEnd()}#`);
+        console.log(content.replaceAll('l','L'));
+    </script>
+</body>
+</html>

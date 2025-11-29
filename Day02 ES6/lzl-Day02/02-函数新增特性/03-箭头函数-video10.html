@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fn01 = (num01,num02,...reg) => {
+            console.log(`还剩${num01}苹果，还剩${num02}香蕉`);
+            // console.log(arguments);
+            console.log(this)//指向window
+            console.log(reg);
+        }
+        fn01(10,20,[10,20,30,40]);
+        // const shopping = new fn01();报错
+
+        const obj = {
+            name:'我的obj',
+            getInfo: function(){
+                const fn = () => {
+                    console.log(this);
+                    // console.log(this.name)
+                }
+                fn();
+            }
+        }
+        obj.getInfo();
+
+        const obj1 = {
+            getInfo: () => {
+                const fn = () => {
+                    console.log(this);
+                }
+                fn();
+            }
+        }
+        obj1.getInfo();
+        // 箭头函数没有this！！！不存在给this指定对象
+        obj1.getInfo.call([1,2,3]);
+    </script>
+</body>
+</html>

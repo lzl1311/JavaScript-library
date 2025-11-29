@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    拆数组 []
+    拆对象 {}
+    -->
+    <script>
+        // -----------------------------------------------
+        // 将对象拆分成用逗号隔开的键值对
+        const nums = [100,200,300,400,500,600];
+        const user = {
+            name:'高小乐',
+            age:'200',
+            address:'上海',
+            say(){},
+            getInfo(){}
+        }
+        console.log(...nums)//相当于console.log(100, 200, 300, 400, 500, 600)
+        // console.log(...user);硬拆
+
+        // 对象的拷贝
+        const user02 ={...user};
+        user02.name = '海绵宝宝';
+        console.log(user02);
+        console.log(user);
+
+        // 对象的合并
+        // 属性名相同的会后者覆盖前者   只有属性名不同才会达到合并的效果
+        const user01 ={
+            username:'派大星',
+            uage:'3',
+            uaddress:'石头底下'
+        }
+        const users ={...user01,...user02}
+        console.log(users);
+
+        // --------------------------------------------------------------
+        // 将键值对序列合并到对象中
+        // 用于对象的解构赋值
+       const {age,address,...data} = users;
+       console.log(address);//上海
+       console.log(age);//200
+       console.log(data);//username: '派大星', uage: '3', uaddress: '石头底下', name: '海绵宝宝', say: ƒ, …
+    </script>
+</body>
+</html>

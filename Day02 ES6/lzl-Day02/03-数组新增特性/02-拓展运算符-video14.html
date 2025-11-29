@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+        // 1.rest参数
+        const fun02 = (n1,n2,n3,...rest) =>{
+            console.log(n1);
+            console.log(n2);
+            console.log(n3);
+            console.log(rest);
+        }
+        fun02(100,200,10,20,30,100);
+        console.log('');
+
+        // 2.解构赋值
+        const [a1,a2,...a3] = [100,200,300,400,500,10,20];
+        console.log(a1);
+        console.log(a2);
+        console.log(a3);
+     </script>
+</body>
+</html>

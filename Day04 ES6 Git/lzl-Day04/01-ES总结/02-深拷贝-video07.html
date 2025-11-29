@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const user01 = {
+            name:'海绵宝宝',
+            address:'比奇堡裤头村',
+            firend:['蟹老板','派大星','章鱼哥'],
+            parent:{
+                name:'海绵',
+                age:100,
+                address:'海绵村',
+                drink(){}
+            },
+            fun01(){},
+            fun02(){}
+        };
+        const user02 = deepClone(user01)
+        user02.parent.name = '海绵妈';
+        user02.parent.age = 200;
+        user02.firend = ['痞老板','珊迪'];
+        console.log(user02);
+        console.log(user01);
+
+        
+        /**
+         * 判断数据类型
+         * @params 要判断类型的数据
+         * @returns string 数据类型
+         * */ 
+        // 调用Object原型上的方法
+        function getType(data) {
+            const typeStr = Object.prototype.toString.call(data);
+            // 截取所需部分
+            // return typeStr.slice(8).replace(']',' ')
+            return typeStr.slice(8,typeStr.length-1)
+        } 
+        /**
+         * 实现对象和数组的深拷贝
+         * @params  要拷贝的数据
+         * @returns 拷贝好的数据
+         * */ 
+        function deepClone(obj){
+            let res;
+            if(getType(obj) === 'Array'){
+                res = [];
+            }else if(getType(obj) === 'Object'){
+                res = {};
+            }else{
+                return obj;
+            }
+            // for in可以遍历(数组、对象)
+            for(let i in obj){
+                res[i] = deepClone(obj[i]) ;
+            }
+            return res;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        bigint的特点
+    1.没有小数，会报错
+    2.是一种原始类型，独立的数据类型
+    3.可以和同种类型的数据进行计算
+    4.可以表示二进制 八进制 十六进制
+    例如 0o10n 0b10n 0x...
+    5.有负数，前面可以加-号 但是正数不能加+会报错
+    6.和相同number类型判等	可以相等不能全等
+    -->
+    <script>
+        const num01 = 56n;
+        console.log(0o10n);
+        console.log(0b10n);
+        console.log(typeof 0b10n);
+        console.log(num01 === 56);
+        console.log(num01 == 56);
+        console.log(-56n);
+        console.log(56n+45n);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fn02 = (...reg) => {
+            console.log(reg)
+        }
+        fn02(1,2,3,[1,2,3]);
+        fn02``;//相当于[]
+        fn02`hello world`//相当于['hello world']
+        const num01=100;
+        const num02=200;
+    
+        //感觉${}被当做分隔符一样，切两刀得三块
+        fn02`hel${num01}lo world${num01}end`//[['hel', 'lo world', 'end'], 100, 100]
+        fn02`hel${num02}lo world${num01}end`//[Array(3), 200, 100]
+    </script>
+</body>
+</html>

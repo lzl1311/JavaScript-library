@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Product{
+            // 数据属性
+            name = '章鱼哥';
+            address = '石头屋';
+            #age = 0;//私有属性
+
+            // 访问器属性
+            set age(val){
+                val = +val;
+                if(val>=10 && val<=200){
+                this.#age = val;
+                }
+            };
+            get age(){
+                return this.#age;
+            }
+        }
+        const p = new Product();
+        p.age = 10;
+        console.log(p.age);
+    </script>
+</body>
+</html>

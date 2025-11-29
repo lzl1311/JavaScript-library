@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         class Product {
+
+            // 设置属性
+            #name ;
+            #price ;
+
+            // 构造器方法   在实例化的时候就执行
+            constructor(name,price){
+                this.#name = name;
+                this.#price = price;
+                this.num = Math.random();
+            }
+
+            // 设置方法
+            #buy(num){
+                console.log(`买了${num}份${this.name}`);
+            }
+            shoppcar(){
+                console.log(`把${this.#name}加入购物车`);
+            }
+        }
+        const p1 = new Product('冰淇淋夹心巧克力',199);
+        const p2 = new Product('熔岩巧克力',99);
+
+        console.log(p1.name);
+        console.log(p1.price);
+        console.log(p1.num);
+        // p1.buy(10);
+        p1.shoppcar();//内部使用name私有属性  shoppcar方法是公有的
+    </script>
+</body>
+</html>

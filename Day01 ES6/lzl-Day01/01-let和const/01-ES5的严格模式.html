@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 开启严格模式
+        'use strict';
+        // 严格模式下不允许八进制的定义方式
+        //var num = 012;
+        var num = 0x12;
+
+        function func(){
+            // 不准这么写
+            username = 100;
+        }
+        func();
+    </script>
+</body>
+</html>

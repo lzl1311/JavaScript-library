@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建对象
+        const user = {
+            name:'海绵宝宝',
+            _age:0
+        }
+        Object.defineProperties(user,{
+            address:{
+                enumerable:false,
+                configurable:true,
+                writable:false,
+                value:'菠萝屋'
+            },
+            age:{
+                enumerable:true,
+                configurable:true,
+                set:function(val){
+                    this._age = val;
+                },
+                get:function(){
+                    return this._age
+                }
+            }
+        })
+        console.log(user);
+        user.age = 200;
+        console.log(user.age);
+        console.log(user._age);
+    </script>
+</body>
+</html>

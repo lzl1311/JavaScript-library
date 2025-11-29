@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    ！！！！！！super只能在简写的对象方法中使用 其他地方写没用
+    这里简写了创建函数的关键词 function
+    {
+        say(){
+            console.log('this:',this.name);
+            console.log('super:',super.name);
+        }
+        say: ()->{
+            console.log('super:',super.name);//会报错
+        }
+    }
+    -->
+    <script>
+        var name = '超级海绵宝宝';
+        const user01 = {
+            name:'海绵宝宝',
+            say(){
+                console.log('this:',this.name);
+                console.log('super:',super.name);
+            }
+        }
+        // 给user01的原型设置name属性
+        user01.__proto__.name = '海绵宝宝原型';
+        user01.say();
+        
+        const user02 = [];
+        user02.name = '派大星';
+        user02.__proto__.name = '派大星原型';
+        user02.say = user01.say;
+        user02.say();
+        // this指向调用函数的对象(谁调用) super指向创建函数的对象原型(谁创建)
+
+        const fn = user01.say;
+        fn();
+    </script>
+</body>
+</html>

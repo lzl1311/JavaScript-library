@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Product {
+
+            // 设置属性
+            #name ;
+            #price ;
+
+            // 构造器方法   在实例化的时候就执行
+            constructor(name,price){
+                this.#name = name;
+                this.#price = Math.max(price,100);
+                this.num = Math.random();
+            }
+
+            // 设置方法
+            buy(num){
+                console.log(`买了${num}件${this.#name},单价是${this.#price}`);
+            }
+            shoppcar(){
+                console.log(`把${this.name}加入购物车`);
+            }
+            static getInfo(){
+                console.log('我是类Product里面的静态方法');
+            }
+        }
+
+        // 设置子类
+        class Phone extends Product {
+            // 设置属性
+            color;
+            // 构造器方法
+            constructor(name,price,color){
+                 super(name,price);
+
+                this.color = color;
+            }
+            // 设置方法
+            discount(pre){
+                this.price *= pre;
+            }
+            buy(num){
+                console.log(`商品是${this.name}；购买数量是${num}；单价是${this.price}；颜色是${this.color}`);
+            }
+        }
+
+        // 实例化子类
+        const p1 = new Phone('小米16',90,'#ccc');
+        const p2 = new Product('巧克力',199)
+        p1.buy(2);
+        p2.buy(2)
+        console.log(p1)
+    </script>
+</body>
+</html>

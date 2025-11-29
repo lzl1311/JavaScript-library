@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user = {
+            address:'北京',
+            name:'高小乐',
+            num: 1,
+            child:{
+                address:'上海',
+                name:'海绵宝宝'
+            },
+            say(){
+                return 'hello';
+            }
+        }
+        console.log(false ?? 100);
+        console.log(0 ?? 100);
+        console.log(null ?? 100);
+        console.log(undefined ?? 100);
+        console.log(user.child.eat ?? user.say());
+    </script>
+</body>
+</html>
