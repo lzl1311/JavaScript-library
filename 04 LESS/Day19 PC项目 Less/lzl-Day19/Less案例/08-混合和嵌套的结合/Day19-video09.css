@@ -1,0 +1,11 @@
+.box {
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #b7f617;
+  color: #b7f617;
+}
+.box01::after {
+  content: "";
+  display: block;
+  clear: both;
+}

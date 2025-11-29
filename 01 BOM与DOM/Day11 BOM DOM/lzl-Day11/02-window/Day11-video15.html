@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            font-size: 400px;
+        }
+    </style>
+</head>
+    <!-- 
+    单次定时器：
+    setTimeout(回调函数, 时间间隔)		时间间隔单位是毫秒，默认值是 0， 返回定时器标记
+    clearTimeout(定时器标记)			  停止定时器，指定定时器标记
+    -->
+<body>
+    <div id="box">
+        11
+    </div>
+    <script>
+        // 设置单次定时器
+        var num=11;
+        var boxElm = document.getElementById('box')
+        runTime();
+        function runTime(){
+            num--;
+            boxElm.innerHTML = num;
+            if(num===0){
+                return;
+            }
+            setTimeout(runTime,1000);
+        }
+    </script>
+</body>
+</html>

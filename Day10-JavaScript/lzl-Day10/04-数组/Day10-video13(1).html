@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 实例的访问器方法(2)参数需要回调函数
+    执行完方法后，结算结果以返回值给出，而调用方法的对象本身不会被修改
+    forEach()           遍历数组，没有返回值
+    filter()            返回由复合条件的元素组成的新数组，如果回调函数返回true，与之对应的元素表示复合条件
+    map()               返回由回调函数的返回值 (return) 组成的新数组，新数组长度与原数组一致
+    every()             只有每个回调函数都返回true，every方法才返回true，否则every方法返回true
+    some()              只有有一个回调函数返回true，some方法就返回true
+    reduce()            用于累计运算，最后一次回调函数的返回值作为reduce方法的返回值
+    reduceRight()       reduce()从左到右遍历，reduceRight从右到左遍历
+    -->
+    <script>
+        var users = [
+            {name: '曹操', age: 67, address: '许昌'},
+            {name: '刘备', age: 47, address: '成都'},
+            {name: '孙权', age: 37, address: '南京'},
+            {name: '吕布', age: 51, address: '包头'},
+            {name: '赵云', age: 46, address: '石家庄'},
+            {name: '诸葛亮', age: 53, address: '南阳'}
+        ];
+        console.log(users);
+        // forEach
+        users.forEach(function(item,index){
+            console.log(item,index)
+        });
+        console.log('');
+
+        // filter
+        var res = users.filter(function(item,index){
+            console.log(item,index);
+            // if(item.age>40){
+            //     return true;
+            // }
+            return item.age>40;
+        })
+        console.log(res);//返回年龄大于40的
+        console.log('')
+
+        // map
+        // 得到由每个用户名组成的数组
+        var user02 = users.map(function(item,index){
+            console.log(item,index);
+            return index;
+        })
+        console.log(user02);
+        // 让每个用户的年龄减少10岁
+        var user03 = users.map(function(item,index){
+            item.age-=10;
+            return item;
+        })
+        console.log(user03);
+        console.log('');
+        // every
+        //判断所有用户是不是都是成年人
+        var user04 = users.every(function(item,index){
+            return item.age>18;
+        })
+        console.log('判断所有用户是不是都是成年人',user04);
+        // 判断用户的名字是不是都是两个字
+         var user05 = users.every(function(item,index){
+            return item.name.length ===2
+        })
+        console.log('判断用户的名字是不是都是两个字',user05);
+        console.log('');
+
+        // some()
+        // 判断是否有住在南京的用户
+        var res02 = users.some(function(item,index){
+            console.log(item,index);
+            return item.address ==='南京';
+        })
+        // 执行一次
+        console.log(res02);//true
+        console.log('');
+
+        // reduce() 第一参数是回调函数 第二个参数可选
+        users.reduce(function(prev,item,index,arr){
+            // prev 是上一次回调函数的返回值
+            console.log(prev,item,index)
+            return item.name
+        })
+        // 因为没有设置初始值,reduce 会默认以 users[0] 作为第一次的 prev，然后从 users[1] 开始遍历
+        console.log('');
+
+        // 计算所有用户的年龄和
+        var res03 = users.reduce(function(prev,item){
+            return prev+=item.age
+        },0)
+        console.log('所有用户的年龄和',res03);
+
+        var nums = [12,34,45,67,76,87,1122];
+        var n = nums.reduce(function(prev,item){
+            return prev+=item
+        },0)
+        console.log(n);
+    </script>
+</body>
+</html>

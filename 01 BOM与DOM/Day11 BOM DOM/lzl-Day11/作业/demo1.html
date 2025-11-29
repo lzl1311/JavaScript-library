@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .box {
+            color: #8cf348;
+            text-align: center;
+            overflow: hidden;
+        }
+        .btns{
+            position: fixed;
+            right: 0;
+            bottom: 10px;
+        }
+        .btn{
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            margin: 10px 0;
+            text-align: center;
+            background-color: #8cf348;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1"><h2>ONE</h2></div>
+    <div class="box box2"><h2>TWO</h2></div>
+    <div class="box box3"><h2>THREE</h2></div>
+    <div class="box box4"><h2>FOUR</h2></div>
+    <div class="box box5"><h2>FIVE</h2></div>
+
+
+    <div class="btns">
+        <div class="btn" id="prevBtn">上一页</div>
+        <div class="btn" id="nextBtn">下一页</div>
+        <div class="btn" id="topBtn">返回顶部</div>
+    </div>
+    <script>
+        var boxs = document.querySelectorAll('.box');
+        boxs.forEach(function(ele){
+            ele.style.height = window.innerHeight + 'px';
+        });
+
+        // 上一页
+        var prevBtn = document.getElementById('prevBtn');
+        prevBtn.onclick = function(){
+            scrollBy({
+                left:0,
+                top:-innerHeight,
+                behavior:"smooth"
+            })
+        };
+        // 下一页
+        var nextBtn = document.getElementById('nextBtn')
+        nextBtn.onclick = function(){
+            scrollBy({
+                top:innerHeight,
+                behavior:"smooth"
+            })
+        }
+        // 返回顶部
+        var topBtn = document.getElementById('topBtn')
+        topBtn.onclick = function(){
+            scrollTo({
+                top:0,
+                behavior:"smooth"
+            })
+        }
+    </script>
+</body>
+</html>

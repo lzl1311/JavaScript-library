@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  
+    封装函数
+   'get-element-by-id' 转为 'getElementById'
+   'set-name-by-class-name' 转为 'setNameByClassName'
+    -->
+    <script>
+        var n = 'get-element-by-id';
+        var n1= n.split('-');
+        for(var i=1;i<n1.length;i++){
+            //先选取元素第一位，第一位大写，再加上后面的字符串
+            n1[i]=n1[i].charAt(0).toUpperCase()+n1[i].slice(1);
+        }
+        console.log(n1.join(''))
+
+        // 封装函数turn
+        function turn(string){
+            n=string.split('-');
+            for(var i=1;i<n.length;i++){
+                n[i]=n[i].charAt(0).toUpperCase() +n[i].slice(1);
+            }
+            var result =n.join('');
+            return console.log(result)
+        }
+        turn('set-name-by-class-name');
+    </script>
+
+</body>
+</html>

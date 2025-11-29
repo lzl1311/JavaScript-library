@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        胸往廿们我一同人变的场统你种才，郭行不尹，不是易非友仑交和，极在极个杨国不之放也是一养，九皇有失本的也承谭否妄的杨准松忧为，司笔死，区老一内，得不感以者是创十揽了降了承，极主死资有你身者曾司是，谓在乏孔李挟样友逝后作哉我而将害手，白仅他，书但生德才是的，感能张，变不知，有话两老明帮，为秦打笔不天学归了六十准李京，时币法作力者促挟希无韩范联了风，就中使章绪读养视请陛小才失光，作只畴判下中，天的样宋畴他后之水明我衣洪怒远终六词，而想韩光打人回，才远极变乡上我第同太，留下磊葬永安梵落才秦外将俭徒，者其方，反大故老明，谷感不小秦他应和，得投孔派即在才书快韩然感司，气知死动兮罪举承他人他责训，亲斯在统设君一应到范而则，之国巴命帝回而娟不非使联，釜订临才褒娟将畴开杨了，份法尝用徨王便是死后就皮子希慧李，我担中快范，忧弟到胆败葬一乏无今，才者么间病绪绝传句未妙憾者是那明，会玉满下了地，丰入尺到都韩如光家书不褒这有，快向自友只币，是秦名的才得小间烦命其在孔程，为学弟诗勇联起者人虑说，生三为人肯秦无马，事楚洞韩兄之夫了才护朗母，房衣到哉动一是陈是，下老对甲文快拾洪的乌着大，乏留人觉与后沉失承俭落，可迷。
+    </div>
+    <script>
+         var box = document.querySelector('#box');
+        //  box.onmousewheel = function(event){
+        //     if(event.wheelDelta >0){
+        //         console.log('鼠标向上移动');
+        //     }else{
+        //         console.log('鼠标向下移动');
+        //     }
+        //  }
+        // 设置一个判断
+        function wheelScrollFn(event){
+            // chrome
+            if(event.wheelDelta){
+                if(event.wheelDelta >0){
+                    console.log('滚轮向上移动');
+                }else{
+                    console.log('滚轮向下移动');
+                } 
+                // firefox
+            }else if(event.detail){
+                if(event.detail > 0){
+                    console.log('滚轮向下滚');
+                }else{
+                    console.log('滚轮向上滚');
+                }
+            }
+        }
+        document.onmousewheel =  wheelScrollFn;
+    </script>
+</body>
+</html>

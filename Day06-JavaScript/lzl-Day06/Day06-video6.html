@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>控制台输出等腰三角形</title>
+</head>
+<body>
+    <script>
+        //如果把星号循环嵌套在空格循环，就会造成混乱，并且空格是给每一个星号加
+        var num=prompt('请输入一个数字');
+        for(var n=1;n<=num;n++){
+            var str=''//用于拼接
+            for(i=0;i<num-n;i++){
+                str=str+' ';
+            }
+            for(i=0;i<2*n-1;i++){
+                str=str+'*';
+            }
+            console.log(str);
+        }
+    </script>
+</body>
+</html>

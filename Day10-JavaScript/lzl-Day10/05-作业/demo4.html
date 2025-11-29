@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    输出当前日期时间，时间格式如下 “2021-03-04 19:02:56” （字符串拼接）
+    -->
+    <script>
+        var date = new Date()
+        console.log(date)
+        var y = date.getFullYear();
+        var m = date.getMonth()+1;
+        var d = date.getDate();
+        var h = date.getHours();
+        var i = date.getMinutes();
+        var s = date.getSeconds();
+
+        // 个位数补零
+        m = m<10 ? '0'+m :m;
+        d = d<10 ? '0'+d :d;
+        h = h<10 ? '0'+h :h;
+        i = i<10 ? '0'+i :i;
+        s = s<10 ? '0'+s :s;
+
+        // 拼接
+        console.log(y+ '-' +m+ '-' +d+ ' ' +h+ ':' +i+ ':' +s);
+    </script>
+</body>
+</html>

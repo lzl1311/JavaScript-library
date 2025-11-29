@@ -1,0 +1,45 @@
+.box {
+  width: 200px;
+  height: 100px;
+  /*选中 .box元素内部后代所有.item类 */
+  /* 选中.box的子元素，不包含孙子辈等等后代 */
+  /* 选中.box相邻的兄弟元素紧跟的第一个元素*/
+  /*选中与 .box同级，且在 .box后面的所有.image，不要求紧相邻*/
+}
+.box .item {
+  background-color: #ccc;
+  font-size: 19px;
+}
+.box > .item01 {
+  background-color: #72c12d;
+  font-family: '宋体';
+}
+.box + .item02 {
+  font-size: 15px;
+  color: #4891bb;
+}
+.box ~ .image {
+  width: 200px;
+  margin: 20px;
+}
+.box01:hover {
+  color: #13d6f4;
+}
+.box01:active {
+  background-color: #4172f7;
+}
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width = 765px) {
+  .container {
+    width: 200px;
+  }
+}
+@media (min-width = 654px) {
+  .container {
+    width: 400px;
+  }
+}

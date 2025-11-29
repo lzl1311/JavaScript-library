@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            margin: 100px auto;
+            width:600px;
+            height: 150px;
+            display: flex;
+            overflow: hidden;
+            background-color: #ccc;
+        }
+
+        .wrapper img {
+            /* 在图片没有被加载到的时候，会因为在伸缩盒布局中被收缩，导致数据不准，设置css属性确保不伸缩 */
+            flex: 0 0 auto;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="wrapper">
+        <img src="../images/db01.jpg" alt="">
+        <img src="../images/db02.jpg" alt="">
+        <img src="../images/db03.jpg" alt="">
+        <img src="../images/db04.jpg" alt="">
+        <img src="../images/db05.jpg" alt="">
+        <img src="../images/db06.jpg" alt="">
+        <img src="../images/db07.jpg" alt="">
+        <img src="../images/db08.jpg" alt="">
+        <img src="../images/db09.jpg" alt="">
+        <img src="../images/db10.jpg" alt="">
+    </div>
+    <!-- 你想到了让值变成0 -->
+    <script>
+        (function(){
+            // 获取元素
+            var boxItems = document.querySelectorAll('#box img');
+            var box = document.querySelector('#box')
+            var imgwidth = box.firstElementChild.offsetWidth;
+            var imgLength = box.children.length;
+            // 复制所有图片
+            box.innerHTML += box.innerHTML;
+            // 设置定时器
+            setInterval(function(){
+                box.scrollLeft +=1;
+                if(box.scrollLeft > imgLength*imgwidth){
+                    box.scrollLeft = 0
+                }
+            },1)
+        })()
+    </script>
+</body>
+</html>

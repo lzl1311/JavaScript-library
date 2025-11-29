@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //整数 int
+        var n02 =123;
+        var n01 = 0o12;// 八进制,只能用于表示整数，下面也一样
+        var n03 = 0b1010;// 二进制
+        var n04 = 0x12;//十六进制表示
+        console.log(n01);
+        console.log(n03);
+        console.log(n04);
+
+        //浮点 float
+        var n05=0.3;
+        console.log(n05);
+
+        //使用科学计数法表示number
+        var n06= 1.2e15;
+        var n07=1.2e-3;
+        console.log(n06);
+        console.log(n07);
+        console.log('');
+        console.log('');
+        console.log('');
+
+        //NaN(全称Not a Number)
+        //特点：①与任何数字计算后都是NaN，②NaN与任何数字不相等，包括它自己
+        //isNaN()函数，判断值是不是有效数字，是有效数字则false，不是则true。
+        var n07=NaN;
+        console.log(n07)
+        console.log(typeof(n07));
+        console.log(n07*20);
+        console.log(typeof(250<100));
+        console.log('');
+        console.log('');
+        console.log('');
+        console.log(isNaN(100));
+        console.log(isNaN(true));//因为true可以转换成1，是有效数字
+        console.log(isNaN('hello'));
+
+        console.log('');
+        console.log('');
+        console.log('');
+
+        //数字的有效范围
+        /*
+            1. JS 中能表示的最大的数字：  1.7976931348623157e+308
+            2. JS 中能表示的最小的正数：  5e-324
+            3. 如果超出有效范围，用 Infinity、-Infinity 表示
+            4. 函数 isFinite() 判断一个值是否为有限数，如果是有效数字结果是true
+            无限数字： Infinity、-Infinity、NaN
+        */
+        console.log('js中能表示的最大的数',Number.MAX_VALUE);
+        console.log('js中能表示的最小的正数',Number.MIN_VALUE);
+        console.log(isFinite(Infinity));
+
+        
+        // 需要使用单引号或双引号表示字符串的直接量
+        // 单引号定义的字符串内容中不要有单引号，双引号定义的字符串内容中不要有双引号
+        var msg01 = 'Hello"高小乐';
+        var msg02 = "你好'老头乐";
+        console.log(msg01);
+        var msg03='锄禾日当午\n汗滴禾下土\n谁知盘中餐\n粒粒皆辛苦';
+        console.log(msg03);
+
+        //转义字符
+        /*
+        \n  表示换行
+        \'			单引号
+        \"			双引号
+        \uXXXX 		四位十六进制表示unicode字符串
+        */
+    </script>
+</body>
+</html>

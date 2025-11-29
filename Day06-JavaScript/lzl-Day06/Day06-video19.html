@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function 关键字声名的变量，预处理阶段，创建并赋值
+        // 使用变量
+        console.log(fn01);   // 函数本身
+        fn01();
+        console.log(fn02);   // undefined
+        // fn02();  // fn02 is not a function 
+
+        // 创建函数
+        // 正式执行到该语句的时候，什么不干，直接跳过
+        function fn01() {
+            console.log('fn01');
+        }
+        // 创建函数 表达式方式
+        // 正式执行到该语句的时候, 仅仅进行赋值
+        var fn02 = function() {
+            console.log('fn02');
+        };
+
+        console.log('');
+        console.log(fn01);  // 函数本身
+        fn01();
+        console.log(fn02);  // 函数本身
+        fn02();
+    </script>
+</body>
+</html>

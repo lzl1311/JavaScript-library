@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 500px;
+            height: 1000px;
+            background-color: #ccc;
+            padding: 100px;
+        }
+        #box01{
+            width: 300px;
+            height: 100px;
+            background-color: #fff;
+            margin: 100px;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    监听对象是box 但目标元素不一定是监听事件的元素，也可能是监听事件的元素的子元素
+    如果没有子元素，那么目标元素元素就是监听事件的元素     出自 冒泡事件
+    -->
+    <div id="box">
+        <div id="box01"></div>
+        <div id="box01"></div>
+    </div>
+    <script>
+        var box = document.querySelector('#box');
+        box.onmousedown = function(event){
+            this.style.backgroundColor = '#36de23';
+            console.log(event.button);
+        }
+        box.onmouseup = function(even){
+            this.style.backgroundColor = '#ccc';
+        }
+        box.onmousemove = function(event){
+            this.firstElementChild.innerHTML = '在目标元素上的位置：'+ 'x:' + event.offsetX +' ' + 'y:' + event.offsetY;
+            this.firstElementChild.innerHTML +='<br>'+'在目标元素上的位置：(视口)' +'x:'+event.clientX+' '+'y:'+ event.clientY;
+            this.firstElementChild.innerHTML +='<br>'+'在目标元素上的位置：(屏幕)' +'x:'+event.screenX+' '+'y:'+ event.screenY;
+            this.firstElementChild.innerHTML +='<br>'+'在目标元素上的位置：(页面)' +'x:'+event.pageX+' '+'y:'+ event.pageY;
+        }
+    </script>
+</body>
+</html>

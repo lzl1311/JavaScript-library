@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #checkList{
+            list-style: none;
+        }
+        li{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <ul id="checkList">
+        <li>
+            <input type="checkbox">
+            一作极自联慨是书与天嗣也们徒乏五，同起。
+        </li>
+        <li>
+            <input type="checkbox">
+            一作极自联慨是书与天嗣也们徒乏五，同起。
+        </li>
+        <li>
+            <input type="checkbox">
+            一作极自联慨是书与天嗣也们徒乏五，同起。
+        </li>
+        <li>
+            <input type="checkbox">
+            一作极自联慨是书与天嗣也们徒乏五，同起。
+        </li>
+        <li>
+            <input type="checkbox">
+            一作极自联慨是书与天嗣也们徒乏五，同起。
+        </li>
+    </ul>
+    <input type="checkbox" id="btn01">全选
+    <script>
+        // 获取按钮对象
+        var btnEle = document.querySelector('#btn01')
+        // 获取复选框对象
+        var chexkBoxItems = document.querySelectorAll('#checkList input');
+        
+        btnEle.onclick = function(){
+            // 遍历可以用forEach
+            chexkBoxItems.forEach(function(checkBoxEle){
+                checkBoxEle.checked = btnEle.checked;
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建函数第二种方式</title>
+</head>
+<body>
+    <script>
+//创建函数-第二种方式-表达式方式
+        var num=10;
+        var arr=[10,20,30];
+        var fun01=function() {
+            console.log('hello my name is Tom');
+        }
+        fun01();
+//创建一个有参的函数
+        var fun02=function(num1,num2){
+            return(num1 * num2);
+        }
+        var res=fun02(3,4);
+        console.log(res);
+        console.log(fun02(100,2));
+        
+    </script>
+</body>
+</html>

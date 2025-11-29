@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">请输入银行卡号:</div>
+    <input type="text">
+    <div id="boxcopy"></div>
+    <script>
+        var box = document.querySelector('#box');
+        var boxcopy = document.querySelector('#boxcopy');
+        var inp = document.querySelector('input');
+
+        inp.onkeyup = function(event){
+            boxcopy.innerHTML = inp.value;
+            //boxcopy.innerHTML = event.key;
+        }
+    </script>
+</body>
+</html>

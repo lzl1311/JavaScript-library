@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多向分支-else if</title>
+</head>
+<body>
+    <script>
+        var score=prompt('请输入您的语文成绩')
+        /*
+        if(source>=90){
+            alert('优');
+        } else if(source<90 && source>=60){
+            alert('良');
+        } else if(source<60){
+            alert('不及格');
+        }*/
+        //优化后
+        if(score <60){
+            alert('不及格');
+        }else if(score <90){
+            alert('良');
+        }else {
+            alert('优');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>累减累减运算/算术运算符</title>
+</head>
+<body>
+    <!--1.算术运算符 2.关系运算符 比较运算符 3.逻辑运算符 4.位运算符 5.赋值运算符 6.其他运算符 -->
+    <script>
+
+        //正号 负号
+        console.log(45%10);//5
+        console.log(+89);//正数
+        console.log(+true);//1
+        var v1=false;
+        console.log(+v1);//0
+        console.log(v1);//false
+        var v2=-89.23;
+        console.log(+v2);//-89.23
+        console.log('');
+        console.log('');
+        console.log('');
+
+        console.log(-89);//89
+        console.log(-true);//-1
+        console.log(-v1);//0
+        console.log(-v2);//89.23
+        console.log('');
+        console.log('');
+        console.log('');
+
+        //创建变量
+        var num =18;
+        //累加累减运算
+        //副作用要求必须是变量的形式
+        num++;
+        console.log(num);
+        num--;
+        console.log(num);
+        var v=true;//因为var，所以是变量了，可以运算了
+        v++;
+        console.log(v);//2
+        console.log('');
+        console.log('');
+        console.log('');
+
+        //累加累减组成的表达式的值
+        /*累加累减：运算符在前在后的区别：
+        操作数在前，表达式的值是没有累加累减前的值
+        操作数在后，表达式的值是累加累减后的值
+        */
+
+        var v1=10;
+        console.log(v1++);//10
+        console.log(v1);//11
+        console.log('');
+
+        var v2=10;
+        console.log(++v2);//11
+        console.log(v2);//11
+        console.log('');
+
+        var v3=10;
+        console.log(v3--);//10
+        console.log(v3);//9
+        console.log('');
+
+        var v4=10;
+        console.log(--v4);//9
+        console.log(v4);//9
+        console.log('');
+
+        var num=10;
+        var res=(num++) - (num--) + (++num) + (--num) + (num++);
+        console.log(res);//30
+        console.log(num);//11
+    </script>
+</body>
+</html>

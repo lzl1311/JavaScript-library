@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <select id="box">
+            <option value="1">烤五花肉</option>
+            <option value="2">火锅</option>
+            <option value="3">炸小肉丸</option>
+            <option value="4">KFC</option>
+        </select>
+        <input type="text" id="inputbox">
+    </form>
+    <script>
+        var box = document.querySelector('#box');
+        var inp = document.querySelector('#inputbox')
+        box.onchange = function(){
+            console.log(box.selectedIndex)
+        }
+        inp.onchange = function(){
+            console.log(inp.value)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //第一种创建对象的方式 直接量方式
+        var obj1={
+            username:'Tom',
+            age:13,
+            home_address:'上海',
+            'school-address':'北京',
+            friend:['刘姥姥','王姥姥','太姥姥'],
+            child:{
+                name:'little-Tom',
+                age:1
+            },
+            getInfo:function(){
+                console.log('obj2 getInfo')
+            }   
+        };
+        //第二种 object 函数
+        var obj2 = Object();
+
+        // 第三种 object 构造函数
+        var obj3 = new Object();
+
+        console.log(obj1,typeof(obj1));
+        console.log(obj2,typeof(obj1));
+        console.log(obj3,typeof(obj1));
+
+        // 读取属性的值
+        console.log(obj1.age*2);
+        console.log(obj1.friend)
+
+        //[] 语法 读取对象的属性
+        console.log(obj1['username']) ;
+        console.log(obj1['friend'][2]);
+        console.log(obj1['child']['age']);
+
+        // 修改属性的值
+        obj1.age=10;
+        obj1.phone=12345;
+        console.log(obj1);
+        obj1.getInfo();
+        console.log(obj1['user']);
+
+        //必须使用[]语法
+        // 情况一   属性名不符合标识规范
+        //console.log(obj1.school-address);
+        console.log(obj1['school-address']);
+
+    </script>
+</body>
+</html>

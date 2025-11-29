@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select {
+            width: 160px;
+            height: 36px;
+        }
+    </style>
+</head>
+<body>
+    <h1>请选择地址</h1>
+    <select id="provSel"></select>
+    <select id="citySel"></select>
+    <script>
+        (function(){
+             // 定义地址信息
+            var provList = ['江苏', '浙江', '安徽', '河南'];
+            var cityList = [
+                ['南京', '苏州', '徐州', '无锡', '常州'],
+                ['杭州', '宁波', '温州', '绍兴', '湖州'],
+                ['合肥', '芜湖', '滁州', '马鞍山', '黄山'],
+                ['郑州', '洛阳', '开封', '安阳', '许昌'],
+            ];
+            // 获取元素
+            var provSel = document.querySelector('#provSel');
+            var citySel = document.querySelector('#citySel');
+            // 遍历
+            provList.forEach(function(item,index){
+                provSel.add(new Option(item,index))
+            })
+            provSel.onchange = function(){
+                //加元素前先清空容器，否则会叠加
+                // citySel.innerHTML = '';
+                citySel.options.length = 0;
+                var Index = this.selectedIndex;
+                cityList[Index].forEach(function(item,index){
+                    citySel.add(new Option(item,index))
+                })
+            }
+            // 看成一个值是回调函数的方法，方法可以调用
+            provSel.onchange();
+        })()
+    </script>
+</body>
+</html>

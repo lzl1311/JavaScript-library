@@ -1,0 +1,22 @@
+.box {
+  width: 500px;
+  height: 500px;
+  font-size: 18px;
+  background-color: #ccc;
+}
+@media (min-width:768px) {
+  .container {
+    width: 100%;
+  }
+}
+@media (min-width:999px) {
+  .container {
+    width: 790px;
+  }
+}
+#page {
+  width: 500px;
+  padding: 10px;
+  color: #75f53a;
+  background-color: #de267c;
+}

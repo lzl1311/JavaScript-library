@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- String实例的属性和方法
+    length      读取字符串长度，字符个数
+    
+    charAt()    返回指定位置的字符，参数是指定索引
+    indexof()   返回指定的内容在字符串中第一次出现的位置(索引)，参数是指定内容
+    lastIndexof()   返回指定的内容在字符串中最后一次出现的位置(索引)，参数是指定内容  
+    slice()    截取字符串并返回，参数指定开始位置和结束位置，返回的值中不包含结束位置，不设置结束位就一直截取到字符串完
+    substring()    截取字符串并返回，规则同上
+    substr()    截取字符串并返回 ， 参数指定开始位置和截取长度
+    split()     分隔字符串返回数组，参数指定分隔符
+    toUpperCase()   将字符串所有字母转为大写并返回，不需要参数
+    toLowerCase()   将字符串所有字母转为小写并返回，不需要参数
+    charCodeAt()    返回指定位置的字符的Unicode编码，参数是指定的索引
+    -->
+    <!-- String构造函数本身的属性和方法
+    String.fromCharCode()   指定Unicode返回字符，参数是Unicode编码是个数字
+    -->
+    <script>
+        // 创建字符串实例
+        var msg = 'hello,懒羊羊,喜欢青草蛋糕！';
+        // charAt()
+        console.log('第三个字符：',msg.charAt(3)) ;
+        console.log('第三个字符：',msg[3]) ;
+        console.log('');
+        // indexof()
+        console.log(msg.indexOf('羊'));//7
+        console.log(msg.indexOf('青草'));//12
+        console.log(msg.lastIndexOf('羊'));//8
+        // 判断字符串中是不是包含某个内容，不存在就返回-1
+        console.log(msg.indexOf('喜羊羊'));//-1
+        console.log('');
+
+        // slice()
+        console.log(msg.slice(6,9)); //选取6 7 8
+        console.log(msg.slice(6));
+        console.log('');
+
+        // substring
+        console.log(msg.substring(6,9)); //选取6 7 8
+        console.log(msg.substring(6));
+        console.log('');
+
+        // substr()
+        console.log(msg.substr(6,5)); //起始位置6，选5个字符
+        console.log(msg.substr(6));
+        console.log('');
+
+        // split()
+        console.log(msg.split(','));
+        console.log(msg.split('懒'));//懒会被吞
+        console.log(msg.split(''));
+
+        // toUpperCase()
+        console.log(msg.toUpperCase());
+        console.log('');
+
+        // toLowerCase()
+        console.log(msg.toLowerCase());
+        console.log('');
+
+        // charCodeAt()
+        console.log(msg.charCodeAt(2)); 
+        console.log('a'.charCodeAt(0));
+        console.log('');
+
+        //String.fromCharCode
+        console.log(String.fromCharCode(99));//c
+        console.log(String.fromCharCode(32610));//罢
+    </script>
+</body>
+</html>

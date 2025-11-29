@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        // 数组     构造函数是Array
+        var arr = [];
+        // 原型链：arr --> Array.prototype -->Object.prototype
+        // 构造函数:Array   Object
+        // Array是子类  Object是父类
+        // 子类实例的原型是父类的实例
+        function A(){}
+        function B(){}
+        // A作为父类 B作为子类
+        // B的实例的原型是A的实例
+        // B.prototype(B的实例的原型)是A的实例
+        // B.prototype = new A();
+        // B.prototype.constructor = B;
+
+
+        /*
+        Array(子类) Object(父类)
+        Array的实例的原型是Object的实例
+        Array.prototype.constructor = Array
+        */  
+    </script>
+</body>
+</html>

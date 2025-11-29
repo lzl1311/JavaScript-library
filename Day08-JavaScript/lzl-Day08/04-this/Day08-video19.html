@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一种在构造函数中使用this
+        function User(userName,userAge,userAddress){
+            this.name = userName;
+            this.age = userAge;
+            this.address = userAddress;
+            this.addshopping = function(product){
+                console.log(this.name + '将' +product +'加入购物车');
+            }
+            this.buy = function(product){
+                console.log(this.name + '买了' +product);
+            }
+            console.log(this);
+        }
+
+        var u1 = new User('高小乐',23,'上海');
+        var u2 = new User('懒羊羊',3,'羊村');
+        console.log(u1);
+        console.log(u2);
+    </script>
+</body>
+</html>

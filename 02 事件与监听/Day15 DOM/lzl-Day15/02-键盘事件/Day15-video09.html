@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" >
+    <script>
+        var inp = document.querySelector('input');
+        inp.onkeydown = function(event){
+            console.log('按键被按下了');
+            console.log(event.keyCode); 
+            console.log(event.keyCode ,event.which,event.key); 
+        }
+        inp.onkeyup = function(){
+            console.log('按键抬起来了！！！')
+        }
+        document.onkeydown = function(){
+            console.log('按键在document被按下了');
+            console.log(event.keyCode ,event.which,event.key); 
+        }
+    </script>
+</body>
+</html>

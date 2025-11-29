@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    .hasOwnProperty判断方式
+     in 判断方式
+     
+    -->
+    <script>
+        //创建数组
+        var arr = [10,20,30,40,50,60];
+        arr.username = '懒羊羊';
+        Array.prototype.address = '上海';
+        // 只要能用就是true
+        console.log('length' in arr);//用于判断指定的属性是否存在于对象
+        console.log('push' in arr);
+
+        // .hasOwnProperty判断方式
+        console.log(arr.hasOwnProperty('username')) ;//true
+        console.log(arr.hasOwnProperty('address')) ;//false
+    </script>
+</body>
+</html>

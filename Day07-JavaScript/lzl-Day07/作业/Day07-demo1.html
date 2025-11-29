@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. 数组排序  sort 方法  按照年龄升序排列
+        var users = [
+            {name: '曹操', age: 67, address: '许昌'},
+            {name: '刘备', age: 47, address: '成都'},
+            {name: '孙权', age: 37, address: '南京'},
+            {name: '吕布', age: 51, address: '包头'},
+            {name: '赵云', age: 46, address: '石家庄'},
+            {name: '诸葛亮', age: 52, address: '南阳'}
+        ]
+        //从小到大
+        // users.sort(( next,prov) =>next.age - prov.age);
+        // console.log(users)
+
+        users.sort(function(a,b){
+            //console.log(a,b);
+           return a.age - b.age;
+        })
+        console.log(users);
+        
+    </script>
+</body>
+</html>

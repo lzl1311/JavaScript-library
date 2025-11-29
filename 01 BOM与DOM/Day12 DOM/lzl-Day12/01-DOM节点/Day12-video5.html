@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 五大节点类型
+document节点    文档类型的节点
+comment节点     注释类型的节点
+element节点     元素类型的节点
+text节点        文本类型的节点
+attribute节点   属性类型的节点
+-->
+<!-- 节点的属性
+所有节点对象具有的以下3个属性
+nodeName
+noddeValue
+nodeType
+-->
+<body>
+    <div class="text" id="str">
+        乌斗罪家了，反也程。
+        中能君娇想承气，子。
+        <!-- 己面上说云者其助志。 -->
+    </div>
+    <script>
+        console.log(document);
+        console.log('doucment_name:',document.nodeName);
+        console.log('document_value:',document.nodeValue);
+        console.log('document_type',document.nodeType);
+        console.log('')
+
+        var ele = document.getElementById('str');
+        console.log('element_name:',ele.nodeName);
+        console.log('element_value:',ele.nodeValue);
+        console.log('element_type:',ele.nodeType);
+        console.log('');
+
+        var attribute = ele.getAttributeNode('class');
+        console.log('attribute_name:',attribute.nodeName);
+        console.log('attribute_value:',attribute.nodeValue);
+        console.log('attribute_type:',attribute.nodeType);
+        console.log('');
+
+        var text = ele.firstChild;
+        console.log('text_name:',text.nodeName);
+        console.log('text_value:',text.nodeValue);
+        console.log('text_type:',text.nodeType);
+        console.log('');
+
+        var comment = ele.childNodes[1];
+        console.log('comment_name:',comment.nodeName);
+        console.log('comment_value:',comment.nodeValue);
+        console.log('comment_type:',comment.nodeType);
+    </script>
+</body>
+</html>

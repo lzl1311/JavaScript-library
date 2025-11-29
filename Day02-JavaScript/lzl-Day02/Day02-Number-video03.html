@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //函数： Number()   参数写在小括号里    
+        //功能：只有纯数字字符串才能转换成有效数字，否则转为NaN
+        //string -> number
+        var msg='hello';
+        var n1 = Number(msg);
+        console.log(n1);
+
+        var n2=Number('45.67');
+        console.log(n2);
+        
+        console.log(Number('45.67'));//45.67
+
+        console.log(Number('0b011'));//3
+        console.log(Number('45e2'));//4500
+
+        console.log(Number('    23.45   '));//23.45,会自动去除两端空格，在进行转换
+        console.log(Number('23 .45'));//NaN
+
+        console.log(Number(''));//0，空字符串会转成0
+        console.log('');
+        console.log('');
+        console.log('');
+        console.log('');
+
+        //boolean -> number
+        console.log(Number(true));//1
+        console.log(Number(false));//0
+
+        //null -> number
+        console.log(Number(null));//0
+
+        //undefine -> number
+        console.log(Number(undefined));//NaN
+    </script>
+</body>
+</html>

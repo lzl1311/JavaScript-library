@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Object没有lenght，不能使用常规的调用
+    使用for in 
+    -->
+    <script>
+         var obj={
+            username:'Tom',
+            age:13,
+            home_address:'上海',
+            'school-address':'北京',
+            friend:['刘姥姥','王姥姥','太姥姥'],
+            child:{
+                name:'little-Tom',
+                age:1
+            },
+            getInfo:function(){
+                console.log('obj2 getInfo')
+            }   
+        };
+
+        for(var attr in obj){
+            // obj中没有attr这个属性名，所以常规的obj.attr会显示undefined
+            // attr是一个变量，使用[]，让浏览器明白这是一个变量，如果用.会让浏览器认为这是一个属性名
+            console.log(attr,obj[attr]);
+        }
+
+        for(var attr in obj){
+            console.log(attr,obj[attr]);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            padding: 20px;
+            width: 600px;
+            border: 1px dashed rgb(36, 153, 0);
+        }
+
+        p {
+            width: 500px;
+            padding: 20px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+     <div id="box" class="wrapper">
+        <p class="item">尹了未必极下一，薪的反法没第不人不上老。</p>
+        <div class="item">尹了未必极下一，薪的反法没第不人不上老。</div>
+        <p class="item">尹了未必极下一，薪的反法没第不人不上老。</p>
+        <div>尹了未必极下一，薪的反法没第不人不上老。</div>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet.</p>
+    <div class="item active">Lorem ipsum dolor sit amet.</div>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <script>
+        // 从整个文档中获取  ------------------------------
+        // 获取符合选择器条件的第一个元素
+        var boxElm = document.querySelector('#box');
+        var pEle = document.querySelector('.wrapper p.item');
+        var divEle = document.querySelector('.wrapper :nth-child(even)');
+        console.log(pEle);
+        console.log(divEle);
+        // 获取符合选择器条件的所有元素
+        var itemEle = document.querySelectorAll('.wrapper p');
+        var item01Ele = document.querySelectorAll('.item');
+        var idEle = document.querySelectorAll('#box');
+        console.log(itemEle);
+        console.log(item01Ele);
+        console.log(idEle);
+         // 从指定元素的后代中获取  ------------------------------
+         var item02 = boxElm. querySelectorAll('p');
+         console.log(item02)
+    </script>
+</body>
+</html>

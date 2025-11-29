@@ -1,0 +1,68 @@
+// 创建混合
+.content-box01(){
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -150px;
+}
+// 调用混合
+.item01{
+    .content-box01()
+}
+.item{
+    background-color: #ccc;
+    font-family: '宋体';
+    .content-box01();
+}
+// 创建有参数的混合
+.content-box02(@width,@height){
+    width: @width;
+    height: @height;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: (@width/2);
+    margin-top:(@height/2);
+}
+// 调用有参数的混合
+.item02{
+    .content-box02(800px,400px);
+}
+// 使用名字调用有参数的混合
+.item02{
+    .content-box02( @height:900px,@width:500px)
+}
+// 创建有默认值的混合
+// 有默认值的放后边 
+// 可以按顺序传参 也可以按名字传参
+// 有默认值的放前边 
+// 只能按名字传参
+.content-box03(@width,@height:300px){
+    width: @width;
+    height: @height;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: (@width/2);
+    margin-top:(@height/2);
+}
+.item03{
+    .content-box03(600px);
+}
+
+// @arguments获取参数列表
+.box-shadow(@x,@y,@b,@o,@color){
+    -webkit-box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    -o-box-shadow: @arguments;
+    box-shadow: @arguments;
+}
+.box{
+    width: 400px;
+    height: 200px;
+    background-color: #ccc;
+    .box-shadow(3px, 10px, 15px, 0px, #ccc)
+}

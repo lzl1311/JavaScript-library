@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(181, 17, 17);
+            color: aliceblue;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    获取时间戳，
+    得到的seconds是剩余时间的毫秒数
+    1s=1000ms   (10)1min = 60000ms  (100)1h = 3600000ms   (1000) 1d = 24*3600000ms
+    -->
+    <div id="time"></div>
+    <script>
+        var dstDate = new Date(2025, 10, 5,11,49,20);
+        // 这是一个立即执行的函数
+       (function(){
+            var timeEle = document.querySelector('#time');
+            // 获取时间对象
+            timeRun();
+            var intervalid = setInterval(timeRun,1000);
+            function timeRun(){
+                var currDate = new Date(); 
+                var seconds = dstDate.getTime() - currDate.getTime();
+                // 到达目标日期需要结束
+                if(seconds<=0){
+                    clearInterval(intervalid);
+                    timeEle.innerHTML = '春节快乐';
+                    return;
+                }
+                // 获取day
+                var d = Math.floor(seconds/(24*3600000));
+                var h = Math.floor((seconds%(24*3600000))/3600000);
+                var i = Math.floor((seconds%(3600000))/60000);
+                var s = Math.floor((seconds%60000)/1000);
+                //个位补0操作
+                d=d<10 ? '0'+d :d; 
+                h=h<10 ? '0'+h :h; 
+                i=i<10 ? '0'+i :i; 
+                s=s<10 ? '0'+s :s; 
+
+                timeEle.innerHTML = '距离春节还有<br>'+d+'天'+h+'小时'+i+'分钟'+s+'秒';
+            }
+       })();
+    </script>
+</body>
+</html>

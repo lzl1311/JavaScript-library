@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- arguments是系统创建的变量，只能在函数内使用
+    arguments的值是一个维数组，由函数调用的实参组成
+    使用arguments可以实现可变参数数量的函数
+    -->
+    <script>
+        function fun1(arg1,arg2){
+            console.log(arg1,arg2);
+            console.log(arguments);//系统创建的变量，只能在函数内部使用
+        }
+        fun1(1,2,3,4);
+
+        function fun2(){
+            var sum=0;
+            for(var i=0;i<arguments.length;i++){
+                sum=sum+arguments[i];
+            }
+            return sum;
+        }
+        console.log(fun2(1,2,3,100,4,500,900)) ;
+        
+    </script>
+</body>
+</html>

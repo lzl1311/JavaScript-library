@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            background-color: #ccc;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+        }
+        .box01{
+            width: 100px;
+            height: 10px;
+            background-color: #fff;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="box01"></div>
+        <div class="box01"></div>
+    </div>
+    <script>
+        box.onclick = function(event){
+            console.log(event);//pointerEvent
+            console.log(event.type);//获取事件名称
+        }
+        document.onkeydown = function(event){
+            console.log(event);//keyboardEvent
+            console.log(event.type);//keydown
+        }
+        box.addEventListener('contextmenu',function(event){
+            console.log(event.timeStamp);
+            console.log(event.target);
+        })
+        box.onclick = function(event){
+            console.log(event.type);
+            console.log(event.target);
+            console.log(event);
+        }
+    </script>
+</body>
+</html>

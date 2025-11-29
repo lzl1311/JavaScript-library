@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #textlist{
+            list-style: none;
+        }
+        #textlist li{
+            line-height: 30px;
+            border-bottom: 1px dashed #ccc;
+            margin: 10px 0;
+        }
+        .active{
+            background-color: rgb(151, 4, 4);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <ul id="textlist">
+        <li>说马只，卧刑着意洪谭爱斯，小贤在价来欲。</li>
+        <li>说马只，卧刑着意洪谭爱斯，小贤在价来欲。</li>
+        <li>说马只，卧刑着意洪谭爱斯，小贤在价来欲。</li>
+        <li>说马只，卧刑着意洪谭爱斯，小贤在价来欲。</li>
+        <li>说马只，卧刑着意洪谭爱斯，小贤在价来欲。</li>
+        <li>说马只，卧刑着意洪谭爱斯，小贤在价来欲。</li>
+        <li>说马只，卧刑着意洪谭爱斯，小贤在价来欲。</li>
+    </ul>
+    <script>
+        // 获取元素
+        var listItems = document.querySelectorAll('#textlist li');
+        
+        // 设置监听事件
+        for(var i=0;i<listItems.length;i++){
+            listItems[i].onclick = function(){
+                // this指向监听事件的元素()
+                this.classList.toggle('active')
+            }
+        }
+    </script>
+</body>
+</html>

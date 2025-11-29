@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 验证js是单线程     它的主线程只能一步步执行代码，不能同时做两件事 -->
+    <script>
+        // 创建一个定时器
+        setTimeout(function(){
+            console.log('时间到了');
+        },1)
+        for(var i=0;i<=100000000;i++){
+            Math.random() *i *i +i;
+        }
+        console.log('循环结束')
+    </script>
+</body>
+</html>

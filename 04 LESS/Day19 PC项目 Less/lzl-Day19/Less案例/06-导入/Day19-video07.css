@@ -1,0 +1,8 @@
+@import "index.css";
+.box {
+  color: #f9eb2d;
+  font-size: 18px;
+  border-style: dashed;
+  border-width: 1px;
+  border-color: #f9eb2d;
+}

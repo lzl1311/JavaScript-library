@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes boxScroll {
+            100% {
+                transform: translate(1000px) rotate(360deg);
+            }
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            background: rgb(60, 182, 8);
+            border-radius: 50%;
+            animation: boxScroll 3s 1s infinite alternate;
+            /* 关键帧名字 持续时间 延迟时间 无限次 交替运动 */
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        var box = document.querySelector('#box');
+        box.onanimationstart = function(){
+            console.log('start');
+        }//只触发了一次
+        box.onanimationend = function(){
+            console.log('end');
+        }//不可能被触发了
+        box.onanimationiteration =function(){
+            console.log('iteration');
+        }//动画每执行一次就触发一次，指这个boxScroll
+    </script>
+</body>
+</html>

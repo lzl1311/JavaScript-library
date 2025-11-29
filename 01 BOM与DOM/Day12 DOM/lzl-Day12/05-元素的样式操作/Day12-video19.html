@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            margin: 20px auto;
+            width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .item{
+            flex: 0 0 auto;
+            margin: 10px;
+            /* 设置这个之后宽高不会因为设置内外边距改变 */
+            box-sizing: border-box;
+            width: 200px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            background-color: #ccc;
+            cursor: pointer;
+        }
+        .active{
+            color: #f73377;
+            background-color: #80f134;
+            border: 2px solid #d41889;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+        <div class="item">懒羊羊</div>
+    </div>
+    <script>
+        // 获取对象
+        var boxitems = document.querySelectorAll('.item');
+        // 给所有div设置事件
+        boxitems.forEach(function(boxitem){
+            boxitem.onclick = function(){
+                if(boxitem.classList.contains('active') === false){
+                    boxitem.classList.add('active')
+                }else(
+                    boxitem.classList.remove('active')
+                )
+
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  
+    原始类型数据    Number，String，Boolean，既有值的状态也有对象的状态
+    -->
+    <script>
+        var num01 = 89;
+        var num02 = Number(88);
+        var num03 = new Number(87);
+
+
+        //不论处于什么状态，需要什么形式转为什么形式
+        console.log(num01);//89
+        console.log(num02);//88
+        console.log(num03);//Number {87}
+
+        // num03自动转成值的状态
+        console.log(num03 * num02);//7656
+
+        // num01/num02自动包装成对象
+        console.log(num01.constructor);//ƒ Number() { [native code] }
+        console.log(num02.constructor);//ƒ Number() { [native code] }
+        console.log(num03.constructor);//ƒ Number() { [native code] }
+
+        console.log(num01 instanceof Number);//false
+        console.log(num02 instanceof Number);//false
+        console.log(num03 instanceof Number);//true
+    </script>
+</body>
+</html>

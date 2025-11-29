@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>读写元素的文本内容</title>
+    <style>
+        .wrapper {
+            width: 600px;
+            padding: 20px;
+            border: 2px dashed #999;
+        }
+
+        .item {
+            padding: 20px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <button id="getBtn">读取内容</button>
+    <button id="setBtn">设置内容</button>
+    <br>
+    <br>
+
+    <div id="box" class="wrapper">
+        什志服新读可可是了雷韩勉能哉回极德，亲胜头洪养慷生韦训弟我心，恼谓落么，范愚可。
+        <ul>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+        </ul>
+        <p>救洪上，后与回才为居而高则讨入人，兮太者己，一葬逃而耐日光说都，天活太实他见使在自你他，水磊语皇，主了到心护病娇从叹是于尝时说，之生是千商的者下程友范本到哥，水亲丑不其见开我价，同月太反锐司土，仁位妙，在于仍负死，肯洪了而斯宫的言月别公竟是者韩都，公人家。</p>
+    </div>
+    <script>
+        var getBtn = document.querySelector('#getBtn');
+        var setBtn = document.querySelector('#setBtn');
+        var box = document.querySelector('#box');
+        var boxList = document.querySelectorAll('#box ul li')
+        getBtn.onclick = function(){
+            console.log('outerHTML:');
+            console.log(box.outerHTML);
+            console.log('')
+            console.log('innerHTML:');
+            console.log(box.innerHTML);
+            console.log('')
+            console.log('innerText:');
+            console.log(box.innerText)
+            console.log('')
+            console.log('textContent');
+            console.log(box.textContent);
+            console.log('');
+        }
+        setBtn.onclick = function(){
+            boxList[1].outerHTML = '国生无你孔秦上台的。' 
+        }
+    </script>
+</body>
+</html>

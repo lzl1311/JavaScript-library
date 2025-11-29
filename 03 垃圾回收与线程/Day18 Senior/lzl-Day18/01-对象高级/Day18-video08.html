@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现js中父类子类继承</title>
+</head>
+<body>
+    <script>
+        // 设置商品类
+        function Product(price,nums){
+            this.price = price;
+            this.nums = nums;
+        }
+        // 丑陋的写法
+        Product.prototype.discount = function(num){
+                this.price *= num;
+            };
+        Product.prototype.buy = function(){
+                this.nums-=1;
+            }
+        // 设置汽车类
+        function CarProduct(price,nums,discount){
+            // 实现父类的属性添加到子类实例中
+            /*利用call 只能 “借用” 构造函数给实例添加自身属性、方法，
+            但拿不到父类原型上的东西；
+            要访问父类原型方法，必须通过原型链*/ 
+            Product.call(this,price,nums);
+            this.speed = 200;
+        }
+        CarProduct.prototype.driver = function(){
+                console.log('这辆车可以被驾驶')
+            }
+        // CarProduct的实例的原型是Product的实例
+        CarProduct.prototype = new Product();
+        // CarProduct的实例的原型的constroduct是CarProduct
+        CarProduct.prototype.constructor = CarProduct;
+
+        var car1 = new CarProduct(17.8,100,0.9);
+        var car2 = new CarProduct(18.9,100,0.7);
+        console.log(car1);
+        console.log(car2);
+        // 原型链 car1 -->CarProduct.prototype --> Product.prototype -->Object.prototype
+    </script>
+</body>
+</html>

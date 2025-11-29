@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 变量的作用域
+    1.变量的作用域指变量的可作用范围，一个变量只能在作用域才能用
+        全局变量：在函数外边创建/声名的变量，作用域：全局
+        局部范围：在函数内创建的变量，作用域：所在的函数内
+    -->
+        <script>
+            function func(){
+                var address = '上海';
+                age = 10;//(设计缺陷，不准这么用)如果在函数内创建变量，没有用var，则函数外也可以用
+                console.log(address);
+                console.log(age);
+            }
+            func();
+            console.log('');
+            console.log(age);
+        </script>
+    <!-- 作用域链
+        作用域表述变量查找过程：
+        从本作用域找——>上层作用域——>...
+        只能向上找，不能向下找
+    -->
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        .wrapper {
+            padding: 20px;
+            width: 600px;
+            border: 1px dashed #900;
+        }
+
+        p {
+            width: 500px;
+            padding: 20px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="wrapper">
+        <p class="item">尹了未必极下一，薪的反法没第不人不上老。</p>
+        <div class="item">尹了未必极下一，薪的反法没第不人不上老。</div>
+        <p class="item">尹了未必极下一，薪的反法没第不人不上老。</p>
+        <div>尹了未必极下一，薪的反法没第不人不上老。</div>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet.</p>
+    <div class="item active">Lorem ipsum dolor sit amet.</div>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <script>
+        // 使用类名
+        var pEle = document.getElementsByClassName('item');
+        pEle[2].style.color = '#fff'
+        console.log(pEle);
+        // 使用name
+        var nameEle = document.getElementsByName('')
+    </script>
+</body>
+</html>

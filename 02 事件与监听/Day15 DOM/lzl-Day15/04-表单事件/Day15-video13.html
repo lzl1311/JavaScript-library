@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #formbox{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <form action="123" id="formbox">
+        <input type="text" placeholder="请输入名称">
+        <br>
+        <input type="password" placeholder="请输入密码">
+        <br>
+        <button>提交</button>
+        <button type="reset">重置</button>
+    </form>
+    <script>
+        var formbox =document.querySelector('#formbox');
+        formbox.onsubmit = function(){
+            alert('是否确认提交');
+        }
+        formbox.onreset = function(){
+            confirm('是否确认重置');
+        }
+        // 可以被用来监听并消除表格的提交事件
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nums =[23,100,12,45,56,78,18,999];
+
+        //使用sort方法
+        console.log(nums);
+        nums.sort(function(next,prev){
+            return next-prev;
+        });
+        console.log(nums);
+
+         nums.sort(function(a,b){
+            return(a-b)
+        })
+        console.log(nums)
+    </script>
+    <!-- 
+    当你给 sort 传入比较函数 function(a, b) { ... } 时：
+    若函数返回正数：sort 会认为 a 应该排在 b 后面（即交换 a 和 b 的位置）
+    若函数返回负数：sort 会认为 a 应该排在 b 前面（即不交换位置）
+    若返回 0：位置不变     
+    -->
+</body>
+</html>

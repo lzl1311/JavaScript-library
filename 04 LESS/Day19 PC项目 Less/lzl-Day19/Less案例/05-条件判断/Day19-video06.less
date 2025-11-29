@@ -1,0 +1,38 @@
+// 朝下
+.triangle(@bcolor,@border-width,@direction) when(@direction = down){
+    width: 0;
+    height: 0;
+    border-width: @border-width;
+    border-style: solid;
+    border-color: @bcolor transparent transparent transparent;
+}
+
+// 朝左
+.triangle(@bcolor,@border-width,@direction) when(@direction = left){
+    width: 0;
+    height: 0;
+    border-width: @border-width;
+    border-style: solid;
+    border-color: transparent @bcolor transparent transparent;
+}
+
+// 朝上
+.triangle(@bcolor,@border-width,@direction) when(@direction = up){
+    width: 0;
+    height: 0;
+    border-width: @border-width;
+    border-style: solid;
+    border-color: transparent transparent @bcolor transparent;
+}
+
+// 朝右
+.triangle(@bcolor,@border-width,@direction) when(@direction = right){
+    width: 0;
+    height: 0;
+    border-width: @border-width;
+    border-style: solid;
+    border-color: transparent transparent transparent @bcolor;
+}
+.box{
+    .triangle(#4eef2e, 40px, right)
+}

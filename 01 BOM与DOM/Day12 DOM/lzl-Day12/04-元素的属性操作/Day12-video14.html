@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./images/about4.jpg" alt="一幅粉蓝紫的图片" width="300" homeaddress="东京">
+    <button id="btn01">获取信息</button>
+    <button id="btn02">创建信息</button>
+    <script>
+        // 获取图片对象
+        var imgEle = document.querySelector('img');
+        // 获取按钮对象
+        var btn01 = document.querySelector('#btn01');
+        var btn02 = document.querySelector('#btn02');
+        // 按下按钮获取信息
+        btn01.onclick = function(){
+            console.log(imgEle.alt);
+            console.log(imgEle.title);
+            console.log(decodeURI(imgEle.src));
+            console.log(imgEle.width);
+            console.log(imgEle.height);
+            console.log(imgEle.id);
+            console.log(imgEle.getAttribute('homeaddress'));
+            console.log(imgEle.getAttribute('comfrom'))            
+        }
+        // 按下按钮创建新信息
+        btn02.onclick = function(){
+            imgEle.setAttribute('comfrom','东京一位画师');
+        }
+    </script>
+</body>
+</html>

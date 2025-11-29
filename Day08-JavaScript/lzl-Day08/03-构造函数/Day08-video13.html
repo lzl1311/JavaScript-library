@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 自定义构造函数的返回值对实例化结果的影响
+     1.如果构造函数没有return或者return的是原始类型数据，实例化的结果就是创建的新对象
+     2.如果构造函数的return的是对象类型的数据，实例化的结果就是return的数据
+    -->
+    <script>
+        function Proudct(){
+            console.log('Proudct start');
+            //return 80;
+            return[1,2,3,4];//依旧可以中断
+            console.log('Proudct start');
+        }
+        var p = new Proudct();
+        console.log(p);
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乘法表格式2</title>
+    <style>
+        table{
+            width: 900px;
+            table-layout: fixed;
+            border-collapse: collapse;
+            empty-cells: hide;
+        }
+        td{
+            padding: 10px;
+            border: 2px solid #353434;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+        document.write('<table>');
+        document.write('<tbody>');
+        for(var i=1;i<=9;i++){
+            document.write('<tr>');
+                //循环i次，这样一行就i个单元格
+                for(var j=1;j<=(10-i);j++){
+                    document.write('<td>'+ j+ 'X'+(10-i)+'='+ (10-i) *j +'</td>');
+                }
+            document.write('</tr>');
+        }   
+        document.write('</tbody>');
+        document.write('</table>');
+        */
+       document.write('<table>');
+        document.write('<tbody>');
+        for(var i=9;i>=1;i--){//行数不会变是9行，但是单元格列数会从多到少
+            document.write('<tr>');
+                //循环i次，这样一行就i个单元格
+                for(var j=1;j<=i;j++){
+                    document.write('<td>'+ j+ 'X'+i+'='+i*j +'</td>');
+                }
+            document.write('</tr>');
+        }   
+        document.write('</tbody>');
+        document.write('</table>');
+    </script>
+</body>
+</html>

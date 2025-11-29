@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 构造函数和函数
+    一个函数，如果实例化它，它就是构造函数，如果去调用它，它就是函数 
+    -->
+    <script>
+        function User(){
+            console.log('hello User');
+            return [1,23,4];
+        }
+
+        var res1 = new User();
+        var res2 = User();
+
+        console.log(res1);
+        console.log(res2);
+    </script>
+</body>
+</html>

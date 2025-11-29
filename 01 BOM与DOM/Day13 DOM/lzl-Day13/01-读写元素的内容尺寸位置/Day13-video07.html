@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            position: relative;
+            width: 600px;
+            padding: 20px;
+            border: 2px dashed #999;
+            /* overflow: hidden;
+            overflow: auto; */
+        }
+
+        .wrapper p {
+            padding: 20px;
+            width: 300px;
+            background: #ccc;
+            border: 2px solid #099;
+            border-left: dashed #099 10px;
+        }
+    </style>
+</head>
+<body>
+     <div class="wrapper">
+        什志服新读可可是了雷韩勉能哉回极德，亲胜头洪养慷生韦训弟我心，恼谓落么，范愚可。
+        <ul>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem ipsum dolor sit amet.</li>
+        </ul>
+        <p id="box">救洪上，后与回才为居而高则讨入人，兮太者己，一葬逃而耐日光说都，天活太实他见使在自你他，水磊语皇，主了到心护病娇从叹是于尝时说，之生是千商的者下程友范本到哥，水亲丑不其见开我价，同月太反锐司土，仁位妙，在于仍负死，肯洪了而斯宫的言月别公竟是者韩都，公人家。</p>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum repellat praesentium numquam eum natus molestias dolorem dolore est nobis, voluptatibus incidunt nisi voluptatem eveniet error aliquid molestiae blanditiis a! Aperiam?</div>
+    </div>
+    <div style="height:1000px;"></div>
+    <script>
+        var box = document.querySelector('#box')
+        // 不包括p自身的边框，到第一个定位的祖先元素最左边的距离，没有定位祖先元素就参照页面
+        console.log('offsetLeft:',box.offsetLeft);
+        // 不包括p自身的边框，到第一个定位的祖先元素最上边边的距离，没有定位祖先元素就参照页面
+        console.log('offsetTop:',box.offsetTop);
+        var res = box.getBoundingClientRect();
+        console.log(res);
+        // 不包括p自身的边框，p左边到视口左边缘的位置
+        console.log(res.left);
+        // 不包括p自身的边框，p顶部到视口上边缘的位置
+        console.log(res.top);
+        console.log(res.bottom);
+        console.log(res.right)
+
+    </script>
+</body>
+</html>

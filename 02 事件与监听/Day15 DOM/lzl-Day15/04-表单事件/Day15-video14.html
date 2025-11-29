@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        #box{
+            color: #298e0e;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <br>
+    <span id="box"></span>
+    <textarea id="areabox"></textarea>
+    <script>
+        var inp = document.querySelector('input');
+        var box = document.querySelector('#box');
+        var areabox = document.querySelector('#areabox');
+        inp.onblur = function(){
+            box.innerHTML = '输入完毕';
+        }
+        inp.onfocus = function(){
+            box.innerHTML = '正在输入中。。。';
+        }
+        areabox.onselect = function(){
+            alert('被选中了');
+        }
+        areabox.onclick = function(){
+            areabox.select();
+            // 不能单独使用必须通过具体元素调用
+        }
+    </script>
+</body>
+</html>

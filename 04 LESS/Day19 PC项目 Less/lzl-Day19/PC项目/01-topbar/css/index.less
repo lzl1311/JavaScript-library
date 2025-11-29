@@ -1,0 +1,32 @@
+// 入口文件
+// 导入变量
+@import "variables" ;
+
+// 导入重置样式表
+@import "reset";
+
+// 导入混合
+@import "mixins";
+// 整体样式设计
+.topbar{
+    height: 30px;
+    width: 100%;
+    line-height: 30px;
+    background-color: #eaeaea;
+    .container{
+        display: flex;
+        // 设置主轴对齐方式——两端对齐
+        justify-content: space-around;
+        a{
+            padding: 0 10px;
+            &:not(:last-child){
+                border-right: 1px solid @sep-color;
+            }
+        }
+    }
+}
+.container{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}

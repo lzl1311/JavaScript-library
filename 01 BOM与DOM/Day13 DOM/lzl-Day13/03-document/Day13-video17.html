@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.title = '您有一条消息 请注意查收 王者十周年福利快来领取';
+        
+        setInterval(function(){
+            document.title = document.title.slice(1) + document.title[0];
+        },200)
+        
+    </script>
+</body>
+</html>

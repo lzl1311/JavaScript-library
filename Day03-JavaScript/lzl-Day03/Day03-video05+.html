@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三元运算符/运算符优先级</title>
+</head>
+<body>
+    <script>
+        //第一个操作数成立，表达式取第二个操作数为值,第三个不会被执行
+        console.log(true ? 100 :200);//100
+        //第一个操作数不成立，表达式取第三个操作数为值
+        console.log(false ? 100 :200);//200
+        console.log('');
+
+        var n=10;
+        var res1=n++ ? n++ :n++;
+        console.log(res1);//11
+        console.log(n);//12
+        console.log('');
+
+        var age=19;
+        var msg =age>=18? '成年人' :'未成年';
+        console.log('恭喜你，你是一个'+msg);
+
+        //逻辑与 优先级大于 逻辑或
+        console.log(100 || 20 && 40);//100
+
+        /*运算符的优先级(下意识判断，就记住哪些和下意识不一样的)
+        1.一元运算符
+        2.算术运算符，乘除取余运算符
+        3.关系（比较）运算符 比大小 > 判等
+        4.逻辑运算符
+        5.三元运算符
+        6.赋值运算符
+        7.逗号运算符
+        */
+       var a=10;
+       var res=45 + 4 > 48 && 67 + --a;
+       console.log(res);//76
+
+       //赋值
+       var a,b,c;
+       a=b=c=100;
+       console.log(a);
+       console.log(b);
+       console.log(c);
+
+    </script>
+</body>
+</html>

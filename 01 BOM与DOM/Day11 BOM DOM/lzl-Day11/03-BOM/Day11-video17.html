@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history</title>
+</head>
+    <!-- 
+    length			获取本窗口历史记录的数量
+
+    back()			回到历史记录上一个
+    forward()		回到历史记录下一个
+    go()			设置一个数字作为参数，正数前进，负数后退
+    -->
+<body>
+    <button id="btn01">后退一步</button>
+    <script>
+        console.log('历史记录：',history.length);
+        var btn01 = document.getElementById('btn01');
+        btn01.onclick = function(){
+            history.forward();
+        }
+    </script>
+</body>
+</html>

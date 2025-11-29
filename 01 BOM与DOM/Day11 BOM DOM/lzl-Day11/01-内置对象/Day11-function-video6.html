@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    length		获取形参的数量
+
+    call()		调用函数并设置里面的this，第二个参数开始后面的参数都是给函数的
+    apply()		调用函数并设置里面的this，第二个参数是数组，数组中的元素作为函数的函数
+    bind()		返回被设置了this的新函数    
+    -->
+    <!-- 
+    看到call和apply要注意this指向谁
+    -->
+    <script>
+        // Array、String、Object 、parseInt ...
+        // 自定义函数
+        function func(num01, num02) {
+            console.log('func被调用了：', num01*num02, this);
+            return num01+num02;
+        };
+
+        // 创建对象
+        var user = {
+            name: '曹操',
+            getInfo: func
+        };
+
+        // 调用函数  window调用，里面的this指向 window
+        func(10, 20);
+        user.getInfo(4, 6);
+        console.log('');
+
+        // 执行 func 函数类型的对象的 call 方法； 函数会被调用
+        // call 调用 func的同时可以设置里面的 this
+        var res = func.call({name:'高小乐'}, 10, 6);
+        // 可以修改this指向对象，还可以写调用函数的参数
+        user.getInfo.call([10,20,30], 8, 5);
+        console.log(res);
+        console.log('');
+
+        // apply 调用函数并设置里面的this
+        // 与call的区别： apply只能接收两个参数，第二个参数是数组
+        var res1 = func.apply('hello', [19, 2]);
+        console.log(res1);
+        console.log('')
+
+        // 使用forEach遍历字符串
+        var str = 'Hello高小乐';
+        [].forEach.call(str,function(item,index){
+            console.log('遍历到了',item,index);
+        });
+        var str1 = [].reduceRight.call(str,function(prev,item){
+            return prev+item;
+        });
+        console.log(str1)
+        console.log('');
+
+
+        // bind
+        var fn01 = func.bind([10,20,30,40,50]);
+        console.log(fn01(10,20)) ;
+        
+        var fn02 = func.bind([10,20,30,40,50],1000,90);
+        console.log(fn02());
+    </script>
+</body>
+</html>

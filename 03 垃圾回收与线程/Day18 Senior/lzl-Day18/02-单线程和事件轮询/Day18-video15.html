@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var value1 = 0, value2 = 0, value3 = 0;
+
+        for (var i = 1; i <= 3; i++) {
+            var i2 = i;
+            (function () {
+                var i3 = i;
+                // 每次循环都开启一个定时器 但是定时器的回调函数在循环结束后才会执行！！！！！
+                setTimeout(function () {
+                    value1 += i;
+                    value2 += i2;
+                    value3 += i3;
+                }, 1);
+            })();
+        }
+
+        setTimeout(function () {
+            console.log(value1);
+            console.log(value2);
+            console.log(value3);
+        }, 100);   //执行结果 12 9 6    
+
+        /*
+        value1 累加i，执行回调函数（异步任务）时，for循环已经结束（同步任务），
+        循环到最后i的值为4，在for循环中开启了三个立即调用函数，所以累加三次4
+        */ 
+        
+    </script>
+</body>
+</html>

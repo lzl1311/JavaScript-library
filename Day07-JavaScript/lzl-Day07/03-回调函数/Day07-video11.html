@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //高阶函数  返回值是一个函数
+        function fun01(){
+            var res=1*200;
+            return function () {
+                console.log(res*2);
+            }
+        }
+        fun01()();
+        (function(){
+            console.log(100);
+        })();
+        (function(){
+            console.log(200);
+        })();
+
+        //高阶函数  要求参数是一个函数
+        function fun02(cd){
+            cd(100,200);
+        }
+        fun02(function(a,b){
+            console.log('我是回调函数',a,b);
+        });
+
+        //高阶函数 参数是函数 返回值也是函数
+        function func02(num01,num02,cb){
+            return cb(num02,num01);
+        }
+       var res = func02(1,2,function(a,b){
+            return a-b;
+        });
+        console.log(res);
+
+
+        //回调函数和作用域
+        var num=10;
+        function fn01(fn){
+            var num = 20;
+            fn();
+        }
+        function fn02(){
+            console.log(num);
+        }
+        fn01(fn02);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关系运算符-比大小</title>
+</head>
+<body>
+    <script>
+        //关系运算符
+        //两个操作数都是数字
+        console.log(100 > 20);//true
+        console.log(67 <= 30);//false
+        console.log(100 < NaN);//false
+        console.log(100 < Infinity);//true
+
+        //两个操作数都不是数字  会转为number再比较
+        console.log(true > false);//true
+        console.log(null >= '');//true
+        console.log('hello' > undefined);//false,因为'hello'和undefined都转成了NaN
+
+        //如果两个操作数都是string，会按照字符串的规则比大小
+        //字符：使用字符对应的Unicode编码比大小
+        //字符串：两边字符串长度不一致，就一个字符一个字符的比,对应的字符大，整个字符串都大，后面不再比较
+        console.log('c'>'a');//true
+        console.log('hl'>'hello');//true
+    </script>
+</body>
+</html>

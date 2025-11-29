@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    instanceof
+    功能：判断一个对象是否是某个构造函数的实例
+    对象自己的构造函数成立，对象原型链上某个对象的构造函数也成立
+    -->
+    <script>
+        var arr = [10,20,30];
+        console.log(arr instanceof Array);//true
+        console.log(arr instanceof Object);//true
+        console.log(arr instanceof Function);//false
+        console.log('');
+
+        var fn = function(){};
+        var user = new fn();
+
+        console.log(user instanceof fn);//true
+        console.log(user instanceof Function);//false
+        console.log(user instanceof Object);//true
+
+    </script>
+</body>
+</html>

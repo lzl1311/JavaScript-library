@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .todolist {
+            margin: 50px auto;
+            width: 700px;
+        }
+
+        .todo-header input {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .todo-header button {
+            padding: 10px 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+        }
+
+        .todo-body ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .todo-body li {
+            position: relative;
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .todo-body li.active {
+            border-color: red;
+        }
+
+        .todo-body li .delete {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 16px;
+            height: 16px;
+            color: #f00;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="todolist">
+        <div class="todo-header">
+            <input type="text" id="input">
+            <button id="addBtn">添加</button>
+        </div>
+        <div class="todo-body">
+            <ul id="todoContent">
+                <li>和雪丽去吃晚饭<span class="delete">&times;</span></li>
+                <li>和雪丽去看电影<span class="delete">&times;</span></li>
+                <li>和雪丽去做足疗<span class="delete">&times;</span></li>
+                <li>和雪丽去河边钓鱼<span class="delete">&times;</span></li>
+                <li>和雪丽去河边挖螃蟹<span class="delete">&times;</span></li>
+                <li>和雪丽去办公室喝茶<span class="delete">&times;</span></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // 获取相关元素
+        var todoContent = document.querySelector('#todoContent');
+        var inputBox = document.querySelector('#input');
+        var addBtn = document.querySelector('#addBtn');
+        var liItems = document.querySelectorAll('#todoContent li')
+        // 获取所有的删除按钮
+        var deleteBtns = todoContent.querySelectorAll('.delete');
+           
+        // 点击添加按钮 
+        addBtn.onclick = function() {
+            // 创建新的元素
+            var newLi = document.createElement('li');
+            // 设置新LI中的文本内容
+            newLi.innerHTML = inputBox.value + '<span class="delete">&times;</span>';
+            // 给ul添加子节点
+            todoContent.appendChild(newLi);
+            // 清空输入框
+            inputBox.value = '';
+            console.log(todoContent.children.length)
+        };
+
+        // 事件委托
+        // 原理冒泡事件 event.target 找到目标对象的不同作为判断依据
+        todoContent.onclick = function(event){
+            if(event.target.className === 'delete'){
+                todoContent.removeChild(event.target.parentElement);
+            }
+        }
+    </script>
+</body>
+</html>

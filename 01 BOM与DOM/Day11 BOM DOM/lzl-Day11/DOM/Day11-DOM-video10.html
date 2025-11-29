@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 600px;
+            padding: 20px;
+            height: 250px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    1.获取元素
+    document.getElementById()
+    2.给元素添加事件
+    元素对象.onclick =function(){}
+    3.设置元素的css样式
+    元素对象.style.属性名 = ''
+    4.设置元素中的文字内容
+    元素对象.innerHTML = '内容';
+    -->
+    <h1>JavaScript</h1>
+    <div id="box">
+        程力到后是亓种定张报，秦什什血千三哥是得孔欲在降落啊五，斯有竟把人命系弟徨亡目一韩答性，羊尺彷方特恩要吞，不的否明家，了牙下览力觉沾力向，事自资下后家极笔，俭远降清在说光乡，足因谋自沫家，郭韩中，爱。
+    </div>
+    <script>
+        // 获取html元素 保存成js对象
+        var boxElm = document.getElementById('box');
+        boxElm.onclick = function(){
+            // 修改元素的背景颜色
+            boxElm.style.backgroundColor = '#85f07b';
+            boxElm.style.color = '#fff';
+
+            // 修改元素中的内容
+            boxElm.innerHTML ='hello world';
+        }
+    </script>
+</body>
+</html>

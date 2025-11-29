@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .box {
+            text-align: center;
+            overflow: hidden;
+        }
+        .btns{
+            position: fixed;
+            right: 0;
+            bottom: 10px;
+        }
+        .btn{
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            margin: 10px 0;
+            text-align: center;
+            background-color: #8cf348;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="btns">
+        <div class="btn" id="btn01">回到顶部</div>
+        <div class="btn" id="btn02">向下滚动500px</div>
+        <div class="btn" id="btn03">平滑滚动到页底</div>
+    </div>
+    
+    <div class="box box1"><h2>ONE</h2></div>
+    <div class="box box2"><h2>TWO</h2></div>
+    <div class="box box3"><h2>THREE</h2></div>
+    <div class="box box4"><h2>FOUR</h2></div>
+    <div class="box box5"><h2>FIVE</h2></div>
+    <script>
+        var viewheight = document.body.scrollHeight;
+         var boxs = document.querySelectorAll('.box');
+        boxs.forEach(function(ele){
+            ele.style.height = window.innerHeight + 'px';
+        });
+        var btn01Eml = document.getElementById('btn01');
+        var btn02Eml = document.getElementById('btn02');
+        var btn03Eml = document.getElementById('btn03');
+
+        btn01Eml.onclick = function(){
+            scrollTo({
+                top:0,
+                behavior:"smooth"
+            })
+        }
+        btn02Eml.onclick = function(){
+            scrollBy({
+                top:500,
+                behavior:"smooth"
+            })
+        }
+        btn03Eml.onclick = function(){
+            scrollTo({
+                top:viewheight,
+                behavior:"smooth"
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var obj={
+            username:'Tom',
+            age:13,
+            home_address:'上海',
+            'school-address':'北京',
+            friend:['刘姥姥','王姥姥','太姥姥'],
+            child:{
+                name:'little-Tom',
+                age:1
+            },
+            getInfo:function(){
+                console.log('obj2 getInfo')
+            }   
+        };
+        var username='child';
+        console.log('age' in obj);
+        console.log('drink' in obj);
+        console.log(username in obj);//没加引号被解析成变量
+    </script>
+</body>
+</html>
